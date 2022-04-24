@@ -2,7 +2,12 @@
 @extends('layouts.default');
 
 @section('content')
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap" rel="stylesheet">
 
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+		<link rel="stylesheet" href="css/style.css">
 
 <style>
     .carousel-item .img-fluid {
@@ -87,14 +92,101 @@
 <div class="posisi">
     <h1>Apa Kata Orang?</h1>
 </div>
-                <p style="text-align: center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur necessitatibus tempore rerum inventore, eaque minus quae nesciunt omnis? Alias iste nobis illum qui iure. Expedita neque fuga sit aut.</p>
-
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="heading-section mb-5">Carousel #05</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="featured-carousel owl-carousel">
+                    <div class="item">
+        <div class="testimony-wrap py-4">
+          <div class="text">
+            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div class="d-flex align-items-center">
+                <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                <div class="pl-3">
+                    <p class="name">Roger Scott</p>
+                    <span class="position">Marketing Manager</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="testimony-wrap py-4">
+          <div class="text">
+            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div class="d-flex align-items-center">
+                <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                <div class="pl-3">
+                    <p class="name">Roger Scott</p>
+                    <span class="position">Marketing Manager</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="testimony-wrap py-4">
+          <div class="text">
+            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div class="d-flex align-items-center">
+                <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                <div class="pl-3">
+                    <p class="name">Roger Scott</p>
+                    <span class="position">Marketing Manager</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="testimony-wrap py-4">
+          <div class="text">
+            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div class="d-flex align-items-center">
+                <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                <div class="pl-3">
+                    <p class="name">Roger Scott</p>
+                    <span class="position">Marketing Manager</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="testimony-wrap py-4">
+          <div class="text">
+            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div class="d-flex align-items-center">
+                <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                <div class="pl-3">
+                    <p class="name">Roger Scott</p>
+                    <span class="position">Marketing Manager</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         </div>
     </div>
 </div>
 @endsection
 
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
 {{-- <picture>
     <source srcset="https://dummyimage.com/2000x400/007aeb/4196e5" media="(min-width: 1400px)">
     <source srcset="https://dummyimage.com/1400x400/007aeb/4196e5" media="(min-width: 768px)">
