@@ -14,6 +14,11 @@
     max-width: 100%;
     height: auto;
 }
+.posisi{
+    display: flex;
+    justify-content: center;
+    align-items: center;"
+}
 </style>
 
 <div class="starter-template">
@@ -22,24 +27,24 @@
                     <picture>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <source srcset="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&w=1000&q=80" media="(min-width: 1400px)">
-                            <source srcset="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&w=1000&q=80" media="(min-width: 768px)">
-                            <source srcset="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&w=1000&q=80" media="(min-width: 576px)">
-                            <img srcset="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8&w=1000&q=80" alt="responsive image" class="d-block img-fluid">
+                        <source srcset="https://cdn0-production-images-kly.akamaized.net/J4GXMv6D_qObmilkwpb1c2mBNqo=/0x0:1000x563/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3653759/original/046108000_1638766318-shutterstock_1959431266.jpg" media="(min-width: 1400px)">
+                            <source srcset="https://cdn0-production-images-kly.akamaized.net/J4GXMv6D_qObmilkwpb1c2mBNqo=/0x0:1000x563/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3653759/original/046108000_1638766318-shutterstock_1959431266.jpg" media="(min-width: 768px)">
+                            <source srcset="https://cdn0-production-images-kly.akamaized.net/J4GXMv6D_qObmilkwpb1c2mBNqo=/0x0:1000x563/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3653759/original/046108000_1638766318-shutterstock_1959431266.jpg" media="(min-width: 576px)">
+                            <img srcset="https://cdn0-production-images-kly.akamaized.net/J4GXMv6D_qObmilkwpb1c2mBNqo=/0x0:1000x563/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3653759/original/046108000_1638766318-shutterstock_1959431266.jpg" alt="responsive image" class="d-block img-fluid">
                         {{-- <img src="" class="d-block w-100" alt="..."> --}}
                       </div>
                       <div class="carousel-item">
-                        <source srcset="https://cdn-image.hipwee.com/wp-content/uploads/2021/01/hipwee-hotel-presidente-4s-4.jpg" media="(min-width: 1400px)">
-                            <source srcset="https://cdn-image.hipwee.com/wp-content/uploads/2021/01/hipwee-hotel-presidente-4s-4.jpg" media="(min-width: 768px)">
-                            <source srcset="https://cdn-image.hipwee.com/wp-content/uploads/2021/01/hipwee-hotel-presidente-4s-4.jpg" media="(min-width: 576px)">
-                            <img srcset="https://cdn-image.hipwee.com/wp-content/uploads/2021/01/hipwee-hotel-presidente-4s-4.jpg" alt="responsive image" class="d-block img-fluid">
+                        <source srcset="https://ik.imagekit.io/10tn5i0v1n/article/60b779ce9bfcd700016b93b1.jpg" media="(min-width: 1400px)">
+                            <source srcset="https://ik.imagekit.io/10tn5i0v1n/article/60b779ce9bfcd700016b93b1.jpg" media="(min-width: 768px)">
+                            <source srcset="https://ik.imagekit.io/10tn5i0v1n/article/60b779ce9bfcd700016b93b1.jpg" media="(min-width: 576px)">
+                            <img srcset="https://ik.imagekit.io/10tn5i0v1n/article/60b779ce9bfcd700016b93b1.jpg" alt="responsive image" class="d-block img-fluid">
                         {{-- <img src="https://bacalagers.com/wp-content/uploads/2021/03/blue-sea-sunset-UXoQ2Z.jpeg" class="d-block w-100" alt="..."> --}}
                       </div>
                       <div class="carousel-item">
-                        <source srcset="https://cdn-2.tstatic.net/travel/foto/bank/images/whiz-prime-hotel-darmo-harapan-surabaya.jpg" media="(min-width: 1400px)">
-                            <source srcset="https://cdn-2.tstatic.net/travel/foto/bank/images/whiz-prime-hotel-darmo-harapan-surabaya.jpg" media="(min-width: 768px)">
-                            <source srcset="https://cdn-2.tstatic.net/travel/foto/bank/images/whiz-prime-hotel-darmo-harapan-surabaya.jpg" media="(min-width: 576px)">
-                            <img srcset="https://cdn-2.tstatic.net/travel/foto/bank/images/whiz-prime-hotel-darmo-harapan-surabaya.jpg" alt="responsive image" class="d-block img-fluid">
+                        <source srcset="https://www.masakapahariini.com/wp-content/uploads/2020/10/roti-manis.jpg" media="(min-width: 1400px)">
+                            <source srcset="https://www.masakapahariini.com/wp-content/uploads/2020/10/roti-manis.jpg" media="(min-width: 768px)">
+                            <source srcset="https://www.masakapahariini.com/wp-content/uploads/2020/10/roti-manis.jpg" media="(min-width: 576px)">
+                            <img srcset="https://www.masakapahariini.com/wp-content/uploads/2020/10/roti-manis.jpg" alt="responsive image" class="d-block img-fluid">
                         {{-- <img src="https://bacalagers.com/wp-content/uploads/2021/03/blue-sea-sunset-UXoQ2Z.jpeg" class="d-block w-100" alt="..."> --}}
                       </div>
                     </div>
@@ -61,33 +66,29 @@
 
 <div class="cekKamar" style=" padding: 10 10 10 10; border-radius: 1%">
 
-    <h1>Cek ketersediaan kamar</h1>
+    <h1 style="text-align: center">Buat Roti Yuk!</h1>
     <br>
     <form action="/pesan" method="post">
         @csrf
-                    <div class="row">
-                      <div class="col">
-                          <label for="date1">Dari tanggal</label>
-                          <input type="date" name="date1" class="form-control" placeholder="Dari tanggal">
-                        </div>
-                        <br>
-                        <div class="col">
-                            <label for="date2">Hingga tanggal</label>
-                            <input type="date" name="date2" class="form-control" placeholder="Hingga tanggal">
-                        </div>
 
-                        <div class="col">
-                        <label for="jumlah">Jumlah kamar</label>
-                          <input type="number" name="jumlah" class="form-control" placeholder="">
-                        </div>
-                    </div><br>
-                    <button class="btn btn-primary" type="submit">Cari</button>
+        <div class="posisi">
 
+            <button class="btn btn-danger" type="submit">Yuk Buat Sekarang!</button>
+
+        </div>
                 </form>
             </div>
             <br>
-            <h1>Tentang Kami</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur necessitatibus tempore rerum inventore, eaque minus quae nesciunt omnis? Alias iste nobis illum qui iure. Expedita neque fuga sit aut.</p>
+            <div class="posisi">
+
+                <h1>Tentang Kami</h1>
+            </div>
+                <p style="text-align: center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur necessitatibus tempore rerum inventore, eaque minus quae nesciunt omnis? Alias iste nobis illum qui iure. Expedita neque fuga sit aut.</p>
+<div class="posisi">
+    <h1>Apa Kata Orang?</h1>
+</div>
+                <p style="text-align: center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur necessitatibus tempore rerum inventore, eaque minus quae nesciunt omnis? Alias iste nobis illum qui iure. Expedita neque fuga sit aut.</p>
+
 
         </div>
     </div>
