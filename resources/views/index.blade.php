@@ -28,19 +28,95 @@
 	<script src="{{ url('assets/js/main.js')}}" type="text/javascript"></script>
 
 
+
 </head>
 <style>
 
-    .gambar {
-        /* float: left; */
-        width:  200px;
-        height: 300px;
-        object-fit: cover;
-    }
     .partner-img {
         /* float: left; */
         width:  150px;
         height: 65px;
+        object-fit: cover;
+    }
+
+    /* owl carousel*/
+    .shadow-effect {
+		    background: #fff;
+		    padding: 20px;
+		    border-radius: 40px;
+		    text-align: center;
+	border:1px solid #ECECEC;
+		    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+		}
+		#customers-testimonials .shadow-effect p {
+		    font-family: inherit;
+		    font-size: 17px;
+		    line-height: 1.5;
+		    margin: 0 0 17px 0;
+		    font-weight: 300;
+		}
+		.testimonial-name {
+		    margin: -17px auto 0;
+		    display: table;
+		    width: auto;
+		    background: green;
+		    padding: 9px 35px;
+		    border-radius: 120px;
+		    text-align: center;
+		    color: #fff;
+		    box-shadow: 0 9px 18px rgba(0,0,0,0.12), 0 5px 7px rgba(0,0,0,0.05);
+		}
+		#customers-testimonials .item {
+		    text-align: center;
+		    padding: 30px;
+		    opacity: 1;
+		    -webkit-transform: scale3d(0.8, 0.8, 1);
+		    transform: scale3d(0.8, 0.8, 1);
+		    -webkit-transition: all 0.3s ease-in-out;
+		    -moz-transition: all 0.3s ease-in-out;
+		    transition: all 0.3s ease-in-out;
+		}
+		/* #customers-testimonials .owl-item.active.center .item {
+		    opacity: 1;
+		    -webkit-transform: scale3d(1.0, 1.0, 1);
+		    transform: scale3d(1.0, 1.0, 1);
+		} */
+		.owl-carousel .img-circle {
+		    transform-style: preserve-3d;
+		    /* max-width: 90px; */
+            width:  90px;
+        height: 100px;
+        object-fit: cover;
+    		margin: 0 auto 17px;
+		}
+		#customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
+#customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+		    background: green;
+		    transform: translate3d(0px, -50%, 0px) scale(0.7);
+		}
+#customers-testimonials.owl-carousel .owl-dots{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot{
+	display: inline-block;
+}
+		#customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+		    background: green;
+		    display: inline-block;
+		    height: 20px;
+		    margin: 0 2px 5px;
+		    transform: translate3d(0px, -50%, 0px) scale(0.3);
+		    transform-origin: 50% 50% 0;
+		    transition: all 250ms ease-out 0s;
+		    width: 20px;
+		}
+
+        .gambar {
+        /* float: left; */
+        width:  200px;
+        height: 300px;
         object-fit: cover;
     }
     </style>
@@ -223,7 +299,7 @@
 					<div class="block">
 						<div class="media">
 							<div class="pull-left" href="#">
-								<i class=" fa fa-foursquare"></i>
+								<i class="fa fa-foursquare"></i>
 						  	</div>
 						  	<div class="media-body">
 						    	<h4 class="media-heading">Media heading</h4>
@@ -324,7 +400,7 @@
 		<!-- PRODUCTS Start
     ================================================== -->
 
-	<section id="products">
+	{{-- <section id="products">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -442,9 +518,93 @@
 				</div> <!-- End Of /.Col-md-3 -->
 			</div>	<!-- End of /.row -->
 		</div>	<!-- End of /.container -->
+	</section>	<!-- End of Section --> --}}
+
+
+
+		<!-- KATA ORANG
+    ================================================== -->
+
+	<section id="call-to-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block">
+						<div class="block-heading">
+							<h2>APA KATA DUNIA?</h2>
+						</div>
+					</div>	<!-- End of /.block -->
+				<!-- TESTIMONIALS -->
+<section class="testimonials">
+	<div class="container">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="customers-testimonials" class="owl-carousel">
+
+            <!--TESTIMONIAL 1 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="{{ url('assets/images/partner/leonardimage.jpg')}}" alt="">
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div class="testimonial-name">Firewall</div>
+            </div>
+            <!--END OF TESTIMONIAL 1 -->
+            <!--TESTIMONIAL 2 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="{{ url('assets/images/partner/prili.jpg')}}" alt="">
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div class="testimonial-name">Prili Ratuconsignment</div>
+            </div>
+            <!--END OF TESTIMONIAL 2 -->
+            <!--TESTIMONIAL 3 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="{{ url('assets/images/partner/jokowi-roti.jpg')}}" alt="">
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div class="testimonial-name">Pakde</div>
+            </div>
+            <!--END OF TESTIMONIAL 3 -->
+            <!--TESTIMONIAL 4 -->
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div class="testimonial-name">IAN OWEN</div>
+            </div>
+            <!--END OF TESTIMONIAL 4 -->
+            <!--TESTIMONIAL 5 -->
+            {{-- <div class="item">
+              <div class="shadow-effect">
+                <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div class="testimonial-name">MICHAEL TEDDY</div>
+            </div>
+            <!--TESTIMONIAL 5 -->
+            <div class="item">
+                <div class="shadow-effect">
+                  <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                  <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                </div>
+                <div class="testimonial-name">MICHAEL TEDDY</div>
+              </div> --}}
+            <!--END OF TESTIMONIAL 5 -->
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- END OF TESTIMONIALS -->
+				</div>	<!-- End of /.col-md-12 -->
+			</div> <!-- End Of /.Row -->
+		</div> <!-- End Of /.Container -->
 	</section>	<!-- End of Section -->
-
-
 
 
 		<!-- CALL TO ACTION Start
@@ -523,12 +683,12 @@
 				<div class="col-md-4">
 					<div class="block">
 						<h4>GET IN TOUCH</h4>
-						<p ><i class="fa  fa-map-marker"></i> <span>Food Code d.o.o.,</span>1000 Ljubljana Celovska cesta 135, Slovenia</p>
-						<p> <i class="fa  fa-phone"></i> <span>Phone:</span> (+386) 40 123 456 </p>
+						<p ><i class="fa fa-map-marker"></i> <span>Pakuan Hill </span>Livistona B 22, Bogor, Jawa Barat</p>
+						<p> <i class="fa fa-phone"></i> <span>Phone:</span> (+62) 40 123 456 </p>
 
-						<p> <i class="fa  fa-mobile"></i> <span>Mobile:</span> (+386) 40 654 123 651</p>
+						<p> <i class="fa fa-mobile"></i> <span>Mobile:</span> (+62) 40 654 123 651</p>
 
-						<p class="mail"><i class="fa  fa-envelope"></i>Eamil: <span>info@sitename.com</span></p>
+						<p class="mail"><i class="fa fa-envelope"></i>Email: <span>info@sitename.com</span></p>
 					</div>	<!-- End Of /.block -->
 				</div> <!-- End Of Col-md-3 -->
 				<div class="col-md-4">
@@ -595,7 +755,7 @@
 								</a>
 							</li>
 						</ul>
-						<p class="copyright-text pull-right">Food Code @2013 Designed by <a href="http://www.themexpert.com">Themexpert</a> All Rights Reserved</p>
+						<p class="copyright-text pull-right">Carrie Bakery @2022 Designed by <a href="http://startcode.id">StartCode</a> All Rights Reserved</p>
 					</div>	<!-- End Of /.col-md-12 -->
 				</div>	<!-- End Of /.row -->
 			</div>	<!-- End Of /.container -->
@@ -605,3 +765,32 @@
 	<a id="back-top" href="#"></a>
 </body>
 </html>
+
+
+<script>
+    jQuery(document).ready(function($) {
+        		"use strict";
+        		//  TESTIMONIALS CAROUSEL HOOK
+		        $('#customers-testimonials').owlCarousel({
+		            loop: true,
+		            center: true,
+		            items: 3,
+		            margin: 0,
+		            autoplay: true,
+		            dots:true,
+		            autoplayTimeout: 8500,
+		            smartSpeed: 450,
+		            responsive: {
+		              0: {
+		                items: 1
+		              },
+		              768: {
+		                items: 2
+		              },
+		              1170: {
+		                items: 3
+		              }
+		            }
+		        });
+        	});
+</script>
