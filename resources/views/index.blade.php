@@ -17,6 +17,8 @@
 	<link rel="stylesheet" href="{{ url('assets/css/font-awesome.min.css')}}">
 	<link rel="stylesheet" href="{{ url('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{ url('assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
 
 	<!-- jS -->
 	<script src="{{ url('assets/js/jquery.min.js')}}" type="text/javascript"></script>
@@ -286,7 +288,7 @@
 					<div class="block">
 						<div class="media">
 							<div class="pull-left" href="#">
-						    	<i class="fa fa-ambulance"></i>
+						    	<i class="fa fa-car" aria-hidden="true"></i>
 						  	</div>
 						  	<div class="media-body">
 						    	<h4 class="media-heading">Free Shipping</h4>
@@ -393,6 +395,45 @@
 			</div>	<!-- End of /.row -->
 		</div>	<!-- End of /.container -->
 	</section>	<!-- End of Section -->
+
+
+    <!-- MAIN GAME Start
+    ================================================== -->
+
+	<section id="catagorie">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block">
+						<div class="block-heading">
+							<h2>Yuk Main Game!</h2>
+						</div>
+						<div class="row">
+
+						  	<div class="col-sm-6 col-md-4">
+							    <div class="thumbnail">
+							    	<a class="catagotie-head" href="blog-single.html">
+                                        <img class="gambar" src="{{ url('assets/images/partner/sushicat.gif')}}" alt="...">
+										<h3>Yuk mainkan game interaktif kami!</h3>
+									</a>
+							      	<div class="caption">
+							        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, aut, esse, laborum placeat id illo a expedita aperiam...</p>
+							        	<p>
+							        		<a href="blog-single.html" class="btn btn-default btn-transparent" role="button">
+							        			<span>Main sekarang</span>
+							        		</a>
+							        	</p>
+							      	</div>	<!-- End of /.caption -->
+							    </div>	<!-- End of /.thumbnail -->
+						  	</div>	<!-- End of /.col-sm-6 col-md-4 -->
+
+						</div>	<!-- End of /.row -->
+					</div>	<!-- End of /.block -->
+				</div>	<!-- End of /.col-md-12 -->
+			</div>	<!-- End of /.row -->
+		</div>	<!-- End of /.container -->
+	</section>	<!-- End of Section -->
+
 
 
 
@@ -695,31 +736,20 @@
 					<div class="block">
 						<h4>UPCOMING ITEMS</h4>
 						<div class="media">
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
-						  	</a>
+                            <div class="mapouter">
+                                <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=pakuan%20hill%20cluster%20livistona&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                {{-- <a href="https://123movies-to.org">123 movies</a> --}}
+                                <br>
+                                <style>.mapouter{position:relative;text-align:right;height:200px;width:600px;}</style>
+                                <a href="https://www.embedgooglemap.net">google maps widget html</a>
+                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:600px;}</style>
+                                </div>
+                                </div>
 						</div>	<!-- End Of /.media -->
 					</div>	<!-- End Of /.block -->
 				</div> <!-- End Of Col-md-3 -->
 			</div> <!-- End Of /.row -->
 		</div> <!-- End Of /.Container -->
-
-
 
 	<!-- FOOTER-BOTTOM Start
     ================================================== -->
