@@ -10,7 +10,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
 
 	<!-- Css -->
-	<link rel="stylesheet" href="{{ url('assets/css/nivo-slider.css" type="text/css')}}" />
+	<link rel="stylesheet" href="{{ url('assets/css/nivo-slider.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{ url('assets/css/owl.carousel.css')}}">
 	<link rel="stylesheet" href="{{ url('assets/css/owl.theme.css')}}">
 	<link rel="stylesheet" href="{{ url('assets/css/bootstrap.min.css')}}">
@@ -56,7 +56,7 @@
 					  				<span class="caret"></span>
 						  			<ul class="media-list">
 								  		<li class="media">
-										    <img class="pull-left" src="{{ url('assets/images/product-item.jpg"')}}" alt="">
+										    <img class="pull-left" src="{{ url('assets/images/product-item.jpg')}}" alt="">
 										    <div class="media-body">
 										      	<h6>Italian Sauce
 								    				<span>$250</span>
@@ -212,9 +212,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div id="slider" class="nivoSlider">
-				    	<img src="{{ url('assets/images/slider.jpg"')}}" alt="" />
-				    	<img src="{{ url('assets/images/slider1.jpg"')}}" alt=""/>
-				    	<img src="{{ url('assets/images/slider2.jpg"')}}" alt="" />
+				    	<img src="{{ url('assets/images/slider.jpg')}}" alt="" />
+				    	<img src="{{ url('assets/images/slider1.jpg')}}" alt=""/>
+				    	<img src="{{ url('assets/images/slider2.jpg')}}" alt="" />
 					</div>	<!-- End of /.nivoslider -->
 				</div>	<!-- End of /.col-md-12 -->
 			</div>	<!-- End of /.row -->
@@ -289,7 +289,7 @@
 						  	<div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
 							    	<a class="catagotie-head" href="blog-single.html">
-										<img src="{{ url('assets/images/category-image-1.jpg"')}}" alt="...">
+										<img src="{{ url('assets/images/category-image-1.jpg')}}" alt="...">
 										<h3>Beef Steak</h3>
 									</a>
 							      	<div class="caption">
@@ -305,7 +305,7 @@
 						  	<div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
 							    	<a class="catagotie-head" href="blog-single.html">
-										<img src="{{ url('assets/images/category-image-2.jpg"')}}" alt="...">
+										<img src="{{ url('assets/images/category-image-2.jpg')}}" alt="...">
 										<h3>Miscellaneous</h3>
 									</a>
 							      	<div class="caption">
@@ -321,7 +321,7 @@
 						  	<div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
 							    	<a class="catagotie-head" href="blog-single.html">
-										<img src="{{ url('assets/images/category-image-3.jpg"')}}" alt="...">
+										<img src="{{ url('assets/images/category-image-3.jpg')}}" alt="...">
 										<h3>Elegant Apparel</h3>
 									</a>
 							      	<div class="caption">
@@ -360,7 +360,7 @@
 				<div class="col-md-3">
 					<div class="products">
 						<a href="single-product.html">
-							<img src="{{ url('assets/images/product-image.jpg"')}}" alt="">
+							<img src="{{ url('assets/images/product-image.jpg')}}" alt="">
 						</a>
 						<a href="single-product.html">
 							<h4>Amazing Italian Sauces</h4>
@@ -373,7 +373,7 @@
 				<div class="col-md-3">
 					<div class="products">
 						<a href="single-product.html">
-							<img src="{{ url('assets/images/product-image-2.jpg"')}}" alt="">
+							<img src="{{ url('assets/images/product-image-2.jpg')}}" alt="">
 						</a>
 						<a href="single-product.html">
 							<h4>Amazing Italian Sauces</h4>
@@ -386,7 +386,7 @@
 				<div class="col-md-3">
 					<div class="products">
 						<a href="single-product.html">
-							<img src="{{ url('assets/images/product-image-3.jpg"')}}" alt="">
+							<img src="{{ url('assets/images/product-image-3.jpg')}}" alt="">
 						</a>
 						<a href="single-product.html">
 							<h4>Amazing Italian Sauces</h4>
@@ -399,7 +399,7 @@
 				<div class="col-md-3">
 					<div class="products">
 						<a href="single-product.html">
-							<img src="{{ url('assets/images/product-image-4.jpg"')}}" alt="">
+							<img src="{{ url('assets/images/product-image-4.jpg')}}" alt="">
 						</a>
 						<a href="single-product.html">
 							<h4>Amazing Italian Sauces</h4>
@@ -412,7 +412,7 @@
 				<div class="col-md-3">
 					<div class="products">
 						<a href="single-product.html">
-							<img src="{{ url('assets/images/product-image-5.jpg"')}}" alt="">
+							<img src="{{ url('assets/images/product-image-5.jpg')}}" alt="">
 						</a>
 						<a href="single-product.html">
 							<h4>Amazing Italian Sauces</h4>
@@ -425,7 +425,7 @@
 				<div class="col-md-3">
 					<div class="products">
 						<a href="single-product.html">
-							<img src="{{ url('assets/images/product-image-6.jpg"')}}" alt="">
+							<img src="{{ url('assets/images/product-image-6.jpg')}}" alt="">
 						</a>
 						<a href="single-product.html">
 							<h4>Amazing Italian Sauces</h4>
@@ -438,7 +438,7 @@
 				<div class="col-md-3">
 					<div class="products">
 						<a href="single-product.html">
-							<img src="{{ url('assets/images/product-image-7.jpg"')}}" alt="">
+							<img src="{{ url('assets/images/product-image-7.jpg')}}" alt="">
 						</a>
 						<a href="single-product.html">
 							<h4>Amazing Italian Sauces</h4>
@@ -451,7 +451,7 @@
 				<div class="col-md-3">
 					<div class="products">
 						<a href="single-product.html">
-							<img src="{{ url('assets/images/product-image-8.jpg"')}}" alt="">
+							<img src="{{ url('assets/images/product-image-8.jpg')}}" alt="">
 						</a>
 						<a href="single-product.html">
 							<h4>Amazing Italian Sauces</h4>
@@ -559,22 +559,22 @@
 						<h4>UPCOMING ITEMS</h4>
 						<div class="media">
 						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg"')}}" alt="...">
+						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
 						  	</a>
 						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg"')}}" alt="...">
+						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
 						  	</a>
 						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg"')}}" alt="...">
+						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
 						  	</a>
 						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg"')}}" alt="...">
+						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
 						  	</a>
 						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg"')}}" alt="...">
+						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
 						  	</a>
 						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg"')}}" alt="...">
+						    	<img class="media-object" src="{{ url('assets/images/product-item.jpg')}}" alt="...">
 						  	</a>
 						</div>	<!-- End Of /.media -->
 					</div>	<!-- End Of /.block -->
