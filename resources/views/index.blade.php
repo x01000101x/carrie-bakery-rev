@@ -29,6 +29,15 @@
 
 
 </head>
+<style>
+
+    .gambar {
+        /* float: left; */
+        width:  200px;
+        height: 300px;
+        object-fit: cover;
+    }
+    </style>
 <body>
 
 
@@ -39,47 +48,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
-					<p class="contact-action"><i class="fa fa-phone-square"></i>IN CASE OF ANY QUESTIONS, CALL THIS NUMBER: <strong>+565 975 658</strong></p>
+					<p class="contact-action"><i class="fa fa-phone-square"></i>POWERED BY <strong>StartCode</strong></p>
 				</div>
-				<div class="col-md-3 clearfix">
-					<ul class="login-cart">
-						<li>
-							<a data-toggle="modal" data-target="#myModal" href="#">
-							<i class="fa fa-user"></i>
-								Login
-							</a>
-						</li>
-						<li>
-							<div class="cart dropdown">
-						  		<a data-toggle="dropdown" href="#"><i class="fa fa-shopping-cart"></i>Cart(1)</a>
-					  			<div class="dropdown-menu dropup">
-					  				<span class="caret"></span>
-						  			<ul class="media-list">
-								  		<li class="media">
-										    <img class="pull-left" src="{{ url('assets/images/product-item.jpg')}}" alt="">
-										    <div class="media-body">
-										      	<h6>Italian Sauce
-								    				<span>$250</span>
-								    			</h6>
-								    		</div>
-								  		</li>
-									</ul>
-									<button class="btn btn-primary btn-sm">Checkout</button>
-							    </div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="col-md-2">
-					<div class="search-box">
-						<div class="input-group">
-					    	<input placeholder="Search Here" type="text" class="form-control">
-					      	<span class="input-group-btn">
-					        	<button class="btn btn-default" type="button"></button>
-					      	</span>
-					    </div><!-- /.input-group -->
-					</div><!-- /.search-box -->
-				</div>
+
 			</div> <!-- End Of /.row -->
 		</div>	<!-- End Of /.Container -->
 
@@ -274,7 +245,7 @@
 
 
 
-	<!-- CATAGORIE Start
+	<!-- BEST SELLER Start
     ================================================== -->
 
 	<section id="catagorie">
@@ -283,20 +254,20 @@
 				<div class="col-md-12">
 					<div class="block">
 						<div class="block-heading">
-							<h2>OUR FOOD CATEGORIES</h2>
+							<h2>BEST SELLER</h2>
 						</div>
 						<div class="row">
 						  	<div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
 							    	<a class="catagotie-head" href="blog-single.html">
-										<img src="{{ url('assets/images/category-image-1.jpg')}}" alt="...">
-										<h3>Beef Steak</h3>
+										<img class="gambar" src="{{ url('assets/images/produk/roti-tawar-bpu.jpeg')}}" alt="...">
+										<h3>Roti Wortel</h3>
 									</a>
 							      	<div class="caption">
 							        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, aut, esse, laborum placeat id illo a expedita aperiam...</p>
 							        	<p>
 							        		<a href="blog-single.html" class="btn btn-default btn-transparent" role="button">
-							        			<span>Check Items</span>
+							        			<span>Beli </span>
 							        		</a>
 							        	</p>
 							      	</div>	<!-- End of /.caption -->
@@ -305,14 +276,14 @@
 						  	<div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
 							    	<a class="catagotie-head" href="blog-single.html">
-										<img src="{{ url('assets/images/category-image-2.jpg')}}" alt="...">
-										<h3>Miscellaneous</h3>
+                                        <img class="gambar" src="{{ url('assets/images/produk/kepang-bou.jpg')}}" alt="...">
+										<h3>Roti Kepang</h3>
 									</a>
 							      	<div class="caption">
 							        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, aut, esse, laborum placeat id illo a expedita aperiam...</p>
 							        	<p>
 							        		<a href="blog-single.html" class="btn btn-default btn-transparent" role="button">
-							        			<span>Check Items</span>
+							        			<span>Beli</span>
 							        		</a>
 							        	</p>
 							      	</div>	<!-- End of /.caption -->
@@ -321,14 +292,14 @@
 						  	<div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
 							    	<a class="catagotie-head" href="blog-single.html">
-										<img src="{{ url('assets/images/category-image-3.jpg')}}" alt="...">
-										<h3>Elegant Apparel</h3>
+                                        <img class="gambar" src="{{ url('assets/images/produk/roti-imut-bou.jpeg')}}" alt="...">
+										<h3>Roti Imoet</h3>
 									</a>
 							      	<div class="caption">
 								        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, aut, esse, laborum placeat id illo a expedita aperiam...</p>
 								        <p>
 								        	<a href="blog-single.html" class="btn btn-default btn-transparent" role="button">
-								        		<span>Check Items</span>
+								        		<span>Beli</span>
 								        	</a>
 								        </p>
 								    </div>	<!-- End of /.caption -->
@@ -483,10 +454,10 @@
 						</div>
 					</div>	<!-- End of /.block -->
 					<div id="owl-example" class="owl-carousel">
-						<div> <img src="{{ url('assets/images/company-1.png')}}" alt=""></div>
-						<div> <img src="{{ url('assets/images/company-2.png')}}" alt=""></div>
-						<div> <img src="{{ url('assets/images/company-3.png')}}" alt=""></div>
-						<div> <img src="{{ url('assets/images/company-4.png')}}" alt=""></div>
+						<div> <img src="{{ url('assets/images/partner/paxel.png')}}" alt=""></div>
+						<div> <img src="{{ url('assets/images/partner/grabfood-logo.png')}}" alt=""></div>
+						<div> <img src="{{ url('assets/images/partner/Gofood-logo.png')}}" alt=""></div>
+                        <div> <img src="{{ url('assets/images/company-4.png')}}" alt=""></div>
 						<div> <img src="{{ url('assets/images/company-5.png')}}" alt=""></div>
 						<div> <img src="{{ url('assets/images/company-6.png')}}" alt=""></div>
 						<div> <img src="{{ url('assets/images/company-8.png')}}" alt=""></div>
