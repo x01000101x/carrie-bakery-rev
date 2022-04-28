@@ -121,6 +121,12 @@
         height: 300px;
         object-fit: cover;
     }
+
+	.carrie{
+		width:  300px;
+        height: 130px;
+        object-fit: cover;
+	}
     </style>
 <body>
 
@@ -208,7 +214,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<a href="#">
-						<img src="{{ url('assets/images/logo.png')}}" alt="logo">
+						<img class="carrie" src="{{ url('assets/images/produk/carriebakery.jpeg')}}" alt="logo">
 					</a>
 				</div>	<!-- End of /.col-md-12 -->
 			</div>	<!-- End of /.row -->
@@ -403,12 +409,13 @@
 	<section id="catagorie">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<div class="block">
+				<div class="col-md-12" >
+					<div class="block" >
 						<div class="block-heading">
 							<h2>Yuk Main Game!</h2>
 						</div>
-						<div class="row">
+						<div class="row" style="display: grid;
+						place-items: center">
 
 						  	<div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
