@@ -127,6 +127,13 @@
         height: 130px;
         object-fit: cover;
 	}
+
+	.tengah{
+		text-align: center;
+		color: black;
+		text
+	}
+
     </style>
 <body>
 
@@ -334,6 +341,36 @@
 	</section>	<!-- End of section -->
 
 
+		<!-- TENTANG KAMI Start
+    ================================================== -->
+
+	<section id="tentang-kami">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block">
+						<div class="block-heading">
+							<h2>TENTANG KAMI</h2>
+						</div>
+						<div class="row" style="display: grid;
+						place-items: center">
+						  	<div class="col-sm-2 col-md-7">
+								  <div class="tengah">
+									  <h1>Hello World</h1>
+									  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+										  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+										  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+										  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+										  in culpa qui officia deserunt mollit anim id est laborum.</p>
+										</div>
+										</div>	<!-- End of /.col-sm-6 col-md-4 -->
+						</div>	<!-- End of /.row -->
+					</div>	<!-- End of /.block -->
+				</div>	<!-- End of /.col-md-12 -->
+			</div>	<!-- End of /.row -->
+		</div>	<!-- End of /.container -->
+	</section>	<!-- End of Section -->
 
 	<!-- BEST SELLER Start
     ================================================== -->
@@ -741,7 +778,7 @@
 				</div> <!-- End Of Col-md-3 -->
 				<div class="col-md-4">
 					<div class="block">
-						<h4>UPCOMING ITEMS</h4>
+						<h4>OUR LOCATION </h4>
 						<div class="media">
                             <div class="mapouter">
                                 <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=pakuan%20hill%20cluster%20livistona&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
@@ -792,7 +829,7 @@
 								</a>
 							</li>
 						</ul>
-						<p class="copyright-text pull-right">Carrie Bakery @2022 Designed by <a href="http://startcode.id">StartCode</a> All Rights Reserved</p>
+						<p class="copyright-text pull-right">Carrie Bakery @2022 Designed by <a href="https://startcode.id">StartCode</a> All Rights Reserved</p>
 					</div>	<!-- End Of /.col-md-12 -->
 				</div>	<!-- End Of /.row -->
 			</div>	<!-- End Of /.container -->
