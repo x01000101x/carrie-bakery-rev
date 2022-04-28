@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Food Code Proudly Presents By Themexpert</title>
+	<title>Carrie Bakery</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 	<!-- Fonts -->
@@ -131,8 +131,14 @@
 	.tengah{
 		text-align: center;
 		color: black;
-		text
+
 	}
+
+    .footer-carrie{
+        width:  130px;
+        height: 50px;
+        object-fit: cover;
+    }
 
     </style>
 <body>
@@ -160,7 +166,7 @@
 		    	<div class="modal-content">
 		    		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        		<h4 class="modal-title" id="myModalLabel">Introduce Yourself</h4>
+		        		<h4 class="modal-title" id="myModalLabel">Carrie Bakery</h4>
 		      		</div>
 			      	<div class="modal-body clearfix">
 
@@ -730,7 +736,9 @@
 				<div class="col-md-4">
 					<div class="block clearfix">
 						<a href="#">
-							<img src="{{ url('assets/images/footer-logo.png')}}" alt="">
+
+                                <img class="footer-carrie" src="{{ url('assets/images/produk/carriebakery.jpeg')}}" alt="">
+
 						</a>
 						<p>
 							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
@@ -829,7 +837,7 @@
 								</a>
 							</li>
 						</ul>
-						<p class="copyright-text pull-right">Carrie Bakery @2022 Designed by <a href="https://startcode.id">StartCode</a> All Rights Reserved</p>
+						<p class="copyright-text pull-right">Carrie Bakery @2022 Designed by <a style="color: blue" href="https://startcode.id">StartCode</a> All Rights Reserved</p>
 					</div>	<!-- End Of /.col-md-12 -->
 				</div>	<!-- End Of /.row -->
 			</div>	<!-- End Of /.container -->
