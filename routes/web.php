@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RotiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/shop', [RotiController::class, 'show'])->name('shop');
 
 Route::middleware([
     'auth:sanctum',
