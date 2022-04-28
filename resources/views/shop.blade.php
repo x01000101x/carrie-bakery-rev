@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Food Code Proudly Presents By Themexpert</title>
+	<title>Carrie Bakery</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 	<!-- Fonts -->
@@ -10,26 +10,135 @@
 	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
 
 	<!-- Css -->
-	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" />
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="{{ url('assets/css/nivo-slider.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ url('assets/css/owl.carousel.css')}}">
+	<link rel="stylesheet" href="{{ url('assets/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{ url('assets/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{ url('assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{ url('assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
 
 	<!-- jS -->
-	<script src="js/jquery.min.js" type="text/javascript"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/jquery.nivo.slider.js" type="text/javascript"></script>
-	<script src="js/owl.carousel.min.js" type="text/javascript"></script>
-	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/main.js" type="text/javascript"></script>
+	<script src="{{ url('assets/js/jquery.min.js')}}" type="text/javascript"></script>
+	<script src="{{ url('assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
+	<script src="{{ url('assets/js/jquery.nivo.slider.js')}}" type="text/javascript"></script>
+	<script src="{{ url('assets/js/owl.carousel.min.js')}}" type="text/javascript"></script>
+	<script src="{{ url('assets/js/jquery.nicescroll.js')}}"></script>
+	<script src="{{ url('assets/js/jquery.scrollUp.min.js')}}"></script>
+	<script src="{{ url('assets/js/main.js')}}" type="text/javascript"></script>
 
+    <style>
+        .partner-img {
+            /* float: left; */
+            width:  150px;
+            height: 65px;
+            object-fit: cover;
+        }
+
+        /* owl carousel*/
+        .shadow-effect {
+                background: #fff;
+                padding: 20px;
+                border-radius: 40px;
+                text-align: center;
+        border:1px solid #ECECEC;
+                box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+            }
+            #customers-testimonials .shadow-effect p {
+                font-family: inherit;
+                font-size: 17px;
+                line-height: 1.5;
+                margin: 0 0 17px 0;
+                font-weight: 300;
+            }
+            .testimonial-name {
+                margin: -17px auto 0;
+                display: table;
+                width: auto;
+                background: green;
+                padding: 9px 35px;
+                border-radius: 120px;
+                text-align: center;
+                color: #fff;
+                box-shadow: 0 9px 18px rgba(0,0,0,0.12), 0 5px 7px rgba(0,0,0,0.05);
+            }
+            #customers-testimonials .item {
+                text-align: center;
+                padding: 30px;
+                opacity: 1;
+                -webkit-transform: scale3d(0.8, 0.8, 1);
+                transform: scale3d(0.8, 0.8, 1);
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+            /* #customers-testimonials .owl-item.active.center .item {
+                opacity: 1;
+                -webkit-transform: scale3d(1.0, 1.0, 1);
+                transform: scale3d(1.0, 1.0, 1);
+            } */
+            .owl-carousel .img-circle {
+                transform-style: preserve-3d;
+                /* max-width: 90px; */
+                width:  90px;
+            height: 100px;
+            object-fit: cover;
+                margin: 0 auto 17px;
+            }
+            #customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
+    #customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+                background: green;
+                transform: translate3d(0px, -50%, 0px) scale(0.7);
+            }
+    #customers-testimonials.owl-carousel .owl-dots{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    #customers-testimonials.owl-carousel .owl-dots .owl-dot{
+        display: inline-block;
+    }
+            #customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+                background: green;
+                display: inline-block;
+                height: 20px;
+                margin: 0 2px 5px;
+                transform: translate3d(0px, -50%, 0px) scale(0.3);
+                transform-origin: 50% 50% 0;
+                transition: all 250ms ease-out 0s;
+                width: 20px;
+            }
+
+            .gambar {
+            /* float: left; */
+            width:  200px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .carrie{
+            width:  300px;
+            height: 130px;
+            object-fit: cover;
+        }
+
+        .tengah{
+            text-align: center;
+            color: black;
+
+        }
+
+        .footer-carrie{
+            width:  130px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        </style>
 
 </head>
 <body>
-
 
 <!-- TOP HEADER Start
     ================================================== -->
@@ -38,47 +147,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
-					<p class="contact-action"><i class="fa fa-phone-square"></i>IN CASE OF ANY QUESTIONS, CALL THIS NUMBER: <strong>+565 975 658</strong></p>
+					<p class="contact-action"><i class="fa fa-phone-square"></i>POWERED BY <strong>StartCode</strong></p>
 				</div>
-				<div class="col-md-3 clearfix">
-					<ul class="login-cart">
-						<li>
-							<a data-toggle="modal" data-target="#myModal" href="#">
-							<i class="fa fa-user"></i>
-								Login
-							</a>
-						</li>
-						<li>
-							<div class="cart dropdown">
-						  		<a data-toggle="dropdown" href="#"><i class="fa fa-shopping-cart"></i>Cart(1)</a>
-					  			<div class="dropdown-menu dropup">
-					  				<span class="caret"></span>
-						  			<ul class="media-list">
-								  		<li class="media">
-										    <img class="pull-left" src="images/product-item.jpg" alt="">
-										    <div class="media-body">
-										      	<h6>Italian Sauce
-								    				<span>$250</span>
-								    			</h6>
-								    		</div>
-								  		</li>
-									</ul>
-									<button class="btn btn-primary btn-sm">Checkout</button>
-							    </div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="col-md-2">
-					<div class="search-box">
-						<div class="input-group">
-					    	<input placeholder="Search Here" type="text" class="form-control">
-					      	<span class="input-group-btn">
-					        	<button class="btn btn-default" type="button"></button>
-					      	</span>
-					    </div><!-- /.input-group -->
-					</div><!-- /.search-box -->
-				</div>
+
 			</div> <!-- End Of /.row -->
 		</div>	<!-- End Of /.Container -->
 
@@ -91,7 +162,7 @@
 		    	<div class="modal-content">
 		    		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        		<h4 class="modal-title" id="myModalLabel">Introduce Yourself</h4>
+		        		<h4 class="modal-title" id="myModalLabel">Carrie Bakery</h4>
 		      		</div>
 			      	<div class="modal-body clearfix">
 
@@ -152,7 +223,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<a href="#">
-						<img src="images/logo.png" alt="logo">
+						<img class="carrie" src="{{ url('assets/images/produk/carriebakery.jpeg')}}" alt="logo">
 					</a>
 				</div>	<!-- End of /.col-md-12 -->
 			</div>	<!-- End of /.row -->
@@ -178,8 +249,8 @@
 
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      	<ul class="nav navbar-nav nav-main">
-		        	<li ><a href="index.html">HOME</a></li>
-					<li class="active"><a href="products.html">SHOP</a></li>
+		        	<li><a href="{{ url('/'); }}">HOME</a></li>
+					<li class="active"><a href="{{ url('shop'); }}">SHOP</a></li>
 					<li><a href="blog.html">BLOG</a></li>
 					<li><a href="blog-single.html">ARTICLE</a></li>
 					<li class="dropdown">
@@ -200,7 +271,6 @@
 		    </div>	<!-- /.navbar-collapse -->
 		</div>	<!-- /.container-fluid -->
 	</nav>	<!-- End of /.nav -->
-
 
 
 
@@ -238,7 +308,7 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="images/product-image-8.jpg" alt="">
+										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Amazing Italian Sauces</h4>
@@ -253,7 +323,7 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="images/product-image-8.jpg" alt="">
+										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Amazing Italian Sauces</h4>
@@ -268,7 +338,7 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="images/product-image-8.jpg" alt="">
+										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Amazing Italian Sauces</h4>
@@ -283,7 +353,7 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="images/product-image-8.jpg" alt="">
+										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Amazing Italian Sauces</h4>
@@ -298,7 +368,7 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="images/product-image-8.jpg" alt="">
+										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Amazing Italian Sauces</h4>
@@ -313,7 +383,7 @@
 					        <li>
 					           <div class="products">
 									<a href="#">
-										<img src="images/product-image-8.jpg" alt="">
+										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Amazing Italian Sauces</h4>
@@ -370,14 +440,14 @@
 							</div>
 						</div>
 						<div class="block">
-							<img src="images/food-ad.png" alt="">
+							<img src="{{  url('assets/images/food-ad.png')}}" alt="">
 						</div>
 						<div class="block">
 							<h4>Latest Food Items</h4>
 							<ul class="media-list">
 							 	<li class="media">
 							    	<a class="pull-left" href="#">
-							      		<img class="media-object" src="images/post-img.png" alt="...">
+							      		<img class="media-object" src="{{  url('assets/images/post-img.png')}}" alt="...">
 							    	</a>
 							    	<div class="media-body">
 							      		<a href="" class="media-heading">Lamb leg roast
@@ -386,7 +456,7 @@
 							  	</li>
 							  	<li class="media">
 							    	<a class="pull-left" href="#">
-							      		<img class="media-object" src="images/post-img-2.png" alt="...">
+							      		<img class="media-object" src="{{  url('assets/images/post-img-2.png')}}" alt="...">
 							    	</a>
 							    	<div class="media-body">
 							      		<a href="" class="media-heading"> Lamingtons
@@ -395,7 +465,7 @@
 							  	</li>
 							  	<li class="media">
 							    	<a class="pull-left" href="#">
-							      		<img class="media-object" src="images/post-img-3.png" alt="...">
+							      		<img class="media-object" src="{{  url('assets/images/post-img-3.png')}}" alt="...">
 							    	</a>
 							    	<div class="media-body">
 							      		<a href="" class="media-heading">
@@ -435,7 +505,7 @@
 
 
 
-<!-- FOOTER Start
+	<!-- FOOTER Start
     ================================================== -->
 
 	<footer>
@@ -444,7 +514,9 @@
 				<div class="col-md-4">
 					<div class="block clearfix">
 						<a href="#">
-							<img src="images/footer-logo.png" alt="">
+
+                                <img class="footer-carrie" src="{{ url('assets/images/produk/carriebakery.jpeg')}}" alt="">
+
 						</a>
 						<p>
 							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
@@ -482,43 +554,32 @@
 				<div class="col-md-4">
 					<div class="block">
 						<h4>GET IN TOUCH</h4>
-						<p ><i class="fa  fa-map-marker"></i> <span>Food Code d.o.o.,</span>1000 Ljubljana Celovska cesta 135, Slovenia</p>
-						<p> <i class="fa  fa-phone"></i> <span>Phone:</span> (+386) 40 123 456 </p>
+						<p ><i class="fa fa-map-marker"></i> <span>Pakuan Hill </span>Livistona B 22, Bogor, Jawa Barat</p>
+						<p> <i class="fa fa-phone"></i> <span>Phone:</span> (+62) 40 123 456 </p>
 
-						<p> <i class="fa  fa-mobile"></i> <span>Mobile:</span> (+386) 40 654 123 651</p>
+						<p> <i class="fa fa-mobile"></i> <span>Mobile:</span> (+62) 40 654 123 651</p>
 
-						<p class="mail"><i class="fa  fa-envelope"></i>Eamil: <span>info@sitename.com</span></p>
+						<p class="mail"><i class="fa fa-envelope"></i>Email: <span>info@sitename.com</span></p>
 					</div>	<!-- End Of /.block -->
 				</div> <!-- End Of Col-md-3 -->
 				<div class="col-md-4">
 					<div class="block">
-						<h4>UPCOMING ITEMS</h4>
+						<h4>OUR LOCATION </h4>
 						<div class="media">
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="images/product-item.jpg" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="images/product-item.jpg" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="images/product-item.jpg" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="images/product-item.jpg" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="images/product-item.jpg" alt="...">
-						  	</a>
-						  	<a class="pull-left" href="#">
-						    	<img class="media-object" src="images/product-item.jpg" alt="...">
-						  	</a>
+                            <div class="mapouter">
+                                <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=pakuan%20hill%20cluster%20livistona&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                {{-- <a href="https://123movies-to.org">123 movies</a> --}}
+                                <br>
+                                <style>.mapouter{position:relative;text-align:right;height:200px;width:600px;}</style>
+                                <a href="https://www.embedgooglemap.net">google maps widget html</a>
+                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:600px;}</style>
+                                </div>
+                                </div>
 						</div>	<!-- End Of /.media -->
 					</div>	<!-- End Of /.block -->
 				</div> <!-- End Of Col-md-3 -->
 			</div> <!-- End Of /.row -->
 		</div> <!-- End Of /.Container -->
-
-
 
 	<!-- FOOTER-BOTTOM Start
     ================================================== -->
@@ -530,31 +591,31 @@
 						<ul class="cash-out pull-left">
 							<li>
 								<a href="#">
-									<img src="images/American-Express.png" alt="">
+									<img src="{{ url('assets/images/American-Express.png')}}" alt="">
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									<img src="images/PayPal.png" alt="">
+									<img src="{{ url('assets/images/PayPal.png')}}" alt="">
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									<img src="images/Maestro.png" alt="">
+									<img src="{{ url('assets/images/Maestro.png')}}" alt="">
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									<img src="images/Visa.png" alt="">
+									<img src="{{ url('assets/images/Visa.png')}}" alt="">
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									<img src="images/Visa-Electron.png" alt="">
+									<img src="{{ url('assets/images/Visa-Electron.png')}}" alt="">
 								</a>
 							</li>
 						</ul>
-						<p class="copyright-text pull-right">Food Code @2013 Designed by <a href="http://www.themexpert.com">Themexpert</a> All Rights Reserved</p>
+						<p class="copyright-text pull-right">Carrie Bakery @2022 Designed by <a style="color: blue" href="https://startcode.id">StartCode</a> All Rights Reserved</p>
 					</div>	<!-- End Of /.col-md-12 -->
 				</div>	<!-- End Of /.row -->
 			</div>	<!-- End Of /.container -->
