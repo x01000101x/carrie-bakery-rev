@@ -308,45 +308,45 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
+										<img src="{{  url('assets/images/produk/kepang-bou.jpg')}}" alt="">
 									</a>
 									<a href="#">
-										<h4>Amazing Italian Sauces</h4>
+										<h4>Roti Kepang</h4>
 									</a>
-									<p class="price">From: £69.99</p>
+									<p class="price">Rp. 20,000</p>
 									<div >
 										<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
+										<i class="fa fa-plus-circle"></i>Beli</a>
 									</div>
 								</div>	<!-- End of /.products -->
 					        </li>
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
+										<img src="{{  url('assets/images/produk/roti-tawar-bpu.jpeg')}}" alt="">
 									</a>
 									<a href="#">
-										<h4>Amazing Italian Sauces</h4>
+										<h4>Roti Tawar</h4>
 									</a>
-									<p class="price">From: £69.99</p>
+									<p class="price">Rp. 20,000</p>
 									<div >
 										<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
+										<i class="fa fa-plus-circle"></i>Beli</a>
 									</div>
 								</div>	<!-- End of /.products -->
 					        </li>
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
+										<img src="{{  url('assets/images/produk/roti-imut-bou.jpeg')}}" alt="">
 									</a>
 									<a href="#">
-										<h4>Amazing Italian Sauces</h4>
+										<h4>Roti Imut</h4>
 									</a>
-									<p class="price">From: £69.99</p>
+									<p class="price">Rp. 20,000</p>
 									<div >
 										<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
+										<i class="fa fa-plus-circle"></i>Beli</a>
 									</div>
 								</div>	<!-- End of /.products -->
 					        </li>
@@ -604,7 +604,7 @@
 									<img src="{{ url('assets/images/Maestro.png')}}" alt="">
 								</a>
 							</li>
-							<li>
+							<li
 								<a href="#">
 									<img src="{{ url('assets/images/Visa.png')}}" alt="">
 								</a>

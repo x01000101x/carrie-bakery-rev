@@ -46,10 +46,10 @@
     .shadow-effect {
 		    background: #fff;
 		    padding: 20px;
-		    border-radius: 40px;
+		    /* border-radius: 40px; */
 		    text-align: center;
-	border:1px solid #ECECEC;
-		    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+	/* border:1px solid #ECECEC; */
+		    /* box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02); */
 		}
 		#customers-testimonials .shadow-effect p {
 		    font-family: inherit;
@@ -456,7 +456,7 @@
 				<div class="col-md-12" >
 					<div class="block" >
 						<div class="block-heading">
-							<h2>Yuk Main Game!</h2>
+							<h2>Order menu sesuai selera kamu</h2>
 						</div>
 						<div class="row" style="display: grid;
 						place-items: center">
@@ -464,14 +464,36 @@
 						  	<div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
 							    	<a class="catagotie-head" href="blog-single.html">
-                                        <img class="gambar" src="{{ url('assets/images/partner/sushicat.gif')}}" alt="...">
-										<h3>Yuk mainkan game interaktif kami!</h3>
-									</a>
+                                        <img class="gambar" src="https://cdn.substack.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F0466831d-680e-43e3-9e8b-dd0799bcc1e6_400x400.jpeg" alt="...">
+
+                                            <li>
+
+                                                <ul>
+                                                    <h3>
+                                                    Pilih Rotinya <img style="width: 50px; height: 50px" src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/check-mark_2714-fe0f.png" alt="">
+
+                                                </h3>
+                                            </ul>
+                                            <ul>
+                                                <h3>
+                                                    Pilih Rasa Atau Topingnya <img style="width: 50px; height: 50px" src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/check-mark_2714-fe0f.png" alt="">
+
+                                                </h3>
+                                            </ul>
+                                            <ul>
+                                                <h3>
+                                                    Submit ke Mr.Chef <img style="width: 50px; height: 50px" src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/check-mark_2714-fe0f.png" alt="">
+
+                                                </h3>
+                                            </ul>
+                                        </li>
+
+                                        </a>
 							      	<div class="caption">
-							        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, aut, esse, laborum placeat id illo a expedita aperiam...</p>
+							        	<p>Di Carrie Bakery kamu bisa menjadi diri kamu sendiri dengan memillih jenis roti, rasa, waktu terima yang kamu mau.</p>
 							        	<p>
 							        		<a href="blog-single.html" class="btn btn-default btn-transparent" role="button">
-							        			<span>Main sekarang</span>
+							        			<span>Order sekarang</span>
 							        		</a>
 							        	</p>
 							      	</div>	<!-- End of /.caption -->
@@ -623,7 +645,7 @@
 				<div class="col-md-12">
 					<div class="block">
 						<div class="block-heading">
-							<h2>APA KATA DUNIA?</h2>
+							<h2>Komen CB Lovers</h2>
 						</div>
 					</div>	<!-- End of /.block -->
 				<!-- TESTIMONIALS -->
@@ -640,7 +662,7 @@
                 <img class="img-circle" src="{{ url('assets/images/partner/leonardimage.jpg')}}" alt="">
                 <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
               </div>
-              <div class="testimonial-name">Firewall</div>
+              <div class="testimonial-name">Firewall <br> Bogor, 24 Mar 2022</div>
             </div>
             <!--END OF TESTIMONIAL 1 -->
             <!--TESTIMONIAL 2 -->
@@ -778,11 +800,11 @@
 					<div class="block">
 						<h4>GET IN TOUCH</h4>
 						<p ><i class="fa fa-map-marker"></i> <span>Pakuan Hill </span>Livistona B 22, Bogor, Jawa Barat</p>
-						<p> <i class="fa fa-phone"></i> <span>Phone:</span> (+62) 40 123 456 </p>
+						<p> <i class="fa fa-phone"></i> <span>Phone:</span> 0251-756-1766  </p>
 
-						<p> <i class="fa fa-mobile"></i> <span>Mobile:</span> (+62) 40 654 123 651</p>
+						<p> <i class="fa fa-mobile"></i> <span>Mobile:</span> (+62) 813-8509-9236 </p>
 
-						<p class="mail"><i class="fa fa-envelope"></i>Email: <span>info@sitename.com</span></p>
+						<p class="mail"><i class="fa fa-envelope"></i>Email: <span>produsenrotiwortel@gmail.com</span></p>
 					</div>	<!-- End Of /.block -->
 				</div> <!-- End Of Col-md-3 -->
 				<div class="col-md-4">
