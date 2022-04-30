@@ -256,7 +256,7 @@
 		      	<ul class="nav navbar-nav nav-main">
 		        	<li class="active"><a href="#">HOME</a></li>
 					<li><a href="{{ url('shop'); }}">SHOP</a></li>
-					<li><a href="blog.html">BLOG</a></li>
+					{{-- <li><a href="blog.html">BLOG</a></li>
 					<li><a href="blog-single.html">ARTICLE</a></li>
 					<li class="dropdown">
 						<a href="#">
@@ -268,7 +268,7 @@
 						    <li><a  href="#">Another action</a></li>
 						    <li><a  href="#">Something else here</a></li>
 						    <li><a  href="#">Separated link</a></li>
-						</ul>
+						</ul> --}}
 					</li> <!-- End of /.dropdown -->
 
 
