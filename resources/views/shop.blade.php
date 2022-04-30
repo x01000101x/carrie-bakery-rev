@@ -308,7 +308,7 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="{{  url('assets/images/produk/kepang-bou.jpg')}}" alt="">
+										<img class="gambar" src="{{  url('assets/images/produk/kepang-bou.jpg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Roti Kepang</h4>
@@ -323,7 +323,7 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="{{  url('assets/images/produk/roti-tawar-bpu.jpeg')}}" alt="">
+										<img class="gambar" src="{{  url('assets/images/produk/roti-tawar-bpu.jpeg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Roti Tawar</h4>
@@ -338,7 +338,7 @@
 					        <li>
 					            <div class="products">
 									<a href="#">
-										<img src="{{  url('assets/images/produk/roti-imut-bou.jpeg')}}" alt="">
+										<img class="gambar" src="{{  url('assets/images/produk/roti-imut-bou.jpeg')}}" alt="">
 									</a>
 									<a href="#">
 										<h4>Roti Imut</h4>
