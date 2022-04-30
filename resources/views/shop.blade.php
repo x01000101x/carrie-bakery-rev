@@ -112,8 +112,8 @@
 
             .gambar {
             /* float: left; */
-            width:  200px;
-            height: 300px;
+            width:  300px;
+            height: 250px;
             object-fit: cover;
         }
 
@@ -478,7 +478,7 @@
 							  </ul>
 						</div>
 
-						<div class="block">
+						{{-- <div class="block">
 							<h4>Food Tag</h4>
 							<div class="tag-link">
 								<a href="">BALLET</a>
@@ -488,7 +488,7 @@
 								<a href="">SHOPPING</a>
 								<a href="">SHOP</a>
 							</div>
-						</div>
+						</div> --}}
 				</div>	<!-- End of /.col-md-3 -->
 
 			</div>	<!-- End of /.row -->
