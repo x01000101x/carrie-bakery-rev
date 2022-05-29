@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/shop', [RotiController::class, 'show'])->name('shop');
+Route::get('/order', [RotiController::class, 'show2'])->name('order');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -28,4 +30,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });

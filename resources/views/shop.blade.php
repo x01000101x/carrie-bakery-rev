@@ -315,7 +315,7 @@
 									</a>
 									<p class="price">Rp. 20,000</p>
 									<div >
-										<a class="view-link shutter" href="#">
+										<a class="view-link shutter" href="/order">
 										<i class="fa fa-plus-circle"></i>Beli</a>
 									</div>
 								</div>	<!-- End of /.products -->

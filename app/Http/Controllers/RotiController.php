@@ -10,4 +10,8 @@ class RotiController extends Controller
     {
         return view('shop');
     }
+    public function show2()
+    {
+        return view('order');
+    }
 }
