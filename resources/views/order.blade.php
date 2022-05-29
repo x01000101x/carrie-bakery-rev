@@ -278,7 +278,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<h1>Shop</h1>
+					<h1>ORDER</h1>
 					<p>A Bunch Of Products</p>
 				</div>	<!-- End of /.col-md-4 -->
 				<div class="col-md-8 hidden-xs">
@@ -300,11 +300,61 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-					<div class="products-heading">
-						<h2>NEW PRODUCTS</h2>
+
+					 <div class="products-heading">
+						<h2>ORDER</h2>
 					</div>	<!-- End of /.Products-heading -->
 					<div class="product-grid">
-					    <ul>
+
+                        <form>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Nama Produk</label>
+                              <input type="text" name="produk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                            </div>
+                            <div class="form-group">
+                              <label for="roti">Roti</label>
+                              <select class="form-control" id="roti" name="roti">
+                                <option selected>Pilih roti</option>
+                                <option>Tawar</option>
+                                <option>Gandum</option>
+                                <option>Jagung</option>
+
+                              </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="selai">Selai</label>
+                                <select class="form-control" id="selai" name="selai">
+                                  <option selected>Pilih selai</option>
+                                  <option>Coklat</option>
+                                  <option>Stroberi</option>
+                                  <option>Nanas</option>
+                                  <option>Keju</option>
+                                  <option>Bluberi</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="toping">Toping</label>
+                                <select class="form-control" id="toping" name="toping">
+                                  <option selected>Pilih toping</option>
+                                  <option>Tidak ada</option>
+                                  <option>Seeds</option>
+                                  <option>Almond</option>
+                                  <option>Kismis</option>
+
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="jumlah">Jumlah</label>
+                                <input type="number" name="jumlah" min="1" class="form-control" id="jumlah" aria-describedby="jumlah">
+                                {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                              </div>
+                            <button type="submit" class="btn btn-success">Tambah ke keranjang</button>
+                            <button type="submit" class="btn btn-danger">Batal</button>
+
+                          </form>
+                          <br><br>
+					   {{-- <ul>
 					        <li>
 					            <div class="products">
 									<a href="#">
@@ -396,12 +446,12 @@
 								</div>	<!-- End of /.products -->
 					        </li>
 					        <!--  ... -->
-					    </ul>
+					    </ul> --}}
 					</div>	<!-- End of /.products-grid -->
 
 					<!-- Pagination -->
 
-					<div class="pagination-bottom">
+					{{-- <div class="pagination-bottom">
 						<ul class="pagination">
 						  	<li class="disabled"><a href="#">&laquo;</a></li>
 						  	<li class="active"><a href="#">1 <span class="sr-only"></span></a></li>
@@ -476,7 +526,7 @@
 							    	</div>
 							  	</li>
 							  </ul>
-						</div>
+						</div> --}}
 
 						{{-- <div class="block">
 							<h4>Food Tag</h4>
