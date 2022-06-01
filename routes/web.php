@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\RotiController;
+use App\Http\Controllers\SelaiController;
+use App\Http\Controllers\OrderanController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
