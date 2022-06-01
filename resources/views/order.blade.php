@@ -350,7 +350,7 @@
                                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                               </div>
                             <button type="submit" class="btn btn-success">Tambah ke keranjang</button>
-                            <button type="submit" class="btn btn-danger">Batal</button>
+                            <a href="/shop" class="btn btn-danger">Batal</a>
 
                           </form>
                           <br><br>
