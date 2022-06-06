@@ -306,7 +306,7 @@
 					</div>	<!-- End of /.Products-heading -->
 					<div class="product-grid">
 
-                        <form>
+                        <form method="POST" action="/pesan">
                             @foreach ($produks as $produk)
 
                             <div class="form-group">
@@ -318,7 +318,7 @@
 
                             <div class="form-group">
                                 <label for="roti">Roti</label>
-                                <select class="form-control" id="roti" name="roti">
+                                <select class="form-control" id="roti" name="roti" required>
                                     <option selected>Pilih roti</option>
                                     @foreach ($rotis as $roti)
                                     <option value="{{ $roti->id }}">{{ $roti->roti_nama }}</option>
@@ -329,7 +329,7 @@
                         </div>
                         <div class="form-group">
                             <label for="selai">Selai</label>
-                            <select class="form-control" id="selai" name="selai">
+                            <select class="form-control" id="selai" name="selai" required>
                                   <option selected>Pilih selai</option>
                                   @foreach ($selais as $selai)
                                   <option value="{{ $selai->id }}">{{ $selai->selai_nama }}</option>
@@ -338,7 +338,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="toping">Toping</label>
-                                <select class="form-control" id="toping" name="toping">
+                                <select class="form-control" id="toping" name="toping" required>
                                     <option selected>Pilih toping</option>
                                     <option>Tidak ada</option>
                                     @foreach ($topings as $toping)
@@ -350,10 +350,39 @@
                               </div>
                               <div class="form-group">
                                   <label for="jumlah">Jumlah</label>
-                                  <input type="number" name="jumlah" min="1" class="form-control" id="jumlah" aria-describedby="jumlah">
+                                  <input type="number" name="jumlah" min="1" class="form-control" id="jumlah" aria-describedby="jumlah" required>
                                   {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                                 </div>
-                            <button type="submit" class="btn btn-success">Tambah ke keranjang</button>
+                                <div class="products-heading">
+                                    <h2>INFO PEMESAN</h2>
+                                </div>	<!-- End of /.Products-heading -->
+
+                                <div class="form-group">
+                                    <label for="nama_pemesan">Nama Pemesan</label>
+                                    <input type="text" name="nama_pemesan" class="form-control" id="nama_pemesan" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="notelp">Nomor Telp. Pemesan</label>
+                                    <input type="text" name="notelp" class="form-control" id="notelp" required>
+                                </div>  <div class="form-group">
+                                    <label for="alamat">Alamat Pemesan</label>
+                                    <input type="text" name="alamat" class="form-control" id="alamat" required>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="myCheck">Dropshipper</label>
+                                  <br>
+
+                                    <input name="myCheck" type="checkbox" id="myCheck" onclick="myFunction()">
+                                    <br><br>
+                                    <label id="label_pengirim" style="display:none" for="nama_pengirim">Nama pengirim</label>
+
+
+                                  <input type="text" style="display:none" name="nama_pengirim" class="form-control" id="nama_pengirim" aria-describedby="nama_pengirim">
+
+
+                                </div>
+                            <button type="submit" class="btn btn-success">Pesan</button>
                             <a href="/shop" class="btn btn-danger">Batal</a>
 
                         </form>
@@ -679,3 +708,26 @@
 	<a id="back-top" href="#"></a>
 </body>
 </html>
+
+<script>
+function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("nama_pengirim");
+  //Get the output from label
+  var label = document.getElementById("label_pengirim");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+    label.style.display = "block";
+
+  } else {
+    text.style.display = "none";
+    label.style.display = "none";
+
+  }
+}
+</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
