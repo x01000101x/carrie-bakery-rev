@@ -307,24 +307,26 @@
 					<div class="product-grid">
 
                         <form>
+                            @foreach ($rotis as $roti)
+
                             <div class="form-group">
-                              <label for="exampleInputEmail1">Nama Produk</label>
-                              <input type="text" name="produk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                              {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                                <label for="exampleInputEmail1">Nama Produk</label>
+                                <input type="text" name="produk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $roti->roti_nama }}" disabled>
+                                {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                             </div>
                             <div class="form-group">
-                              <label for="roti">Roti</label>
-                              <select class="form-control" id="roti" name="roti">
-                                <option selected>Pilih roti</option>
+                                <label for="roti">Roti</label>
+                                <select class="form-control" id="roti" name="roti">
+                                    <option selected>Pilih roti</option>
                                 <option>Tawar</option>
                                 <option>Gandum</option>
                                 <option>Jagung</option>
 
-                              </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="selai">Selai</label>
-                                <select class="form-control" id="selai" name="selai">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="selai">Selai</label>
+                            <select class="form-control" id="selai" name="selai">
                                   <option selected>Pilih selai</option>
                                   <option>Coklat</option>
                                   <option>Stroberi</option>
@@ -332,36 +334,37 @@
                                   <option>Keju</option>
                                   <option>Bluberi</option>
                                 </select>
-                              </div>
-                              <div class="form-group">
+                            </div>
+                            <div class="form-group">
                                 <label for="toping">Toping</label>
                                 <select class="form-control" id="toping" name="toping">
-                                  <option selected>Pilih toping</option>
-                                  <option>Tidak ada</option>
-                                  <option>Seeds</option>
-                                  <option>Almond</option>
-                                  <option>Kismis</option>
+                                    <option selected>Pilih toping</option>
+                                    <option>Tidak ada</option>
+                                    <option>Seeds</option>
+                                    <option>Almond</option>
+                                    <option>Kismis</option>
 
                                 </select>
                               </div>
                               <div class="form-group">
-                                <label for="jumlah">Jumlah</label>
-                                <input type="number" name="jumlah" min="1" class="form-control" id="jumlah" aria-describedby="jumlah">
-                                {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
-                              </div>
+                                  <label for="jumlah">Jumlah</label>
+                                  <input type="number" name="jumlah" min="1" class="form-control" id="jumlah" aria-describedby="jumlah">
+                                  {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                                </div>
+                                @endforeach
                             <button type="submit" class="btn btn-success">Tambah ke keranjang</button>
                             <a href="/shop" class="btn btn-danger">Batal</a>
 
-                          </form>
+                        </form>
                           <br><br>
-					   {{-- <ul>
-					        <li>
-					            <div class="products">
-									<a href="#">
+                          {{-- <ul>
+                              <li>
+                                  <div class="products">
+                                      <a href="#">
 										<img class="gambar" src="{{  url('assets/images/produk/kepang-bou.jpg')}}" alt="">
 									</a>
 									<a href="#">
-										<h4>Roti Kepang</h4>
+                                        <h4>Roti Kepang</h4>
 									</a>
 									<p class="price">Rp. 20,000</p>
 									<div >

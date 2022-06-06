@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/shop', [RotiController::class, 'show'])->name('shop');
-Route::get('/order', [RotiController::class, 'show2'])->name('order');
+Route::get('/order/{id}', [RotiController::class, 'show2'])->name('order');
 
 
 Route::middleware([

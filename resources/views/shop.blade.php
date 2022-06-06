@@ -319,7 +319,7 @@
 									</a>
 									<p class="price">@currency($roti->roti_harga) </p>
 									<div >
-                                        <a class="view-link shutter" href="/order">
+                                        <a class="view-link shutter" href="/order/{{ $roti->id }}">
                                             <i class="fa fa-plus-circle"></i>Beli</a>
 
                                         </div>
