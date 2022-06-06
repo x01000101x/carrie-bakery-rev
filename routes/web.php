@@ -3,7 +3,7 @@
 use App\Http\Controllers\RotiController;
 use App\Http\Controllers\SelaiController;
 use App\Http\Controllers\OrderanController;
-
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +21,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/shop', [RotiController::class, 'show'])->name('shop');
-Route::get('/order/{id}', [RotiController::class, 'show2'])->name('order');
+Route::get('/shop', [ProdukController::class, 'show'])->name('shop');
+Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 
 
 Route::middleware([

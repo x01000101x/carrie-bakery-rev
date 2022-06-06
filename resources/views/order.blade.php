@@ -307,20 +307,23 @@
 					<div class="product-grid">
 
                         <form>
-                            @foreach ($rotis as $roti)
+                            @foreach ($produks as $produk)
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nama Produk</label>
-                                <input type="text" name="produk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $roti->roti_nama }}" disabled>
+                                <input type="text" name="produk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $produk->produk_nama }}" disabled>
                                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                             </div>
+                            @endforeach
+
                             <div class="form-group">
                                 <label for="roti">Roti</label>
                                 <select class="form-control" id="roti" name="roti">
                                     <option selected>Pilih roti</option>
-                                <option>Tawar</option>
-                                <option>Gandum</option>
-                                <option>Jagung</option>
+                                    @foreach ($rotis as $roti)
+                                    <option value="{{ $roti->id }}">{{ $roti->roti_nama }}</option>
+                                     @endforeach
+
 
                             </select>
                         </div>
@@ -328,11 +331,9 @@
                             <label for="selai">Selai</label>
                             <select class="form-control" id="selai" name="selai">
                                   <option selected>Pilih selai</option>
-                                  <option>Coklat</option>
-                                  <option>Stroberi</option>
-                                  <option>Nanas</option>
-                                  <option>Keju</option>
-                                  <option>Bluberi</option>
+                                  @foreach ($selais as $selai)
+                                  <option value="{{ $selai->id }}">{{ $selai->selai_nama }}</option>
+                                  @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
@@ -340,10 +341,11 @@
                                 <select class="form-control" id="toping" name="toping">
                                     <option selected>Pilih toping</option>
                                     <option>Tidak ada</option>
-                                    <option>Seeds</option>
-                                    <option>Almond</option>
-                                    <option>Kismis</option>
+                                    @foreach ($topings as $toping)
 
+                                    <option>{{ $toping->toping_nama }}</option>
+
+                                    @endforeach
                                 </select>
                               </div>
                               <div class="form-group">
@@ -351,7 +353,6 @@
                                   <input type="number" name="jumlah" min="1" class="form-control" id="jumlah" aria-describedby="jumlah">
                                   {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                                 </div>
-                                @endforeach
                             <button type="submit" class="btn btn-success">Tambah ke keranjang</button>
                             <a href="/shop" class="btn btn-danger">Batal</a>
 
