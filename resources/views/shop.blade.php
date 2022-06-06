@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -305,22 +307,27 @@
 					</div>	<!-- End of /.Products-heading -->
 					<div class="product-grid">
 					    <ul>
+                            <form action="/order" method="POST"></form>
+                            @foreach ($rotis as $roti)
 					        <li>
-					            <div class="products">
-									<a href="#">
-										<img class="gambar" src="{{  url('assets/images/produk/kepang-bou.jpg')}}" alt="">
+                                <div class="products">
+                                    <a href="#">
+                                        <img class="gambar" src="{{  Voyager::image($roti->roti_gambar)}}" alt="">
 									</a>
 									<a href="#">
-										<h4>Roti Kepang</h4>
+                                        <h4>{{ $roti->roti_nama }}</h4>
 									</a>
-									<p class="price">Rp. 20,000</p>
+									<p class="price">@currency($roti->roti_harga) </p>
 									<div >
-										<a class="view-link shutter" href="/order">
-										<i class="fa fa-plus-circle"></i>Beli</a>
-									</div>
-								</div>	<!-- End of /.products -->
-					        </li>
-					        <li>
+                                        <a class="view-link shutter" href="/order">
+                                            <i class="fa fa-plus-circle"></i>Beli</a>
+
+                                        </div>
+                                    </div>	<!-- End of /.products -->
+                                </li>
+                                @endforeach
+                        </form>
+					        {{-- <li>
 					            <div class="products">
 									<a href="#">
 										<img class="gambar" src="{{  url('assets/images/produk/roti-tawar-bpu.jpeg')}}" alt="">
@@ -394,7 +401,7 @@
 										<i class="fa fa-plus-circle"></i>Add To Cart</a>
 									</div>
 								</div>	<!-- End of /.products -->
-					        </li>
+					        </li> --}}
 					        <!--  ... -->
 					    </ul>
 					</div>	<!-- End of /.products-grid -->
