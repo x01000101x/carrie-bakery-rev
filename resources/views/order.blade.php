@@ -308,6 +308,11 @@
 
                         <form method="POST" action="/pesan">
                             @foreach ($produks as $produk)
+                            <img style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">
+                            <h1 style="text-align: center">{{ $produk->produk_nama }}</h1>
+                            <div class="form-group">
+                                <input type="text" name="gambar" value="{{ $produk->produk_gambar }}" hidden>
+                            </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nama Produk</label>
