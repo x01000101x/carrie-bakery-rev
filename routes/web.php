@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/shop', [ProdukController::class, 'show'])->name('shop');
 Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 
+Route::post('/pesan', [OrderanController::class, 'store'])->name('pesan');
 
 Route::middleware([
     'auth:sanctum',
