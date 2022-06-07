@@ -48,7 +48,7 @@
                 <div class="inalan">
                     <div class="row">
                         <!-- toping -->
-                        <div class="col-3 col-md-3">
+                        <div class="col-3">
                             <div id="topingbin" class="owl-carousel owl-theme">
                                 @foreach($topings as $toping)
                                 <div class="item">
@@ -57,13 +57,13 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="col-6 col-md-6">
+                        <div class="col-6">
                             <img src="./2.png" id="img1" style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
                             <img src="./1.png" id="img2" style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
                             <img src="./3.png" id="img3" style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 20%;max-height: 50%; object-fit: scale-down;">
                         </div>
                         <!-- selai -->
-                        <div class="col-md-3 col-3">
+                        <div class="col-3">
                             <div id="slaybin" class="owl-carousel owl-theme">   
                                 @foreach($selais as $selai)
                                 <div class="item">
