@@ -21,9 +21,13 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/nineselai', [ProdukController::class, 'nineselai'])->name('nineselai');
+Route::post('/nineorder', [ProdukController::class, 'nineorder'])->name('nineorder');
+
 Route::get('/shop', [ProdukController::class, 'show'])->name('shop');
 Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 
+Route::get('/play', [ProdukController::class, 'show'])->name('shop');
 
 Route::middleware([
     'auth:sanctum',
