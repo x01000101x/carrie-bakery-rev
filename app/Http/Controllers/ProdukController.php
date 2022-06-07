@@ -29,4 +29,38 @@ class ProdukController extends Controller
 
         return view('order', compact('produks', 'selais', 'topings', 'rotis'));
     }
+
+    public function nineselai(Request $request)
+    {
+        // $produks = Produk::where('id', $id_produk)->get();
+        $selais = Selai::get();
+        $topings = Toping::get();
+        $rotis = Roti::get();
+        $data=[
+            'selais' => $selais,
+            'topings' => $topings,
+            'rotis' => $rotis
+        ];
+        return view('nine_hendeler/nine',$data);
+    }
+
+    public function nineorder(Request $request)
+    {
+        dd(json_decode($request->kombinasi_rasa),$request->kombinasi_toping);
+    }
+
+    public function oneselai(Request $request)
+    {
+        // $produks = Produk::where('id', $id_produk)->get();
+        $selais = Selai::get();
+        $topings = Toping::get();
+        $rotis = Roti::get();
+        $data=[
+            'selais' => $selais,
+            'topings' => $topings,
+            'rotis' => $rotis
+        ];
+        return view('one_hendeler/one',$data);
+    }
+
 }
