@@ -8,7 +8,7 @@ use App\Produk;
 use App\Selai;
 use App\Toping;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
+// use Symfony\Component\HttpFoundation\Session\Session;
 
 
 class OrderanController extends Controller
@@ -17,11 +17,11 @@ class OrderanController extends Controller
     {
         $order = new Orderan();
 
-        $produk = Produk::select('id', 'produk_harga')->where('id', $request->produk_id)->get();
-        $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('id', $request->roti)->get();
-        $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->get();
-        $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->get();
-
+        $produk = Produk::select('id', 'produk_harga')->where('id', $request->produk_id)->first();
+        $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('id', $request->roti)->first();
+        $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->first();
+        $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->first();
+        // dd($produk->produk_harga);
         $rumus =
             ($produk->produk_harga * $request->jumlah) +
             ($roti->roti_harga * $request->jumlah) +
@@ -47,6 +47,6 @@ class OrderanController extends Controller
         $order->save();
 
         // Session::flash('message', "Special message goes here");
-        return redirect()->route('login')->with('success', 'berhasil dipesan');
+        return redirect()->route('/')->with('success', 'berhasil dipesan');
     }
 }

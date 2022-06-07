@@ -307,6 +307,7 @@
 					<div class="product-grid">
 
                         <form method="POST" action="/pesan">
+                            @csrf
                             @foreach ($produks as $produk)
                             <img style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">
                             <h1 style="text-align: center">{{ $produk->produk_nama }}</h1>
@@ -317,7 +318,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nama Produk</label>
                                 <input type="text" name="produk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $produk->produk_nama }}" disabled>
-                                <input type="text" name="produk_id" class="form-control" id="produk_id"  value="{{ $produk->id }}" hidden disabled>
+                                <input type="hidden" name="produk_id" class="form-control" id="produk_id"  value="{{ $produk->id }}">
                                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                             </div>
                             @endforeach
@@ -349,7 +350,7 @@
                                     <option>Tidak ada</option>
                                     @foreach ($topings as $toping)
 
-                                    <option>{{ $toping->toping_nama }}</option>
+                                    <option value="{{ $toping->id }}">{{ $toping->toping_nama }}</option>
 
                                     @endforeach
                                 </select>
