@@ -8,6 +8,8 @@ use App\Produk;
 use App\Selai;
 use App\Toping;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 
 class OrderanController extends Controller
 {
@@ -20,7 +22,11 @@ class OrderanController extends Controller
         $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->get();
         $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->get();
 
-        $rumus = "";
+        $rumus =
+            ($produk->produk_harga * $request->jumlah) +
+            ($roti->roti_harga * $request->jumlah) +
+            ($selai->selai_harga * $request->jumlah) +
+            ($toping->toping_harga * $request->jumlah);
 
         //Orderan
         $order->produk = $request->produk;
@@ -28,7 +34,7 @@ class OrderanController extends Controller
         $order->selai = $selai->selai_nama;
         $order->toping = $toping->toping_nama;
         $order->jumlah = $request->jumlah;
-        $order->harga = $request->jumlah;
+        $order->harga = $rumus;
         $order->gambar = $request->gambar;
 
         //Info pemesan
@@ -39,5 +45,8 @@ class OrderanController extends Controller
         $order->nama_pengirim = $request->nama_pengirim;
 
         $order->save();
+
+        // Session::flash('message', "Special message goes here");
+        return redirect()->route('login')->with('success', 'berhasil dipesan');
     }
 }
