@@ -20,7 +20,7 @@ class OrderanController extends Controller
         $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->get();
         $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->get();
 
-        $rumus = "sex";
+        $rumus = "";
 
         //Orderan
         $order->produk = $request->produk;
@@ -29,13 +29,14 @@ class OrderanController extends Controller
         $order->toping = $toping->toping_nama;
         $order->jumlah = $request->jumlah;
         $order->harga = $request->jumlah;
+        $order->gambar = $request->gambar;
 
         //Info pemesan
-        $nama_pemesan = $request->nama_pemesan;
-        $notelp = $request->notelp;
-        $alamat = $request->alamat;
-        $dropship = $request->myCheck;
-        $nama_pengirim = $request->nama_pengirim;
+        $order->nama_pembeli = $request->nama_pemesan;
+        $order->notelp = $request->notelp;
+        $order->alamat = $request->alamat;
+        $order->dropship = $request->myCheck;
+        $order->nama_pengirim = $request->nama_pengirim;
 
         $order->save();
     }
