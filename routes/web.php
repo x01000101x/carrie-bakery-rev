@@ -24,6 +24,9 @@ Route::get('/', function () {
 Route::get('/nineselai', [ProdukController::class, 'nineselai'])->name('nineselai');
 Route::post('/nineorder', [ProdukController::class, 'nineorder'])->name('nineorder');
 
+Route::get('/oneselai', [ProdukController::class, 'oneselai']);
+
+
 Route::get('/shop', [ProdukController::class, 'show'])->name('shop');
 Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 
