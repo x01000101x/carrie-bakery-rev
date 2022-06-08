@@ -657,7 +657,7 @@
 						<h4>OUR LOCATION </h4>
 						<div class="media">
                             <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=pakuan%20hill%20cluster%20livistona&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=carrie%20bakery&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                                 {{-- <a href="https://123movies-to.org">123 movies</a> --}}
                                 <br>
                                 <style>.mapouter{position:relative;text-align:right;height:200px;width:600px;}</style>

@@ -307,10 +307,10 @@
 					<div class="block">
 						<div class="media">
 							<div class="pull-left" href="#">
-						    	<i class="fa fa-car" aria-hidden="true"></i>
+						    	<i class="fa fa-map" aria-hidden="true"></i>
 						  	</div>
 						  	<div class="media-body">
-						    	<h4 class="media-heading">Free Shipping</h4>
+						    	<h4 class="media-heading">Alamat</h4>
 						    	<p>Lorem ipsum dolor sit amet, consectetur.</p>
 						  </div>
 						</div>
@@ -323,8 +323,8 @@
 								<i class="fa fa-foursquare"></i>
 						  	</div>
 						  	<div class="media-body">
-						    	<h4 class="media-heading">Media heading</h4>
-						    	<p>Lorem ipsum dolor sit amet, consectetur.</p>
+						    	<h4 class="media-heading">Social Media</h4>
+						    	<p>Instagram : carrie_bakery_official Facebook: carrie_bakery_official <br> TikTok : maylindebora</p>
 						  </div>
 						</div>
 					</div>
@@ -337,7 +337,7 @@
 						  	</div>
 						  	<div class="media-body">
 						    	<h4 class="media-heading">Call Us</h4>
-						    	<p>Lorem ipsum dolor sit amet, consectetur.</p>
+						    	<p>WA : +62 813-8509-9236 <br>Telp : (02511) 7561766<br></p>
 						  </div>	<!-- End of /.media-body -->
 						</div>	<!-- End of /.media -->
 					</div>	<!-- End of /.block -->
@@ -363,12 +363,7 @@
 						  	<div class="col-sm-2 col-md-7">
 								  <div class="tengah">
 									  <h1>Hello World</h1>
-									  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-										  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-										  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-										  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-										  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-										  in culpa qui officia deserunt mollit anim id est laborum.</p>
+									  <p>Kami adalah produsen roti sehat dan kaya serat yang berfokus pada aneka roti wortel dan gandum yang berlokasi di daerah Bogor, Jawa Barat, Indonesia. Kami juga menyediakan camilan aman bagi keluarga yang berfokus pada <i>Indonesian traditional culinary</i></p>
 										</div>
 										</div>	<!-- End of /.col-sm-6 col-md-4 -->
 						</div>	<!-- End of /.row -->
@@ -811,7 +806,7 @@
 						<h4>OUR LOCATION </h4>
 						<div class="media">
                             <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=pakuan%20hill%20cluster%20livistona&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=carrie%20bakery&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                                 {{-- <a href="https://123movies-to.org">123 movies</a> --}}
                                 <br>
                                 <style>.mapouter{position:relative;text-align:right;height:200px;width:600px;}</style>
@@ -859,7 +854,7 @@
 								</a>
 							</li>
 						</ul>
-						<p class="copyright-text pull-right">Carrie Bakery @2022 Designed by <a style="color: blue" href="https://startcode.id">StartCode</a> All Rights Reserved</p>
+						<p class="copyright-text pull-right">Carrie Bakery @2022 by <a style="color: blue" href="https://startcode.id">StartCode</a> All Rights Reserved</p>
 					</div>	<!-- End Of /.col-md-12 -->
 				</div>	<!-- End Of /.row -->
 			</div>	<!-- End Of /.container -->

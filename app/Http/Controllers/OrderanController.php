@@ -47,6 +47,6 @@ class OrderanController extends Controller
         $order->save();
 
         // Session::flash('message', "Special message goes here");
-        return redirect()->route('/')->with('success', 'berhasil dipesan');
+        return redirect()->route('dashboard')->with('success', 'berhasil dipesan');
     }
 }
