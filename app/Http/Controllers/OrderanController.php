@@ -16,7 +16,7 @@ class OrderanController extends Controller
 
     public function confirm(Request $request)
     {
-        $produk = Produk::select('id', 'produk_harga')->where('id', $request->produk_id)->first();
+        $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id)->first();
         $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('id', $request->roti)->first();
         $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->first();
         $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->first();
@@ -30,19 +30,20 @@ class OrderanController extends Controller
         $datas = [
 
             //Orderan
-            $produk_nama = $request->produk_nama,
-            $roti_nama = $request->roti_nama,
-            $selai_nama = $request->selai_nama,
-            $toping_nama = $request->toping_nama,
-            $harga = $rumus,
-            $gambar = $request->gambar,
+            'produk' => $produk->produk_nama,
+            'roti' => $roti->roti_nama,
+            'selai' => $selai->selai_nama,
+            'toping' => $toping->toping_nama,
+            'jumlah' => $request->jumlah,
+            'harga' => $rumus,
+            'gambar' => $request->gambar,
 
             //Info pemesan
-            $pembeli = $request->nama_pembeli,
-            $notelp = $request->notelp,
-            $alamat = $request->alamat,
-            $dropship = $request->myCheck,
-            $pengirim = $request->nama_pengirim
+            'pembeli' => $request->nama_pemesan,
+            'notelp' => $request->notelp,
+            'alamat' => $request->alamat,
+            'dropship' => $request->myCheck,
+            'pengirim' => $request->nama_pengirim
         ];
 
         return view('confirm', compact('datas'));
@@ -52,7 +53,7 @@ class OrderanController extends Controller
     {
         $order = new Orderan();
 
-        $produk = Produk::select('id', 'produk_harga')->where('id', $request->produk_id)->first();
+        $produk = Produk::select('id', 'produk_nama', 'produk_harga')->where('id', $request->produk_id)->first();
         $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('id', $request->roti)->first();
         $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->first();
         $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->first();
@@ -64,7 +65,7 @@ class OrderanController extends Controller
             ($toping->toping_harga * $request->jumlah);
 
         //Orderan
-        $order->produk = $request->produk;
+        $order->produk = $produk->produk_nama;
         $order->roti = $roti->roti_nama;
         $order->selai = $selai->selai_nama;
         $order->toping = $toping->toping_nama;

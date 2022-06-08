@@ -316,8 +316,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Nama Produk</label>
-                                <input type="text" name="produk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $produk->produk_nama }}" disabled>
+                                <label for="produk_nama">Nama Produk</label>
+                                <input type="text" name="produk_nama" class="form-control" id="produk_nama" value="{{ $produk->produk_nama }}" disabled>
                                 <input type="hidden" name="produk_id" class="form-control" id="produk_id"  value="{{ $produk->id }}">
                                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                             </div>
