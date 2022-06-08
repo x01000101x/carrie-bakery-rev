@@ -179,16 +179,30 @@ background:#eee;
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 text-left">
-                        <h4><strong>Client</strong> Details</h4>
+                        <h4><strong>Detail</strong> Pesanan</h4>
                         <ul class="list-unstyled">
-                            <li><strong>First Name:</strong> John</li>
-                            <li><strong>Last Name:</strong> Doe</li>
+                            <li><strong>Nama:</strong> {{ $datas['pembeli'] }}</li>
+                            <li><strong>Alamat:</strong> {{ $datas['alamat'] }}</li>
+                            <li><strong>No. Telp:</strong> {{ $datas['notelp'] }}</li>
+                            <li><strong>Dropship:</strong>
+                                @if($datas['dropship'] == null)
+                                {{ "Tidak" }}
+                                @else
+                                {{ "Ya" }}
+                                @endif <li>
+                            <li><strong>Nama pengirim (untuk dropshipper):</strong> @if($datas['pengirim'] == null)
+                                {{ "-" }}
+                                @else
+                                {{ $datas['pengirim'] }}
+                                @endif <li>
+
+                            {{-- <li><strong>Last Name:</strong> Doe</li>
                             <li><strong>Country:</strong> U.S.A.</li>
-                            <li><strong>DOB:</strong> YYYY/MM/DD</li>
+                            <li><strong>DOB:</strong> YYYY/MM/DD</li> --}}
                         </ul>
                     </div>
 
-                    <div class="col-md-6 col-sm-6 text-right">
+                    {{-- <div class="col-md-6 col-sm-6 text-right">
                         <h4><strong>Payment</strong> Details</h4>
                         <ul class="list-unstyled">
                             <li><strong>Bank Name:</strong> 012345678901</li>
@@ -197,7 +211,7 @@ background:#eee;
                             <li><strong>V.A.T Reg #:</strong> VAT5678901CODE</li>
                         </ul>
 
-                    </div>
+                    </div> --}}
 
                 </div>
 
