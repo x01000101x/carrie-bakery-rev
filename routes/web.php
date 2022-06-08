@@ -21,19 +21,20 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/nineselai', [ProdukController::class, 'nineselai'])->name('nineselai');
-Route::post('/nineorder', [ProdukController::class, 'nineorder'])->name('nineorder');
-
-Route::post('/pesan', [OrderanController::class, 'store'])->name('pesan');
-
-
-Route::get('/oneselai', [ProdukController::class, 'oneselai']);
-
-
+//Firewall Here
 Route::get('/shop', [ProdukController::class, 'show'])->name('shop');
 Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
+Route::post('/pesan', [OrderanController::class, 'store'])->name('pesan');
+Route::post('/confirm', [OrderanController::class, 'confirm'])->name('confirm');
 
-Route::get('/play', [ProdukController::class, 'show'])->name('shop');
+
+//Lgarin Here
+Route::get('/nineselai', [ProdukController::class, 'nineselai'])->name('nineselai');
+Route::post('/nineorder', [ProdukController::class, 'nineorder'])->name('nineorder');
+Route::get('/oneselai', [ProdukController::class, 'oneselai']);
+Route::get('/play', [ProdukController::class, 'show']);
+
+//Vendor Here
 
 Route::middleware([
     'auth:sanctum',

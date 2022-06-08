@@ -306,7 +306,7 @@
 					</div>	<!-- End of /.Products-heading -->
 					<div class="product-grid">
 
-                        <form method="POST" action="/pesan">
+                        <form method="POST" action="/confirm">
                             @csrf
                             @foreach ($produks as $produk)
                             <img style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">

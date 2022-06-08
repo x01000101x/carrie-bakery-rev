@@ -13,6 +13,41 @@ use Illuminate\Http\Request;
 
 class OrderanController extends Controller
 {
+
+    public function confirm(Request $request)
+    {
+        $produk = Produk::select('id', 'produk_harga')->where('id', $request->produk_id)->first();
+        $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('id', $request->roti)->first();
+        $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->first();
+        $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->first();
+
+        $rumus =
+            ($produk->produk_harga * $request->jumlah) +
+            ($roti->roti_harga * $request->jumlah) +
+            ($selai->selai_harga * $request->jumlah) +
+            ($toping->toping_harga * $request->jumlah);
+
+        $datas = [
+
+            //Orderan
+            $produk_nama = $request->produk_nama,
+            $roti_nama = $request->roti_nama,
+            $selai_nama = $request->selai_nama,
+            $toping_nama = $request->toping_nama,
+            $harga = $rumus,
+            $gambar = $request->gambar,
+
+            //Info pemesan
+            $pembeli = $request->nama_pembeli,
+            $notelp = $request->notelp,
+            $alamat = $request->alamat,
+            $dropship = $request->myCheck,
+            $pengirim = $request->nama_pengirim
+        ];
+
+        return view('confirm', compact('datas'));
+    }
+
     public function store(Request $request)
     {
         $order = new Orderan();
@@ -21,7 +56,7 @@ class OrderanController extends Controller
         $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('id', $request->roti)->first();
         $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->first();
         $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->first();
-        // dd($produk->produk_harga);
+
         $rumus =
             ($produk->produk_harga * $request->jumlah) +
             ($roti->roti_harga * $request->jumlah) +
@@ -47,6 +82,6 @@ class OrderanController extends Controller
         $order->save();
 
         // Session::flash('message', "Special message goes here");
-        return redirect()->route('dashboard')->with('success', 'berhasil dipesan');
+        // return redirect()->route('shop')->with('success', 'berhasil dipesan');
     }
 }
