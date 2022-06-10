@@ -506,7 +506,29 @@
             document.getElementById('fastoping').src = topingimg
 			roso()
         }
-
+		// Keranjang
+		var sessionkaranjang=sessionStorage.getItem("karanjang");
+        var karan=[]
+        if (sessionkaranjang!=null) {
+            karan=JSON.parse(sessionkaranjang)                
+        }
+        function pastin() {
+            var kmb_r='Roti Sobek'
+            var kmb_s=document.getElementById('kombinasi_rasa').value
+            kmb_s=JSON.parse(kmb_s)
+            var kmb_t=document.getElementById('kombinasi_toping').value
+            kmb_t=JSON.parse(kmb_t)
+            var tmb=[
+                kmb_r,kmb_s,kmb_t
+            ]
+            if (kmb_s.length<6) {
+                alert('pilihlah 6 Kombinasi Selai dan 1 Kombinasi Toping')
+            }else{
+                karan.push(tmb)
+                sessionStorage.setItem('karanjang',JSON.stringify(karan))
+                location.replace('{{url('/shop')}}');
+            }
+        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
