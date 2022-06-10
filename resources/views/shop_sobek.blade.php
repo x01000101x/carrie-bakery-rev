@@ -1,23 +1,11 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Carrie Bakery</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-	<!-- sugastart -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
-    <style>
-        .mt-10 {
-            margin-top: 10rem !important;
-        }
-
-        .proxbon {
-            height: 80vh;
-        }
-    </style>
-	<!-- sugaend -->
 
 	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
@@ -311,7 +299,187 @@
     ================================================== -->
 
 	<section id="shop">
-        @include('nine_hendeler/ninebread')
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="products-heading">
+						<h2>NEW PRODUCTS</h2>
+					</div>	<!-- End of /.Products-heading -->
+					<div class="product-grid">
+					    <ul>
+                            <li>
+					            <div class="products">
+									<a href="#">
+										<img class="gambar" src="{{  url('assets/images/produk/roti-imut-bou.jpeg')}}" alt="">
+									</a>
+									<a href="#">
+										<h4>Roti Sobek 5 Selai</h4>
+									</a>
+									<p class="price">Rp. 20,000</p>
+									<div >
+										<a class="view-link shutter" href="/nineselai">
+										<i class="fa fa-plus-circle"></i>Beli</a>
+									</div>
+								</div>
+					        </li>
+                            <li>
+					            <div class="products">
+									<a href="#">
+										<img class="gambar" src="{{  url('assets/images/produk/roti-imut-bou.jpeg')}}" alt="">
+									</a>
+									<a href="#">
+										<h4>Roti Sobek - Mix</h4>
+									</a>
+									<p class="price">Rp. 20,000</p>
+								    
+                                    <div>
+										<a class="view-link shutter" href="/nineselai-mix">
+										<i class="fa fa-plus-circle"></i>Beli</a>
+									</div>
+								</div>
+					        </li>
+					    </ul>
+					</div>	<!-- End of /.products-grid -->
+
+					<!-- Pagination -->
+
+					<div class="pagination-bottom">
+						<ul class="pagination">
+						  	<li class="disabled"><a href="#">&laquo;</a></li>
+						  	<li class="active"><a href="#">1 <span class="sr-only"></span></a></li>
+						  	<li><a href="#">2</a></li>
+						  	<li><a href="#">3</a></li>
+						  	<li><a href="#">4</a></li>
+						  	<li><a href="#">»</a></li>
+						</ul>	<!-- End of /.pagination -->
+					</div>
+				</div>	<!-- End of /.col-md-9 -->
+				<div class="col-md-3">
+					<div class="blog-sidebar">
+						
+				<!-- chart -->
+				<div class="block">
+					<h4>Keranjang nanti Omean we bentuknya kayak gimana wkwkwk</h4>
+					<ul class="media-list" id='keranjang_blass'>
+
+					</ul>
+				</div>
+
+				<script>
+					var html_blass=``
+
+					var inche=sessionStorage.getItem('karanjang')
+					inche=JSON.parse(inche)
+					
+					for (let i = 0; i < inche.length; i++) {
+						var order=inche[i]
+
+						for (let a = 0; a < order[1].length; a++) {
+							var selai=''
+							var selbe=order[1]
+							selai +=selbe+','
+						}
+						html_blass+=`
+						<li class="media">
+					    	<a class="pull-left" href="#">
+					      		<img class="media-object" src="{{  url('assets/images/post-img.png')}}" alt="...">
+							</a>
+					    	<div class="media-body">
+
+					      		<a href="" class="media-heading">${order[0]}
+					      			<p>
+										Selai : ${selai}
+										<br>
+										dengan Toping ${order[2]}</p>
+								</a>
+
+					    	</div>
+					  	</li>
+						  `	
+					}
+					// console.log(html_blass);
+					document.getElementById('keranjang_blass').innerHTML=html_blass
+				</script>
+				<!-- end -->
+						<div class="block">
+							<h4>Catagories</h4>
+							<div class="list-group">
+								<a href="#" class="list-group-item">
+									<i class="fa  fa-dot-circle-o"></i>
+									Italian Foods
+								</a>
+								<a href="#" class="list-group-item">
+									<i class="fa  fa-dot-circle-o"></i>
+									Traditional Food
+								</a>
+								<a href="#" class="list-group-item">
+									<i class="fa  fa-dot-circle-o"></i>
+									Indian Food
+								</a>
+								<a href="#" class="list-group-item">
+									<i class="fa  fa-dot-circle-o"></i>
+									Spanish Food
+								</a>
+								<a href="#" class="list-group-item">
+									<i class="fa  fa-dot-circle-o"></i>
+									Thai FoodN
+								</a>
+							</div>
+						</div>
+						<div class="block">
+							<img src="{{  url('assets/images/food-ad.png')}}" alt="">
+						</div>
+						<div class="block">
+							<h4>Latest Food Items</h4>
+							<ul class="media-list">
+							 	<li class="media">
+							    	<a class="pull-left" href="#">
+							      		<img class="media-object" src="{{  url('assets/images/post-img.png')}}" alt="...">
+							    	</a>
+							    	<div class="media-body">
+							      		<a href="" class="media-heading">Lamb leg roast
+							      		<p>Lorem ipsum dolor sit amet.</p></a>
+							    	</div>
+							  	</li>
+							  	<li class="media">
+							    	<a class="pull-left" href="#">
+							      		<img class="media-object" src="{{  url('assets/images/post-img-2.png')}}" alt="...">
+							    	</a>
+							    	<div class="media-body">
+							      		<a href="" class="media-heading"> Lamingtons
+							      		<p>Lorem ipsum dolor.</p></a>
+							    	</div>
+							  	</li>
+							  	<li class="media">
+							    	<a class="pull-left" href="#">
+							      		<img class="media-object" src="{{  url('assets/images/post-img-3.png')}}" alt="...">
+							    	</a>
+							    	<div class="media-body">
+							      		<a href="" class="media-heading">
+							      		Anzac Salad
+							      		<p>Lorem ipsum dolor sit.</p>
+
+							      		</a>
+							    	</div>
+							  	</li>
+							  </ul>
+						</div>
+
+						{{-- <div class="block">
+							<h4>Food Tag</h4>
+							<div class="tag-link">
+								<a href="">BALLET</a>
+								<a href="">CHRISTMAS</a>
+								<a href="">ELEGANCE</a>
+								<a href="">ELEGANT</a>
+								<a href="">SHOPPING</a>
+								<a href="">SHOP</a>
+							</div>
+						</div> --}}
+				</div>	<!-- End of /.col-md-3 -->
+
+			</div>	<!-- End of /.row -->
+		</div>	<!-- End of /.container -->
 	</section>	<!-- End of Section -->
 
 
@@ -386,7 +554,8 @@
 						<h4>OUR LOCATION </h4>
 						<div class="media">
                             <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=pakuan%20hill%20cluster%20livistona&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                <div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=carrie%20bakery&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
                                 {{-- <a href="https://123movies-to.org">123 movies</a> --}}
                                 <br>
                                 <style>.mapouter{position:relative;text-align:right;height:200px;width:600px;}</style>
@@ -434,7 +603,7 @@
 								</a>
 							</li>
 						</ul>
-						<p class="copyright-text pull-right">Carrie Bakery @2022 Designed by <a style="color: blue" href="https://startcode.id">StartCode</a> All Rights Reserved</p>
+						<p class="copyright-text pull-right">Carrie Bakery @2022 by <a style="color: blue" href="https://startcode.id">StartCode</a> All Rights Reserved</p>
 					</div>	<!-- End Of /.col-md-12 -->
 				</div>	<!-- End Of /.row -->
 			</div>	<!-- End Of /.container -->
@@ -442,137 +611,5 @@
 	</footer> <!-- End Of Footer -->
 
 	<a id="back-top" href="#"></a>
-	<!-- sugastart -->
-	    <!-- foot -->
-
-		<script>
-        var nika = screen.availWidth
-        if (nika >= 700) {
-            document.getElementById('lwp').classList.toggle("owl-carousel2");
-            document.getElementById('lwp').classList.toggle("owl-carousel");
-            document.getElementById('hititemlist').classList.toggle("owl-carousel");
-            document.getElementById('fastoping').classList.toggle("mt-10");
-            document.getElementById('rotina').classList.toggle("proxbon");
-        }
-        var selainame=[];
-        var selaiimg=[];
-        function selt(id) {
-            if (selainame.length<6) {
-                selainame.push(document.getElementById(id + 'value').value)
-                selaiimg.push(document.getElementById(id + 'img').src);                
-            }        
-            console.log(selainame,selaiimg,selainame.length,selaiimg.length);
-            claw()
-			roso()
-        }
-        function hitall() {
-            var rasa = []
-            var hititem = selainame
-            for (let i = 0; i < hititem.length; i++) {
-                rasa[i] = hititem[i];
-            }
-        }
-		function roso() {
-            kom_rasa = JSON.stringify(selainame); 
-            document.getElementById('kombinasi_rasa').value = kom_rasa;
-            
-            kom_toping = JSON.stringify(toping); 
-			// alert(toping)
-            document.getElementById('kombinasi_toping').value = kom_toping;
-
-        }
-        function pwt(id) {
-            selaiimg.splice(id, 1);
-            selainame.splice(id, 1);
-            claw();
-        }
-        function claw() {
-            var clawimg = ''
-            var hititem = selaiimg;
-            for (let i = 0; i < hititem.length; i++) {
-                clawimg += `
-                <div class="col-4 mb-4 mt-4">
-                    <button type="button" class="btn-close" onclick="pwt(${i})"></button>
-                    <img src="${hititem[i]}" class="img-fluid rounded" height="100px">
-                </div>
-                `
-            }
-            document.getElementById('itemshow').innerHTML = clawimg;
-        }
-        var toping = 'none'
-        function topingpass(id) {
-            toping = document.getElementById(id + 'value').value
-            var topingimg = document.getElementById(id + 'img').src
-            document.getElementById('fastoping').src = topingimg
-			roso()
-        }
-		// Keranjang
-		var sessionkaranjang=sessionStorage.getItem("karanjang");
-        var karan=[]
-        if (sessionkaranjang!=null) {
-            karan=JSON.parse(sessionkaranjang)                
-        }
-        function pastin() {
-            var kmb_r='Roti Sobek'
-            var kmb_s=document.getElementById('kombinasi_rasa').value
-            kmb_s=JSON.parse(kmb_s)
-            var kmb_t=document.getElementById('kombinasi_toping').value
-            kmb_t=JSON.parse(kmb_t)
-            var tmb=[
-                kmb_r,kmb_s,kmb_t
-            ]
-            if (kmb_s.length<6) {
-                alert('pilihlah 6 Kombinasi Selai dan 1 Kombinasi Toping')
-            }else{
-                karan.push(tmb)
-                sessionStorage.setItem('karanjang',JSON.stringify(karan))
-                location.replace('{{url('/shop')}}');
-            }
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: false,
-            navigationText: [
-                "<i class='fa fa-chevron-left'></i>",
-                "<i class='fa fa-chevron-right'></i>"
-            ],
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 2
-                }
-            }
-        })
-        $('.owl-carousel2').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 2
-                }
-            }
-        })
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
-	<!-- sugaend -->
 </body>
 </html>

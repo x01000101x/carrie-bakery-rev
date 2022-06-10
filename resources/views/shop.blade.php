@@ -318,11 +318,17 @@
                                         <h4>{{ $produk->produk_nama }}</h4>
 									</a>
 									<p class="price">@currency($produk->produk_harga) </p>
-									<div >
-                                        <a class="view-link shutter" href="/order/{{ $produk->id }}">
-                                            <i class="fa fa-plus-circle"></i>Beli</a>
-
-                                        </div>
+									<div>
+										@if($produk->link_blass!=null)
+										<a class="view-link shutter" href="{!! url($produk->link_blass) !!}">
+                                            <i class="fa fa-plus-circle"></i>Order
+										</a>
+										@else
+										<a class="view-link shutter" href="/order/{{ $produk->id }}">
+                                            <i class="fa fa-plus-circle"></i>Beli
+										</a>
+										@endif
+                                    </div>
                                     </div>	<!-- End of /.products -->
                                 </li>
                                 @endforeach
@@ -421,6 +427,51 @@
 				</div>	<!-- End of /.col-md-9 -->
 				<div class="col-md-3">
 					<div class="blog-sidebar">
+						
+				<!-- chart -->
+				<div class="block">
+					<h4>Keranjang nanti Omean we bentuknya kayak gimana wkwkwk</h4>
+					<ul class="media-list" id='keranjang_blass'>
+
+					</ul>
+				</div>
+
+				<script>
+					var html_blass=``
+
+					var inche=sessionStorage.getItem('karanjang')
+					inche=JSON.parse(inche)
+					
+					for (let i = 0; i < inche.length; i++) {
+						var order=inche[i]
+
+						for (let a = 0; a < order[1].length; a++) {
+							var selai=''
+							var selbe=order[1]
+							selai +=selbe+','
+						}
+						html_blass+=`
+						<li class="media">
+					    	<a class="pull-left" href="#">
+					      		<img class="media-object" src="{{  url('assets/images/post-img.png')}}" alt="...">
+							</a>
+					    	<div class="media-body">
+
+					      		<a href="" class="media-heading">${order[0]}
+					      			<p>
+										Selai : ${selai}
+										<br>
+										dengan Toping ${order[2]}</p>
+								</a>
+
+					    	</div>
+					  	</li>
+						  `	
+					}
+					// console.log(html_blass);
+					document.getElementById('keranjang_blass').innerHTML=html_blass
+				</script>
+				<!-- end -->
 						<div class="block">
 							<h4>Catagories</h4>
 							<div class="list-group">

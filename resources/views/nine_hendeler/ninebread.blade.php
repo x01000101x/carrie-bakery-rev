@@ -52,12 +52,9 @@
         </div>
     </div>
     <div style="margin: 1% 10% 1% 10%;">
-        <form action="{{url('/nineorder')}}" method="POST">
-            @csrf
             <input type="hidden" name="kombinasi_rasa" id="kombinasi_rasa" value="">
             <input type="hidden" name="kombinasi_toping" id="kombinasi_toping" value="">
-            <button class="col-12 btn btn-primary">Pesan</button>
-        </form>
+            <a class="col-12 btn btn-primary" onclick="pastin()">Pesan</a>
     </div>
 
 
