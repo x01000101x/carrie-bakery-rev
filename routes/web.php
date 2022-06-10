@@ -33,9 +33,10 @@ Route::get('/nineselai', [ProdukController::class, 'nineselai'])->name('ninesela
 Route::post('/nineorder', [ProdukController::class, 'nineorder'])->name('nineorder');
 Route::get('/oneselai', [ProdukController::class, 'oneselai']);
 Route::get('/play', [ProdukController::class, 'show']);
+Route::get('/rotisobek', [ProdukController::class, 'show_sobek']);
+
 
 //Vendor Here
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

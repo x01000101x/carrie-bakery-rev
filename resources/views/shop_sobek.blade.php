@@ -307,108 +307,37 @@
 					</div>	<!-- End of /.Products-heading -->
 					<div class="product-grid">
 					    <ul>
-                            <form action="/order" method="POST"></form>
-                            @foreach ($produks as $produk)
-					        <li>
-                                <div class="products">
-                                    <a href="#">
-                                        <img class="gambar" src="{{  Voyager::image($produk->produk_gambar)}}" alt="">
-									</a>
-									<a href="#">
-                                        <h4>{{ $produk->produk_nama }}</h4>
-									</a>
-									<p class="price">@currency($produk->produk_harga) </p>
-									<div>
-										@if($produk->link_blass!=null)
-										<a class="view-link shutter" href="{!! url($produk->link_blass) !!}">
-                                            <i class="fa fa-plus-circle"></i>Order
-										</a>
-										@else
-										<a class="view-link shutter" href="/order/{{ $produk->id }}">
-                                            <i class="fa fa-plus-circle"></i>Beli
-										</a>
-										@endif
-                                    </div>
-                                    </div>	<!-- End of /.products -->
-                                </li>
-                                @endforeach
-                        </form>
-					        {{-- <li>
-					            <div class="products">
-									<a href="#">
-										<img class="gambar" src="{{  url('assets/images/produk/roti-tawar-bpu.jpeg')}}" alt="">
-									</a>
-									<a href="#">
-										<h4>Roti Tawar</h4>
-									</a>
-									<p class="price">Rp. 20,000</p>
-									<div >
-										<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Beli</a>
-									</div>
-								</div>	<!-- End of /.products -->
-					        </li>
-					        <li>
+                            <li>
 					            <div class="products">
 									<a href="#">
 										<img class="gambar" src="{{  url('assets/images/produk/roti-imut-bou.jpeg')}}" alt="">
 									</a>
 									<a href="#">
-										<h4>Roti Imut</h4>
+										<h4>Roti Sobek 5 Selai</h4>
 									</a>
 									<p class="price">Rp. 20,000</p>
 									<div >
-										<a class="view-link shutter" href="#">
+										<a class="view-link shutter" href="/nineselai">
 										<i class="fa fa-plus-circle"></i>Beli</a>
 									</div>
-								</div>	<!-- End of /.products -->
+								</div>
 					        </li>
-					        <li>
+                            <li>
 					            <div class="products">
 									<a href="#">
-										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
+										<img class="gambar" src="{{  url('assets/images/produk/roti-imut-bou.jpeg')}}" alt="">
 									</a>
 									<a href="#">
-										<h4>Amazing Italian Sauces</h4>
+										<h4>Roti Sobek - Mix</h4>
 									</a>
-									<p class="price">From: £69.99</p>
-									<div >
-										<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
+									<p class="price">Rp. 20,000</p>
+								    
+                                    <div>
+										<a class="view-link shutter" href="/nineselai-mix">
+										<i class="fa fa-plus-circle"></i>Beli</a>
 									</div>
-								</div>	<!-- End of /.products -->
+								</div>
 					        </li>
-					        <li>
-					            <div class="products">
-									<a href="#">
-										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
-									</a>
-									<a href="#">
-										<h4>Amazing Italian Sauces</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<div >
-										<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-									</div>
-								</div>	<!-- End of /.products -->
-					        </li>
-					        <li>
-					           <div class="products">
-									<a href="#">
-										<img src="{{  url('assets/images/product-image-8.jpg')}}" alt="">
-									</a>
-									<a href="#">
-										<h4>Amazing Italian Sauces</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<div >
-										<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-									</div>
-								</div>	<!-- End of /.products -->
-					        </li> --}}
-					        <!--  ... -->
 					    </ul>
 					</div>	<!-- End of /.products-grid -->
 

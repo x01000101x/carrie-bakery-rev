@@ -29,7 +29,12 @@ class ProdukController extends Controller
 
         return view('order', compact('produks', 'selais', 'topings', 'rotis'));
     }
-
+    
+    public function show_sobek()
+    {
+        $produks = Produk::get();
+        return view('shop_sobek');
+    }
     public function nineselai(Request $request)
     {
         // $produks = Produk::where('id', $id_produk)->get();

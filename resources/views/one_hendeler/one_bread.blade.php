@@ -50,24 +50,29 @@
                         <!-- toping -->
                         <div class="col-3">
                             <div id="topingbin" class="owl-carousel owl-theme">
-                                @foreach($topings as $toping)
+                                @foreach($topings as $key=>$toping)
                                 <div class="item">
-                                    <img src="{{url('/storage/'.$toping->toping_gambar)}}" class="img-fluid" onclick="iponi('{{url('/storage/'.$toping->toping_gambar)}}','img3')">
+                                    <img src="{{url('/storage/'.$toping->toping_gambar)}}" class="img-fluid" onclick="iponi('{{url('/storage/'.$toping->toping_gambar)}}','img3','valimg{{$key}}','toping')">
+                                    <input type="hidden" id="valimg{{$key}}" value="{{$toping->toping_nama}}">                                        
                                 </div>
                                 @endforeach
                             </div>
                         </div>
                         <div class="col-6">
                             <img src="./2.png" id="img1" style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
+                            <input type="text" id="selai_select" value="none">
                             <img src="./1.png" id="img2" style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
+                            <input type="text" id="roti_select" value="none">
                             <img src="./3.png" id="img3" style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 20%;max-height: 50%; object-fit: scale-down;">
+                            <input type="text" id="toping_select" value="none">
                         </div>
                         <!-- selai -->
                         <div class="col-3">
                             <div id="slaybin" class="owl-carousel owl-theme">   
                                 @foreach($selais as $selai)
                                 <div class="item">
-                                    <img src="{{url('/storage/'.$selai->selai_gambar)}}" class="img-fluid" onclick="iponi(`{!!url('/storage/'.$selai->selai_gambar)!!}`,'img1')">
+                                    <img src="{{url('/storage/'.$selai->selai_gambar)}}" class="img-fluid" onclick="iponi(`{!!url('/storage/'.$selai->selai_gambar)!!}`,'img1','selaivalimg{{$key}}','selai')">
+                                    <input type="hidden" id="selaivalimg{{$key}}" value="{{$selai->selai_nama}}">                                        
                                 </div>
                                 @endforeach
                             </div>
@@ -81,7 +86,8 @@
                     <div id="rotibin" class="owl-carousel owl-theme">
                         @foreach($rotis as $roti)
                         <div class="item">
-                            <img src="{{url('/storage/'.$roti->roti_gambar)}}" class="img-fluid" onclick="iponi('{{url('/storage/'.$roti->roti_gambar)}}','img2')">
+                            <img src="{{url('/storage/'.$roti->roti_gambar)}}" class="img-fluid" onclick="iponi('{{url('/storage/'.$roti->roti_gambar)}}','img2','rotivalimg{{$key}}','roti')">
+                            <input type="hidden" id="rotivalimg{{$key}}" value="{{$roti->roti_nama}}">                                        
                         </div>
                         @endforeach
                         <div class="item">
@@ -103,7 +109,7 @@
         -->
         <!-- owl corosel cdn -->
         <script>
-            iponi = (url, pin) => {
+            iponi = (url, pin,race,tipe) => {
                 setTimeout(() => {
                     document.getElementById(pin).src = url;
                     document.getElementById(pin).classList.toggle('animate__hinge');
@@ -111,6 +117,42 @@
                 }, 3000);
                     document.getElementById(pin).classList.toggle('animate__bounceInLeft');
                     document.getElementById(pin).classList.toggle('animate__hinge');
+
+                    var cal=document.getElementById(race).value
+                    console.log(cal,race);
+                    document.getElementById(tipe+'_select').value=cal
+                    var owq=document.getElementById(tipe+'_select').value
+                    console.log(owq,tipe);
+            }
+
+            function ortian(params) {
+                var ras=[]
+                ras=[
+                    document.getElementById('roti_select').value,
+                ]
+            }
+            		// Keranjang
+            var sessionkaranjang=sessionStorage.getItem("karanjang");
+            var karan=[]
+            if (sessionkaranjang!=null) {
+                karan=JSON.parse(sessionkaranjang)                
+            }
+            function pastin() {
+                var kmb_r=document.getElementById('roti_select').value
+                var kmb_s=document.getElementById('selai_select').value
+                // kmb_s=JSON.parse(kmb_s)
+                var kmb_t=document.getElementById('toping_select').value
+                // kmb_t=JSON.parse(kmb_t)
+                var tmb=[
+                    kmb_r,kmb_s,kmb_t
+                ]
+                if (kmb_s.length<1) {
+                    alert('pilihlah 1 roti, Selai, Toping')
+                }else{
+                    karan.push(tmb)
+                    sessionStorage.setItem('karanjang',JSON.stringify(karan))
+                    location.replace('{{url('/shop')}}');
+                }
             }
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
