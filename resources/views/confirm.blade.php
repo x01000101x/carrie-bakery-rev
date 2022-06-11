@@ -222,41 +222,28 @@ background:#eee;
                                 <th>Item Name</th>
                                 <th>Quantity</th>
                                 <th>Unit Price</th>
-                                <th>VAT</th>
                                 <th>Total Price</th>
                             </tr>
                         </thead>
                         <tbody>
+
                             <tr>
                                 <td>
-                                    <div><strong>Unique side and front panel design</strong></div>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+                                    <div><strong>{{ $datas['produk'] }}</strong></div>
+                                    <small>
+                                        <li>Roti : {{ $datas['roti'] }}</li>
+                                        <li>Selai : {{ $datas['selai'] }}</li>
+                                        <li>Toping : {{ $datas['toping'] }}</li>
+
+                                   </small>
                                 </td>
-                                <td>2</td>
-                                <td>$20.00</td>
-                                <td>$3.78</td>
-                                <td>$23,78</td>
+                                <td>{{ $datas['jumlah'] }}</td>
+                                <td> @currency($datas['harga_satuan']) <td>
+                                <td>@currency($datas['harga'])</td>
+
                             </tr>
-                            <tr>
-                                <td>
-                                    <div><strong>Side panel with TAC 2.0 ventilation</strong></div>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                                </td>
-                                <td>2</td>
-                                <td>$67.00</td>
-                                <td>$1.80</td>
-                                <td>$68.80</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div><strong>Mesh front panel design to improve air</strong></div>
-                                    <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                                </td>
-                                <td>3</td>
-                                <td>$335.00</td>
-                                <td>$100.20</td>
-                                <td>$435.20</td>
-                            </tr>
+
+
                         </tbody>
                     </table>
                 </div>
@@ -300,8 +287,6 @@ background:#eee;
             </div>
         </div>
     </div>
-
-   {{ dd($datas['alamat']);}}
 
 
 

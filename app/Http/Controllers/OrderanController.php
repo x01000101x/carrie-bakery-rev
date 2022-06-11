@@ -29,6 +29,8 @@ class OrderanController extends Controller
 
         $datas = [
 
+            'harga_satuan' => $produk->produk_harga,
+
             //Orderan
             'produk' => $produk->produk_nama,
             'roti' => $roti->roti_nama,
