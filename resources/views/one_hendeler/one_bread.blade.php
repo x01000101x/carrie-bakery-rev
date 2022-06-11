@@ -4,9 +4,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-<title>Hello, world!</title>
 <style type="text/css">
-    /* #topingbin {
+    #topingbin {
         transform: rotate(90deg);
         width: 400px;
         margin-top: 200px;
@@ -40,7 +39,7 @@
         position: absolute;
         width: 100%;
         top: calc(50% - 33px);
-    } */
+    }
 </style>
 
 <div class="container">
@@ -50,7 +49,7 @@
                 <div class="row">
                     <!-- toping -->
                     <div class="col-3">
-                        <div id="topingbin" class="owl-carousel ">
+                        <div id="topingbin" class="owl-carousel owl-theme ">
                             @foreach($topings as $key=>$toping)
                             <div class="item">
                                 <img src="{{url('/storage/'.$toping->toping_gambar)}}" class="img-fluid"
@@ -62,18 +61,18 @@
                     </div>
                     <div class="col-6">
                         <img src="./2.png" id="img1"
-                            style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
+                            style="position:absolute;object-fit: scale-down;   min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
                         <input type="hidden" id="selai_select" value="none">
                         <img src="./1.png" id="img2"
-                            style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
+                            style="position:absolute;object-fit: scale-down;   min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
                         <input type="hidden" id="roti_select" value="none">
                         <img src="./3.png" id="img3"
-                            style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 20%;max-height: 50%; object-fit: scale-down;">
+                            style="position:absolute;object-fit: scale-down;   min-width: 40vw;height: 80vh; max-width: 20%;max-height: 50%; object-fit: scale-down;">
                         <input type="hidden" id="toping_select" value="none">
                     </div>
                     <!-- selai -->
                     <div class="col-3">
-                        <div id="slaybin" class="owl-carousel ">
+                        <div id="slaybin" class="owl-carousel owl-theme ">
                             @foreach($selais as $key=>$selai)
                             <div class="item">
                                 <img src="{{url('/storage/'.$selai->selai_gambar)}}" class="img-fluid"
@@ -98,13 +97,12 @@
                                         title="Selai mix Ya mix selainya"></i>
                                 </h3>
                             </div>
-
-                            <script>
+                        </div>
+                        <script>
                                 function ringgo() {
                                     iponi('https://astromesin.com/wp-content/uploads/2018/06/Selai.jpg', 'img1', 'selaivalimg-mix', 'selai')
                                 }
-                            </script>
-                        </div>
+                        </script>
                     </div>
                 </div>
             </div>
@@ -114,25 +112,27 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="exampleModalLabel">Buat 2 rasa Menjadi 1</h5>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" id="tutupmodalnya" style="display: none;"></button>
                     </div>
                     <div class="modal-body">
                         @include('one_hendeler.mixmodal')
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary" onclick="pwaope()">Buat</button>
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <div class="col-3"></div>
-        <div class="col-4">
+        <div class="containercol-12 text-center mt-1 ">
+            <div class="col-12">
+                <button class="btn btn-primary" onclick="pastin()">Order</button>
+            </div>
+        </div>
+        <div class="col-12">
             <!-- roti -->
-            <div id="rotibin" class="owl-carousel ">
+            <div id="rotibin" class="owl-carousel owl-theme ">
                 @foreach($rotis as $roti)
                 <div class="item">
                     <img src="{{url('/storage/'.$roti->roti_gambar)}}" class="img-fluid"
@@ -147,7 +147,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-3"></div>
     </div>
 </div>
 <!-- jquery -->
@@ -166,15 +165,15 @@
             document.getElementById(pin).src = url;
             document.getElementById(pin).classList.toggle('animate__hinge');
             document.getElementById(pin).classList.toggle('animate__bounceInLeft');
-        }, 3000);
+        }, 1500);
         document.getElementById(pin).classList.toggle('animate__bounceInLeft');
         document.getElementById(pin).classList.toggle('animate__hinge');
 
         var cal = document.getElementById(race).value
-        console.log(cal, race);
+        // console.log(cal, race);
         document.getElementById(tipe + '_select').value = cal
         var owq = document.getElementById(tipe + '_select').value
-        console.log(owq, tipe);
+        // console.log(owq, tipe);
     }
 
     function ortian(params) {
@@ -202,7 +201,7 @@
         } else {
             karan.push(tmb)
             sessionStorage.setItem('karanjang', JSON.stringify(karan))
-            location.replace('{{url(' / shop')}}');
+            location.replace("{{url('/shop')}}");
         }
     }
 
@@ -236,6 +235,15 @@
                 document.getElementById(lw).classList.toggle('border-primary')
             }
         }
+
+        document.getElementById('selai_select').value = document.getElementById('mix-1').value + ' MIX ' + document.getElementById('mix-2').value
+        // alert(document.getElementById('selai_select').value)
+    }
+    
+    function pwaope() {
+        var isian=document.getElementById('selai_select').value
+        alert('selai '+isian+' siap di pesan');
+        document.getElementById('tutupmodalnya').click()
     }
 
     function pqw(id) {
@@ -252,7 +260,7 @@
         nav: true,
         responsive: {
             0: {
-                items: 3
+                items: 1
             },
             600: {
                 items: 1
@@ -268,7 +276,7 @@
         nav: true,
         responsive: {
             0: {
-                items: 3
+                items: 1
             },
             600: {
                 items: 1
@@ -284,7 +292,7 @@
         nav: true,
         responsive: {
             0: {
-                items: 3
+                items: 1
             },
             600: {
                 items: 1

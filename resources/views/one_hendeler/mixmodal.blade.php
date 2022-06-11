@@ -39,8 +39,7 @@
             </div>
         </div>
         <div class="card-footer text-muted">
-            Make The Base of Your Life Beautiful With This Bread & Butter Recipe That Will Make You Look
-            Gorgeous And Feel Gorgeous Too :)
+            Kombinasikan Selai Sesukamu
         </div>
     </div>
 </div>
