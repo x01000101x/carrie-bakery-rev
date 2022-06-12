@@ -9,7 +9,7 @@
                             <img src="{!!url('/storage/'.$selai->selai_gambar)!!}" height="100px" class="card-img-top" id="binsel{{$key+1}}img">
                             <div class="card-body">
                                 <p class="card-title btn btn-outline-dark">{{$selai->selai_nama}}</p>
-                                <input type="hidden" id="binsel{{$key+1}}value" value="{{$selai->selai_nama}}.">
+                                <input type="hidden" id="binsel{{$key+1}}value" value="{{$selai->selai_nama}}">
                             </div>
                         </div>
                     </div>

@@ -22,6 +22,7 @@ class ProdukController extends Controller
     {
         if (!empty($_POST['orderanjson'])) {
             $orderanjson =json_decode($_POST['orderanjson']);
+            // dd($orderanjson);
             foreach ($orderanjson as $key => $las) {
                 $arcana=$this->countingroti($las[0]);
                 $orderanjson[$key][0]=$arcana;
