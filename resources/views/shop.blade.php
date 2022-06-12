@@ -267,7 +267,19 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav nav-main">
 					<li><a href="{{ url('/'); }}">HOME</a></li>
-					<li class="active"><a href="{{ url('shop'); }}">SHOP</a></li>
+                    <li class="dropdown active">
+						<a href="{{ url('shop'); }}">
+							SHOP
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+						   <li><a  href="{{ url('shop'); }}">Breads</a></li>
+						    <li><a  href="#">Indonesian Culinaries</a></li>
+						    <li><a  href="#">Beverages</a></li>
+						    <li><a  href="#">Jams</a></li>
+						</ul>
+					</li> <!-- End of /.dropdown -->
+
 					{{-- <li><a href="blog.html">BLOG</a></li>
 					<li><a href="blog-single.html">ARTICLE</a></li>
 					<li class="dropdown">
@@ -452,7 +464,7 @@
 
 							</ul>
 							<div class="container">
-								<form action="{{url('/chekout')}}" method="post">
+								<form action="{{url('/checkout')}}" method="post">
 									@csrf
 									<input type="hidden" id="allpas" name="orderanjson">
 									<button type="submit" class="btn btn-primary">Order All</button>
@@ -466,7 +478,7 @@
 								var value=sessionStorage.getItem('karanjang');
 								alert(value);
 								if (value != null) {
-									document.getElementById('allpas').value=value;	
+									document.getElementById('allpas').value=value;
 								}
 							}
 							valueofchar()
@@ -742,3 +754,5 @@
 </body>
 
 </html>
+
+

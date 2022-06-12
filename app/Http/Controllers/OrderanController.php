@@ -87,4 +87,9 @@ class OrderanController extends Controller
         // Session::flash('message', "Special message goes here");
         // return redirect()->route('shop')->with('success', 'berhasil dipesan');
     }
+
+    public function checkout()
+    {
+        return view('form-pesan');
+    }
 }

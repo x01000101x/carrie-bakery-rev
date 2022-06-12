@@ -278,7 +278,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<h1>ORDER</h1>
+					<h1>Checkout</h1>
 					<p>A Bunch Of Products</p>
 				</div>	<!-- End of /.col-md-4 -->
 				<div class="col-md-8 hidden-xs">
@@ -300,70 +300,39 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
+                                <div class="products-heading">
+                                    <h2>INFO PEMESAN</h2>
+                                </div>	<!-- End of /.Products-heading -->
 
-					 <div class="products-heading">
-						<h2>ORDER</h2>
-					</div>	<!-- End of /.Products-heading -->
-					<div class="product-grid">
-
-
-                            @foreach ($produks as $produk)
-                            <img style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">
-                            <h1 style="text-align: center">{{ $produk->produk_nama }}</h1>
-                            <div class="form-group">
-                                <input type="text" name="gambar" value="{{ $produk->produk_gambar }}" hidden>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="produk_nama">Nama Produk</label>
-                                <input type="text" name="produk_nama" class="form-control" id="produk_nama" value="{{ $produk->produk_nama }}" disabled>
-                                <input type="hidden" name="produk_id" class="form-control" id="produk_id"  value="{{ $produk->id }}">
-                                {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
-                            </div>
-                            @endforeach
-
-                            <div class="form-group">
-                                <label for="roti">Roti</label>
-                                <select class="form-control" id="roti" name="roti" required>
-                                    <option selected>Pilih roti</option>
-                                    @foreach ($rotis as $roti)
-                                    <option value="{{ $roti->id }}">{{ $roti->roti_nama }}</option>
-                                     @endforeach
-
-
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="selai">Selai</label>
-                            <select class="form-control" id="selai" name="selai" required>
-                                  <option selected>Pilih selai</option>
-                                  @foreach ($selais as $selai)
-                                  <option id="selai_id" value="{{ $selai->id }}">{{ $selai->selai_nama }}</option>
-                                  @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="toping">Toping</label>
-                                <select class="form-control" id="toping" name="toping" required>
-                                    <option selected>Pilih toping</option>
-                                    <option>Tidak ada</option>
-                                    @foreach ($topings as $toping)
-
-                                    <option id="toping_id" value="{{ $toping->id }}">{{ $toping->toping_nama }}</option>
-
-                                    @endforeach
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                  <label for="jumlah">Jumlah</label>
-                                  <input type="number" name="jumlah" min="1" class="form-control" id="jumlah" aria-describedby="jumlah" required>
-                                  {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                                <div class="form-group">
+                                    <label for="nama_pemesan">Nama Pemesan</label>
+                                    <input type="text" name="nama_pemesan" class="form-control" id="nama_pemesan" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="notelp">Nomor Telp. Pemesan</label>
+                                    <input type="text" name="notelp" class="form-control" id="notelp" required>
+                                </div>  <div class="form-group">
+                                    <label for="alamat">Alamat Pemesan</label>
+                                    <input type="text" name="alamat" class="form-control" id="alamat" required>
                                 </div>
 
-                            <button onclick="pastin()" class="btn btn-success">Masukkan ke keranjang</button>
+                                <div class="form-group">
+                                  <label for="myCheck">Dropshipper</label>
+                                  <br>
+
+                                    <input name="myCheck" type="checkbox" id="myCheck" onclick="myFunction()">
+                                    <br><br>
+                                    <label id="label_pengirim" style="display:none" for="nama_pengirim">Nama pengirim</label>
+
+
+                                  <input type="text" style="display:none" name="nama_pengirim" class="form-control" id="nama_pengirim" aria-describedby="nama_pengirim">
+
+
+                                </div>
+                            <button type="submit" class="btn btn-success">Pesan</button>
                             <a href="/shop" class="btn btn-danger">Batal</a>
 
-
+                        </form>
                           <br><br>
                           {{-- <ul>
                               <li>
@@ -708,31 +677,6 @@ function myFunction() {
 
   }
 }
-</script>
-
-<script>
-   var sessionkaranjang = sessionStorage.getItem("karanjang");
-   var karan = []
-   if (sessionkaranjang != null) {
-       karan = JSON.parse(sessionkaranjang)
-   }
-
-   function pastin() {
-       var roti_id = document.getElementById('roti_id').value
-       var roti_nama = document.getElementById('roti_nama').value
-       var roti = document.getElementById('roti').value
-       var selai = document.getElementById('selai').value
-       var toping = document.getElementById('toping').value
-       var jumlah = document.getElementById('jumlah').value
-
-       var tmb = [
-           roti_id, roti_nama, roti, selai, toping, jumlah
-       ]
-           karan.push(tmb)
-           sessionStorage.setItem('karanjang', JSON.stringify(karan))
-           location.replace("{{url('/shop')}}");
-       }
-   }
 </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
