@@ -513,7 +513,7 @@
             karan=JSON.parse(sessionkaranjang)                
         }
         function pastin() {
-            var kmb_r='Roti Sobek'
+            var kmb_r='Sobek'
             var kmb_s=document.getElementById('kombinasi_rasa').value
             kmb_s=JSON.parse(kmb_s)
             var kmb_t=document.getElementById('kombinasi_toping').value

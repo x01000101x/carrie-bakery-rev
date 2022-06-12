@@ -190,7 +190,7 @@
     }
 
     function pastin() {
-        var kmb_r = 'Roti ' + document.getElementById('roti_select').value
+        var kmb_r = document.getElementById('roti_select').value
         var kmb_s = document.getElementById('selai_select').value
         var kmb_t = document.getElementById('toping_select').value
         var tmb = [

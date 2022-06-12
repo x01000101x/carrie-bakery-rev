@@ -30,7 +30,7 @@ class ProdukController extends Controller
                 $orderanjson[$key][2]=$arcana;
             }
         }
-        dd($orderanjson);
+        // dd($orderanjson);
         // $produks = Produk::get();
         return view('Agus_Chekout.cek');
     }
