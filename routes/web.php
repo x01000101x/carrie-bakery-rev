@@ -34,7 +34,7 @@ Route::post('/nineorder', [ProdukController::class, 'nineorder'])->name('nineord
 Route::get('/oneselai', [ProdukController::class, 'oneselai']);
 Route::get('/play', [ProdukController::class, 'show']);
 Route::get('/rotisobek', [ProdukController::class, 'show_sobek']);
-
+Route::any('/chekout', [ProdukController::class, 'lgarinchekout']);
 
 //Vendor Here
 Route::middleware([

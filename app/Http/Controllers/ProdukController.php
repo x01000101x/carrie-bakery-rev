@@ -15,9 +15,40 @@ class ProdukController extends Controller
     public function show()
     {
         $produks = Produk::get();
-
         return view('shop', compact('produks'));
     }
+
+    public function lgarinchekout()
+    {
+        if (!empty($_POST['orderanjson'])) {
+            $orderanjson =json_decode($_POST['orderanjson']);
+            foreach ($orderanjson as $key => $las) {
+                $arcana=$this->countingroti($las[0]);
+                $orderanjson[$key][0]=$arcana;
+
+                $arcana=$this->countingtoping($las[2]);
+                $orderanjson[$key][2]=$arcana;
+            }
+        }
+        dd($orderanjson);
+        // $produks = Produk::get();
+        return view('Agus_Chekout.cek');
+    }
+
+    public function countingroti($roti)
+    {
+        $rotinya=Roti::where('roti_nama', $roti)->first();
+        $roti=['harga'=>$rotinya->roti_harga,'nama'=>$roti];
+        return $roti;
+    }
+
+    public function countingtoping($toping)
+    {
+        $topingnya=Toping::where('toping_nama', $toping)->first();
+        $toping=['harga'=>$topingnya->toping_harga,'nama'=>$toping];
+        return $toping;
+    }
+
     public function show2(Request $request)
     {
         $id_produk = $request->route('id');
