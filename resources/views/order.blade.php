@@ -719,15 +719,16 @@ function myFunction() {
 
    function pastin() {
        var produk_id = document.getElementById('produk_id').value
-       var produk_namat = document.getElementById('produk_nama').value
+       var produk_nama = document.getElementById('produk_nama').value
        var roti = document.getElementById('roti').value
        var selai = document.getElementById('selai').value
        var toping = document.getElementById('toping').value
        var jumlah = document.getElementById('jumlah').value
 
+
        var tmb = [
            produk_id,
-           produk_namat, roti, selai, toping, jumlah
+           produk_nama, roti, selai, toping, jumlah
        ]
        console.log(tmb);
            idk.push(tmb)

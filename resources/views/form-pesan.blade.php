@@ -303,10 +303,23 @@
                                 <div class="products-heading">
                                     <h2>INFO PEMESAN</h2>
                                 </div>	<!-- End of /.Products-heading -->
-
                                 <form method="POST" action="/confirm">
+                                    @csrf
 
-                                    <input type="hidden" name="" value="{{ }}">
+                                    @foreach( $orderanjson as $json )
+
+                                    <input type="hidden" name="produk_id[{{ $json[0] }}]" value="{{ $json[0] }}">
+                                    <input type="hidden" name="produk_nama[{{ $json[0] }}]" value="{{ $json[1] }}">
+                                    <input type="hidden" name="roti[{{ $json[0] }}]" value="{{ $json[2] }}">
+                                    <input type="hidden" name="selai[{{ $json[0] }}]" value="{{ $json[3] }}">
+                                    <input type="hidden" name="toping[{{ $json[0] }}]" value="{{ $json[4] }}">
+                                    <input type="hidden" name="jumlah[{{ $json[0] }}]" value="{{ $json[5] }}">
+
+
+
+                                    @endforeach
+
+                                    <input type="hidden" name="" value="">
 
                                     <div class="form-group">
                                         <label for="nama_pemesan">Nama Pemesan</label>

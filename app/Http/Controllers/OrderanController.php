@@ -16,38 +16,42 @@ class OrderanController extends Controller
 
     public function confirm(Request $request)
     {
-        $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id)->first();
-        $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('id', $request->roti)->first();
-        $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->first();
-        $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->first();
+        foreach ($request->produk_id as $key => $produk_id) {
 
-        $rumus =
-            ($produk->produk_harga * $request->jumlah) +
-            ($roti->roti_harga * $request->jumlah) +
-            ($selai->selai_harga * $request->jumlah) +
-            ($toping->toping_harga * $request->jumlah);
+            dd($key);
+            $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id[$key])->first();
+            $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $request->roti[$key])->first();
+            $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $request->selai)->first();
+            $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $request->toping)->first();
 
-        $datas = [
+            $rumus =
+                ($produk->produk_harga * $request->jumlah) +
+                ($roti->roti_harga * $request->jumlah) +
+                ($selai->selai_harga * $request->jumlah) +
+                ($toping->toping_harga * $request->jumlah);
+            // Create/update query.
 
-            'harga_satuan' => $produk->produk_harga,
+            $datas = [
 
-            //Orderan
-            'produk' => $produk->produk_nama,
-            'roti' => $roti->roti_nama,
-            'selai' => $selai->selai_nama,
-            'toping' => $toping->toping_nama,
-            'jumlah' => $request->jumlah,
-            'harga' => $rumus,
-            'gambar' => $request->gambar,
+                'harga_satuan' => $produk->produk_harga,
 
-            //Info pemesan
-            'pembeli' => $request->nama_pemesan,
-            'notelp' => $request->notelp,
-            'alamat' => $request->alamat,
-            'dropship' => $request->myCheck,
-            'pengirim' => $request->nama_pengirim
-        ];
+                //Orderan
+                'produk' => $produk->produk_nama,
+                'roti' => $roti->roti_nama,
+                'selai' => $selai->selai_nama,
+                'toping' => $toping->toping_nama,
+                'jumlah' => $request->jumlah,
+                'harga' => $rumus,
+                // 'gambar' => $request->gambar,
 
+                //Info pemesan
+                'pembeli' => $request->nama_pemesan,
+                'notelp' => $request->notelp,
+                'alamat' => $request->alamat,
+                'dropship' => $request->myCheck,
+                'pengirim' => $request->nama_pengirim
+            ];
+        }
         return view('confirm', compact('datas'));
     }
 
@@ -91,7 +95,7 @@ class OrderanController extends Controller
     public function checkout()
     {
         if (!empty($_POST['orderanjson'])) {
-            $orderans = json_decode($_POST['orderanjson']);
+            $orderanjson = json_decode($_POST['orderanjson']);
             // dd($orderanjson);
             // foreach ($orderanjson as $key => $las) {
             //     $arcana = $this->countingroti($las[0]);
@@ -103,7 +107,8 @@ class OrderanController extends Controller
         }
         // dd($orderanjson);
         // $produks = Produk::get();
-        return view('form-pesan', compact('orderans'));
+
+        return view('form-pesan', compact('orderanjson'));
     }
 
     public function breads()
