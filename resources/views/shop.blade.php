@@ -274,7 +274,7 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-						   <li><a  href="{{ url('shop'); }}">Breads</a></li>
+						   <li><a  href="{{ url('breads'); }}">Breads</a></li>
 						    <li><a  href="{{ url('indonesian') }}">Indonesian Culinaries</a></li>
 						    <li><a  href="{{ url('beverages') }}">Beverages</a></li>
 						    <li><a  href="{{ url('jams') }}">Jams</a></li>
