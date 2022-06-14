@@ -90,6 +90,47 @@ class OrderanController extends Controller
 
     public function checkout()
     {
-        return view('form-pesan');
+        if (!empty($_POST['orderanjson'])) {
+            $orderans = json_decode($_POST['orderanjson']);
+            // dd($orderanjson);
+            // foreach ($orderanjson as $key => $las) {
+            //     $arcana = $this->countingroti($las[0]);
+            //     $orderanjson[$key][0] = $arcana;
+
+            //     $arcana = $this->countingtoping($las[2]);
+            //     $orderanjson[$key][2] = $arcana;
+            // }
+        }
+        // dd($orderanjson);
+        // $produks = Produk::get();
+        return view('form-pesan', compact('orderans'));
+    }
+
+    public function breads()
+    {
+        $breads = Produk::select('id', 'produk_nama', 'produk_harga', 'kategori')->where('kategori', 'breads')->get();
+
+        return view('breads', compact('breads'));
+    }
+
+    public function indonesian()
+    {
+        $indonesian = Produk::select('id', 'produk_nama', 'produk_harga', 'kategori')->where('kategori', 'indonesian')->get();
+
+        return view('indonesian', compact('indonesian'));
+    }
+
+    public function beverages()
+    {
+        $beverages = Produk::select('id', 'produk_nama', 'produk_harga', 'kategori')->where('kategori', 'beverages')->get();
+
+        return view('beverages', compact('beverages'));
+    }
+
+    public function jams()
+    {
+        $jams = Produk::select('id', 'produk_nama', 'produk_harga', 'kategori')->where('kategori', 'jams')->get();
+
+        return view('jams', compact('jams'));
     }
 }

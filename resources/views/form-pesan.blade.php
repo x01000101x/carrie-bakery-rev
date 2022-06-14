@@ -304,8 +304,12 @@
                                     <h2>INFO PEMESAN</h2>
                                 </div>	<!-- End of /.Products-heading -->
 
-                                <div class="form-group">
-                                    <label for="nama_pemesan">Nama Pemesan</label>
+                                <form method="POST" action="/confirm">
+
+                                    <input type="hidden" name="" value="{{ }}">
+
+                                    <div class="form-group">
+                                        <label for="nama_pemesan">Nama Pemesan</label>
                                     <input type="text" name="nama_pemesan" class="form-control" id="nama_pemesan" required>
                                 </div>
                                 <div class="form-group">
@@ -317,20 +321,21 @@
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="myCheck">Dropshipper</label>
-                                  <br>
+                                    <label for="myCheck">Dropshipper</label>
+                                    <br>
 
                                     <input name="myCheck" type="checkbox" id="myCheck" onclick="myFunction()">
                                     <br><br>
                                     <label id="label_pengirim" style="display:none" for="nama_pengirim">Nama pengirim</label>
 
 
-                                  <input type="text" style="display:none" name="nama_pengirim" class="form-control" id="nama_pengirim" aria-describedby="nama_pengirim">
+                                    <input type="text" style="display:none" name="nama_pengirim" class="form-control" id="nama_pengirim" aria-describedby="nama_pengirim">
 
 
                                 </div>
-                            <button type="submit" class="btn btn-success">Pesan</button>
-                            <a href="/shop" class="btn btn-danger">Batal</a>
+                                <button type="submit" class="btn btn-success">Pesan</button>
+                                <a href="/shop" class="btn btn-danger">Batal</a>
+                            </form>
 
                         </form>
                           <br><br>

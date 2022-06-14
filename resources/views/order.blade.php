@@ -327,7 +327,7 @@
                                 <select class="form-control" id="roti" name="roti" required>
                                     <option selected>Pilih roti</option>
                                     @foreach ($rotis as $roti)
-                                    <option value="{{ $roti->id }}">{{ $roti->roti_nama }}</option>
+                                    <option value="{{ $roti->roti_nama }}">{{ $roti->roti_nama }}</option>
                                      @endforeach
 
 
@@ -338,7 +338,7 @@
                             <select class="form-control" id="selai" name="selai" required>
                                   <option selected>Pilih selai</option>
                                   @foreach ($selais as $selai)
-                                  <option id="selai_id" value="{{ $selai->id }}">{{ $selai->selai_nama }}</option>
+                                  <option id="selai_id" value="{{ $selai->selai_nama }}">{{ $selai->selai_nama }}</option>
                                   @endforeach
                                 </select>
                             </div>
@@ -349,7 +349,7 @@
                                     <option>Tidak ada</option>
                                     @foreach ($topings as $toping)
 
-                                    <option id="toping_id" value="{{ $toping->id }}">{{ $toping->toping_nama }}</option>
+                                    <option id="toping_id" value="{{ $toping->toping_nama }}">{{ $toping->toping_nama }}</option>
 
                                     @endforeach
                                 </select>
@@ -712,27 +712,29 @@ function myFunction() {
 
 <script>
    var sessionkaranjang = sessionStorage.getItem("karanjang");
-   var karan = []
+   var idk = []
    if (sessionkaranjang != null) {
-       karan = JSON.parse(sessionkaranjang)
+       idk = JSON.parse(sessionkaranjang)
    }
 
    function pastin() {
-       var roti_id = document.getElementById('roti_id').value
-       var roti_nama = document.getElementById('roti_nama').value
+       var produk_id = document.getElementById('produk_id').value
+       var produk_namat = document.getElementById('produk_nama').value
        var roti = document.getElementById('roti').value
        var selai = document.getElementById('selai').value
        var toping = document.getElementById('toping').value
        var jumlah = document.getElementById('jumlah').value
 
        var tmb = [
-           roti_id, roti_nama, roti, selai, toping, jumlah
+           produk_id,
+           produk_namat, roti, selai, toping, jumlah
        ]
-           karan.push(tmb)
-           sessionStorage.setItem('karanjang', JSON.stringify(karan))
+       console.log(tmb);
+           idk.push(tmb)
+           sessionStorage.setItem('karanjang', JSON.stringify(idk))
            location.replace("{{url('/shop')}}");
        }
-   }
+
 </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

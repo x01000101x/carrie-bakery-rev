@@ -336,23 +336,23 @@
 					<div class="product-grid">
 						<ul>
 							<form action="/order" method="POST"></form>
-							@foreach ($produks as $produk)
+							@foreach ($breads as $bread)
 							<li>
 								<div class="products">
 									<a href="#">
-										<img class="gambar" src="{{  Voyager::image($produk->produk_gambar)}}" alt="">
+										<img class="gambar" src="{{  Voyager::image($bread->produk_gambar)}}" alt="">
 									</a>
 									<a href="#">
-										<h4>{{ $produk->produk_nama }}</h4>
+										<h4>{{ $bread->produk_nama }}</h4>
 									</a>
-									<p class="price">@currency($produk->produk_harga) </p>
+									<p class="price">@currency($bread->produk_harga) </p>
 									<div>
-										@if($produk->link_blass!=null)
-										<a class="view-link shutter" href="{!! url($produk->link_blass) !!}">
+										@if($bread->link_blass!=null)
+										<a class="view-link shutter" href="{!! url($bread->link_blass) !!}">
 											<i class="fa fa-plus-circle"></i>Order
 										</a>
 										@else
-										<a class="view-link shutter" href="/order/{{ $produk->id }}">
+										<a class="view-link shutter" href="/order/{{ $bread->id }}">
 											<i class="fa fa-plus-circle"></i>Beli
 										</a>
 										@endif
