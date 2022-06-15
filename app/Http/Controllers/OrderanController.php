@@ -16,43 +16,55 @@ class OrderanController extends Controller
 
     public function confirm(Request $request)
     {
-        foreach ($request->produk_id as $key => $produk_id) {
+        // foreach ($request->orderan as $json) {
+        //     var_dump($json[0]);
+        // }
 
-            dd($key);
-            $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id[$key])->first();
-            $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $request->roti[$key])->first();
-            $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $request->selai)->first();
-            $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $request->toping)->first();
+        $orders = $request->orders;
+        $order = json_decode($orders);
 
-            $rumus =
-                ($produk->produk_harga * $request->jumlah) +
-                ($roti->roti_harga * $request->jumlah) +
-                ($selai->selai_harga * $request->jumlah) +
-                ($toping->toping_harga * $request->jumlah);
-            // Create/update query.
 
-            $datas = [
-
-                'harga_satuan' => $produk->produk_harga,
-
-                //Orderan
-                'produk' => $produk->produk_nama,
-                'roti' => $roti->roti_nama,
-                'selai' => $selai->selai_nama,
-                'toping' => $toping->toping_nama,
-                'jumlah' => $request->jumlah,
-                'harga' => $rumus,
-                // 'gambar' => $request->gambar,
-
-                //Info pemesan
-                'pembeli' => $request->nama_pemesan,
-                'notelp' => $request->notelp,
-                'alamat' => $request->alamat,
-                'dropship' => $request->myCheck,
-                'pengirim' => $request->nama_pengirim
-            ];
+        foreach ($order as $ord) {
+            dd($ord[0]);
         }
-        return view('confirm', compact('datas'));
+
+        $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id)->get();
+        $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $request->roti)->first();
+        $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $request->selai)->first();
+        $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $request->toping)->first();
+
+
+        // dd($order[0]);
+
+        $rumus =
+            ($produk->produk_harga * $request->jumlah) +
+            ($roti->roti_harga * $request->jumlah) +
+            ($selai->selai_harga * $request->jumlah) +
+            ($toping->toping_harga * $request->jumlah);
+        // Create/update query.
+
+        $datas = [
+
+            'harga_satuan' => $produk->produk_harga,
+
+            //Orderan
+            'produk' => $produk->produk_nama,
+            'roti' => $roti->roti_nama,
+            'selai' => $selai->selai_nama,
+            'toping' => $toping->toping_nama,
+            'jumlah' => $request->jumlah,
+            'harga' => $rumus,
+            // 'gambar' => $request->gambar,
+
+            //Info pemesan
+            'pembeli' => $request->nama_pemesan,
+            'notelp' => $request->notelp,
+            'alamat' => $request->alamat,
+            'dropship' => $request->myCheck,
+            'pengirim' => $request->nama_pengirim
+        ];
+
+        return view('confirm', compact('datas', 'order'));
     }
 
     public function store(Request $request)

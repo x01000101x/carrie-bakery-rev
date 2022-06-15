@@ -306,20 +306,13 @@
                                 <form method="POST" action="/confirm">
                                     @csrf
 
-                                    @foreach( $orderanjson as $json )
+                                    <input type="hidden" name="orders" value="{{ json_encode($orderanjson) }}">
 
-                                    <input type="hidden" name="produk_id[{{ $json[0] }}]" value="{{ $json[0] }}">
-                                    <input type="hidden" name="produk_nama[{{ $json[0] }}]" value="{{ $json[1] }}">
-                                    <input type="hidden" name="roti[{{ $json[0] }}]" value="{{ $json[2] }}">
-                                    <input type="hidden" name="selai[{{ $json[0] }}]" value="{{ $json[3] }}">
-                                    <input type="hidden" name="toping[{{ $json[0] }}]" value="{{ $json[4] }}">
-                                    <input type="hidden" name="jumlah[{{ $json[0] }}]" value="{{ $json[5] }}">
+{{-- @foreach ($orderanjson as $json ) --}}
+                                    {{-- <input type="hidden" name="orders" value="{{ json_encode($json) }}"> --}}
+{{-- @endforeach --}}
 
-
-
-                                    @endforeach
-
-                                    <input type="hidden" name="" value="">
+                                    {{-- <input type="hidden" name="orderan[]" value="{{ $orderanjson }}" multiple> --}}
 
                                     <div class="form-group">
                                         <label for="nama_pemesan">Nama Pemesan</label>

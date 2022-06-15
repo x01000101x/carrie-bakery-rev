@@ -335,7 +335,7 @@
 					</div> <!-- End of /.Products-heading -->
 					<div class="product-grid">
 						<ul>
-							<form action="/order" method="POST"></form>
+							<form action="/order" method="POST">
 							@foreach ($breads as $bread)
 							<li>
 								<div class="products">
