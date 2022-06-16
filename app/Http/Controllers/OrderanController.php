@@ -24,23 +24,42 @@ class OrderanController extends Controller
         $order = json_decode($orders);
 
 
+        // foreach ($order as $tes) {
+
+        //     // $ppk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $mmk[5])->get()->toArray();
+        //     // var_dump($ppk);
+
+        // }
+
+        $keys = array_keys($order);
+        for ($i = 0; $i < count($order); $i++) {
+            foreach ($order[$keys[$i]] as $key => $value) {
+                echo  $value . "<br>";
+            }
+        }
         foreach ($order as $ord) {
-            dd($ord[0]);
+
+            $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $ord[5])->first();
+            $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $ord[2])->first();
+            $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $ord[3])->first();
+            $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $ord[4])->first();
+            $rumus =
+                ($produk->produk_harga * $ord[5]) +
+                ($roti->roti_harga * $ord[5]) +
+                ($selai->selai_harga * $ord[5]) +
+                ($toping->toping_harga * $ord[5]);
         }
 
-        $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id)->get();
-        $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $request->roti)->first();
-        $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $request->selai)->first();
-        $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $request->toping)->first();
+
+        // dd($order);
+        // foreach ($order as $ord) {
+        //     dd($ord);
+        // }
+
 
 
         // dd($order[0]);
 
-        $rumus =
-            ($produk->produk_harga * $request->jumlah) +
-            ($roti->roti_harga * $request->jumlah) +
-            ($selai->selai_harga * $request->jumlah) +
-            ($toping->toping_harga * $request->jumlah);
         // Create/update query.
 
         $datas = [

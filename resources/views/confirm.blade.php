@@ -241,6 +241,8 @@ background:#eee;
                                 <td> @currency($datas['harga_satuan']) <td>
                                 <td>@currency($datas['harga'])</td>
 
+                                @dump($datas)
+
                             </tr>
 
 
