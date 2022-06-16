@@ -13,11 +13,57 @@ use Illuminate\Http\Request;
 
 class OrderanController extends Controller
 {
-
+    // aku agak rubah ini versiku ya
     public function confirm(Request $request)
+    {   
+        $request->json_data=json_decode($request->json_data);
+        // dd($_POST);
+        foreach ($request->json_data as $key => $pdk) {
+            // dd($produk,$request->json_data);
+            $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $pdk[0])->first();
+            $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $pdk[2])->first();
+            $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $pdk[3])->first();
+            $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $pdk[4])->first();
+
+            $rumus =
+                ($produk->produk_harga * $pdk[5]) +
+                ($roti->roti_harga * $pdk[5]) +
+                // ($toping->toping_harga * $pdk[5]) +
+                ($selai->selai_harga * $pdk[5]) ;
+
+            // Create/update query.
+
+            // dd($data=['request'=>$pdk,'produk'=>$produk,'roti'=>$roti,'selai'=>$selai,'toping'=>$toping,'rumus'=>$rumus]);
+
+            
+            $datas[$key] = [
+
+                'harga_satuan' => $produk->produk_harga,
+
+                //Orderan
+                'produk' => $produk->produk_nama,
+                'roti' => $roti->roti_nama,
+                'selai' => $selai->selai_nama,
+                // 'toping' => $toping->toping_nama,
+                'jumlah' => $pdk[5],
+                'harga' => $rumus,
+                // 'gambar' => $request->gambar,
+
+                //Info pemesan
+                'pembeli' => $request->nama_pemesan,
+                'notelp' => $request->notelp,
+                'alamat' => $request->alamat,
+                'dropship' => $request->myCheck,
+                'pengirim' => $request->nama_pengirim
+            ];
+        }
+        // dd($datas);
+        return view('confirm', compact('datas'));
+    }
+
+    public function confirmleo(Request $request)
     {
         foreach ($request->produk_id as $key => $produk_id) {
-
             dd($key);
             $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id[$key])->first();
             $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $request->roti[$key])->first();

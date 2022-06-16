@@ -477,11 +477,12 @@
 
 							function valueofchar(){
 								var value=sessionStorage.getItem('karanjang');
-								alert(value);
+								// alert(value);
 								if (value != null) {
 									document.getElementById('allpas').value=value;
 								}
 							}
+							
 							valueofchar()
 
 							var html_blass = ``

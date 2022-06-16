@@ -305,7 +305,7 @@
                                 </div>	<!-- End of /.Products-heading -->
                                 <form method="POST" action="/confirm">
                                     @csrf
-
+									<input type="text" name="json_data" value="{{json_encode($orderanjson)}}">
                                     @foreach( $orderanjson as $json )
 
                                     <input type="hidden" name="produk_id[{{ $json[0] }}]" value="{{ $json[0] }}">

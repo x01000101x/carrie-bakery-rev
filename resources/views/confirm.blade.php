@@ -181,19 +181,19 @@ background:#eee;
                     <div class="col-md-6 col-sm-6 text-left">
                         <h4><strong>Detail</strong> Pesanan</h4>
                         <ul class="list-unstyled">
-                            <li><strong>Nama:</strong> {{ $datas['pembeli'] }}</li>
-                            <li><strong>Alamat:</strong> {{ $datas['alamat'] }}</li>
-                            <li><strong>No. Telp:</strong> {{ $datas['notelp'] }}</li>
+                            <li><strong>Nama:</strong> {{ $datas[0]['pembeli'] }}</li>
+                            <li><strong>Alamat:</strong> {{ $datas[0]['alamat'] }}</li>
+                            <li><strong>No. Telp:</strong> {{ $datas[0]['notelp'] }}</li>
                             <li><strong>Dropship:</strong>
-                                @if($datas['dropship'] == null)
+                                @if($datas[0]['dropship'] == null)
                                 {{ "Tidak" }}
                                 @else
                                 {{ "Ya" }}
                                 @endif <li>
-                            <li><strong>Nama pengirim (untuk dropshipper):</strong> @if($datas['pengirim'] == null)
+                            <li><strong>Nama pengirim (untuk dropshipper):</strong> @if($datas[0]['pengirim'] == null)
                                 {{ "-" }}
                                 @else
-                                {{ $datas['pengirim'] }}
+                                {{ $datas[0]['pengirim'] }}
                                 @endif <li>
 {{-- Hello --}}
                             {{-- <li><strong>Last Name:</strong> Doe</li>
@@ -226,24 +226,29 @@ background:#eee;
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $total = 0;
+                            @endphp
+                            @foreach($datas as $key=>$data)
+                                <tr>
+                                    <td>
+                                        <div><strong>{{ $data['produk'] }}</strong></div>
+                                        <small>
+                                            <li>Roti : {{ $data['roti'] }}</li>
+                                            <li>Selai : {{ $data['selai'] }}</li>
+                                            {{-- <li>Toping : {{ $data['toping'] }}</li> --}}
 
-                            <tr>
-                                <td>
-                                    <div><strong>{{ $datas['produk'] }}</strong></div>
-                                    <small>
-                                        <li>Roti : {{ $datas['roti'] }}</li>
-                                        <li>Selai : {{ $datas['selai'] }}</li>
-                                        <li>Toping : {{ $datas['toping'] }}</li>
-
-                                   </small>
-                                </td>
-                                <td>{{ $datas['jumlah'] }}</td>
-                                <td> @currency($datas['harga_satuan']) <td>
-                                <td>@currency($datas['harga'])</td>
-
-                            </tr>
-
-
+                                    </small>
+                                    </td>
+                                    <td>{{ $data['jumlah'] }}</td>
+                                    <td> @currency($data['harga_satuan']) <td>
+                                    <td>@currency($data['harga'])</td>
+                                </tr>
+                                @php
+                                    $total += $data['harga'];
+                                @endphp
+                            @endforeach
+                            <tr>Total Seluruh : @currency($total)</tr>
                         </tbody>
                     </table>
                 </div>
