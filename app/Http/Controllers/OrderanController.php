@@ -31,12 +31,12 @@ class OrderanController extends Controller
 
         // }
 
-        $keys = array_keys($order);
-        for ($i = 0; $i < count($order); $i++) {
-            foreach ($order[$keys[$i]] as $key => $value) {
-                echo  $value . "<br>";
-            }
-        }
+        // $keys = array_keys($order);
+        // for ($i = 0; $i < count($order); $i++) {
+        //     foreach ($order[$keys[$i]] as $key => $value) {
+        //         echo  $value . "<br>";
+        //     }
+        // }
         foreach ($order as $ord) {
 
             $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $ord[5])->first();
