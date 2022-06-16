@@ -235,7 +235,7 @@ background:#eee;
                                         <small>
                                             <li>Roti : {{ $data['roti'] }}</li>
                                             <li>Selai : {{ $data['selai'] }}</li>
-                                            {{-- <li>Toping : {{ $data['toping'] }}</li> --}}
+                                            <li>Toping : {{ $data['toping'] }}</li>
 
                                     </small>
                                     </td>
@@ -285,15 +285,25 @@ background:#eee;
 
         <div class="panel panel-default text-right">
             <div class="panel-body">
-                <a class="btn btn-warning" href="#"><i class="fa fa-pencil-square-o"></i> EDIT</a>
-                <a class="btn btn-primary" href="#"><i class="fa fa-check"></i> SAVE</a>
-                <a class="btn btn-success" href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
+                <form action="/pesan" method="POST">
+                    @csrf
+                    <input type="hidden" name="orderan" value="{{ json_encode($orderanjson) }}">
+                    <input type="hidden" name="nama_pemesan" value="{{ $pemesan  }}">
+                    <input type="hidden" name="notelp" value="{{ $notelp }}">
+                    <input type="hidden" name="alamat" value="{{ $alamat }}">
+                    <input type="hidden" name="myCheck" value="{{ $myCheck }}">
+                    <input type="hidden" name="nama_pengirim" value="{{ $pengirim }}">
+
+                    <a class="btn btn-warning" href="/checkout"><i class="fa fa-pencil-square-o"></i>BACK</a>
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>SAVE</button>
+                    <a class="btn btn-success" href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
+                </form>
             </div>
         </div>
     </div>
 
 
-    <form action="/pesan" method="POST"></form>
+
 
 </body>
 </html>

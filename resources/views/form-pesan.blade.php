@@ -306,6 +306,9 @@
                                 <form method="POST" action="/confirm">
                                     @csrf
 
+									{{-- <input type="hidden" id="allpas" name="orderanjson"> --}}
+
+
                                     {{-- <input type="hidden" name="json_data" value="{{ json_encode($orderanjson) }}"> --}}
                                     <input type="hidden" name="json_data" value="{{json_encode($orderanjson)}}">
 
@@ -668,7 +671,50 @@
 </body>
 </html>
 
+{{-- <script>
+    	function valueofchar(){
+								var value=sessionStorage.getItem('karanjang');
+								// alert(value);
+								if (value != null) {
+									document.getElementById('allpas').value=value;
+								}
+							}
+                            valueofchar()
 
+var html_blass = ``
+
+var inche = sessionStorage.getItem('karanjang')
+inche = JSON.parse(inche)
+
+for (let i = 0; i < inche.length; i++) {
+    var order = inche[i]
+
+    for (let a = 0; a < order[1].length; a++) {
+        var selai = ''
+        var selbe = order[1]
+        selai += selbe + ','
+    }
+    html_blass += `
+<li class="media">
+<a class="pull-left" href="#">
+      <img class="media-object" src="{{  url('assets/images/post-img.png')}}" alt="...">
+</a>
+<div class="media-body">
+
+      <a href="" class="media-heading">${order[0]}
+          <p>
+            Selai : ${selai}
+            <br>
+            dengan Toping ${order[2]}</p>
+    </a>
+
+</div>
+</li>
+`
+}
+// console.log(html_blass);
+document.getElementById('keranjang_blass').innerHTML = html_blass
+</script> --}}
 <script>
 function myFunction() {
   // Get the checkbox

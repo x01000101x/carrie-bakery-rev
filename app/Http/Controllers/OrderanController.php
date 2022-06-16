@@ -16,7 +16,10 @@ class OrderanController extends Controller
     // aku agak rubah ini versiku ya
     public function confirm(Request $request)
     {
+
+        $orderanjson = $request->json_data;
         $request->json_data = json_decode($request->json_data);
+        // dd($request->json_data);
         // dd($_POST);
         foreach ($request->json_data as $key => $pdk) {
             // dd($produk,$request->json_data);
@@ -25,6 +28,7 @@ class OrderanController extends Controller
             $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $pdk[3])->first();
             $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $pdk[4])->first();
 
+            // dd($pdk[4]);
             $rumus =
                 ($produk->produk_harga * $pdk[5]) +
                 ($roti->roti_harga * $pdk[5]) +
@@ -44,7 +48,7 @@ class OrderanController extends Controller
                 'produk' => $produk->produk_nama,
                 'roti' => $roti->roti_nama,
                 'selai' => $selai->selai_nama,
-                // 'toping' => $toping->toping_nama,
+                'toping' => $toping->toping_nama,
                 'jumlah' => $pdk[5],
                 'harga' => $rumus,
                 // 'gambar' => $request->gambar,
@@ -57,9 +61,91 @@ class OrderanController extends Controller
                 'pengirim' => $request->nama_pengirim
             ];
         }
+
+        $pemesan = $request->nama_pemesan;
+        $notelp = $request->notelp;
+        $alamat = $request->alamat;
+        $myCheck = $request->myCheck;
+        $pengirim = $request->nama_pengirim;
+
         // dd($datas);
-        return view('confirm', compact('datas'));
+        return view('confirm', compact('datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
     }
+
+
+    public function store(Request $request)
+    {
+        // dd(json_decode($request->orderan));
+        $ppa = json_decode($request->orderan);
+        $xxx = json_decode($ppa);
+
+        foreach ($xxx as $key => $pdk) {
+            // dd($produk,$request->json_data);
+            $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $pdk[0])->first();
+            $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $pdk[2])->first();
+            $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $pdk[3])->first();
+            $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $pdk[4])->first();
+
+
+
+            $rumus =
+                ($produk->produk_harga * $pdk[5]) +
+                ($roti->roti_harga * $pdk[5]) +
+                // ($toping->toping_harga * $pdk[5]) +
+                ($selai->selai_harga * $pdk[5]);
+
+            // Create/update query.
+
+            // dd($data=['request'=>$pdk,'produk'=>$produk,'roti'=>$roti,'selai'=>$selai,'toping'=>$toping,'rumus'=>$rumus]);
+
+
+            // $datas[$key] = [
+
+            //     'harga_satuan' => $produk->produk_harga,
+
+            //     //Orderan
+            //     'produk' => $produk->produk_nama,
+            //     'roti' => $roti->roti_nama,
+            //     'selai' => $selai->selai_nama,
+            //     // 'toping' => $toping->toping_nama,
+            //     'jumlah' => $pdk[5],
+            //     'harga' => $rumus,
+            //     // 'gambar' => $request->gambar,
+
+            //     //Info pemesan
+            //     'pembeli' => $request->nama_pemesan,
+            //     'notelp' => $request->notelp,
+            //     'alamat' => $request->alamat,
+            //     'dropship' => $request->myCheck,
+            //     'pengirim' => $request->nama_pengirim
+            // ];
+            $order = new Orderan();
+            //Orderan
+            $order->produk = $produk->produk_nama;
+            $order->roti = $roti->roti_nama;
+            $order->selai = $selai->selai_nama;
+            $order->toping = $toping->toping_nama;
+            $order->jumlah = $pdk[5];
+            $order->harga = $rumus;
+            // $order->gambar = $request->gambar;
+
+            //Info pemesan
+            $order->nama_pembeli = $request->nama_pemesan;
+            $order->notelp = $request->notelp;
+            $order->alamat = $request->alamat;
+            $order->dropship = $request->myCheck;
+            $order->nama_pengirim = $request->nama_pengirim;
+            $order->save();
+        }
+
+
+
+
+        // Session::flash('message', "Special message goes here");
+        // return redirect()->route('shop')->with('success', 'berhasil dipesan');
+
+    }
+
 
     // public function confirmleo(Request $request)
     // {
@@ -133,42 +219,6 @@ class OrderanController extends Controller
     //         return view('confirm', compact('datas', 'order'));
     //     }
     // }
-    public function store(Request $request)
-    {
-        $order = new Orderan();
-
-        $produk = Produk::select('id', 'produk_nama', 'produk_harga')->where('id', $request->produk_id)->first();
-        $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('id', $request->roti)->first();
-        $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('id', $request->selai)->first();
-        $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('id', $request->toping)->first();
-
-        $rumus =
-            ($produk->produk_harga * $request->jumlah) +
-            ($roti->roti_harga * $request->jumlah) +
-            ($selai->selai_harga * $request->jumlah) +
-            ($toping->toping_harga * $request->jumlah);
-
-        //Orderan
-        $order->produk = $produk->produk_nama;
-        $order->roti = $roti->roti_nama;
-        $order->selai = $selai->selai_nama;
-        $order->toping = $toping->toping_nama;
-        $order->jumlah = $request->jumlah;
-        $order->harga = $rumus;
-        $order->gambar = $request->gambar;
-
-        //Info pemesan
-        $order->nama_pembeli = $request->nama_pemesan;
-        $order->notelp = $request->notelp;
-        $order->alamat = $request->alamat;
-        $order->dropship = $request->myCheck;
-        $order->nama_pengirim = $request->nama_pengirim;
-
-        $order->save();
-
-        // Session::flash('message', "Special message goes here");
-        // return redirect()->route('shop')->with('success', 'berhasil dipesan');
-    }
 
     public function checkout()
     {
