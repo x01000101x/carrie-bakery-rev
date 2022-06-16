@@ -306,7 +306,8 @@
                                 <form method="POST" action="/confirm">
                                     @csrf
 
-                                    <input type="hidden" name="orders" value="{{ json_encode($orderanjson) }}">
+                                    {{-- <input type="hidden" name="json_data" value="{{ json_encode($orderanjson) }}"> --}}
+                                    <input type="hidden" name="json_data" value="{{json_encode($orderanjson)}}">
 
 {{-- @foreach ($orderanjson as $json ) --}}
                                     {{-- <input type="hidden" name="orders" value="{{ json_encode($json) }}"> --}}

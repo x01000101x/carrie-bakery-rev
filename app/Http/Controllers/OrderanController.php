@@ -15,8 +15,8 @@ class OrderanController extends Controller
 {
     // aku agak rubah ini versiku ya
     public function confirm(Request $request)
-    {   
-        $request->json_data=json_decode($request->json_data);
+    {
+        $request->json_data = json_decode($request->json_data);
         // dd($_POST);
         foreach ($request->json_data as $key => $pdk) {
             // dd($produk,$request->json_data);
@@ -29,13 +29,13 @@ class OrderanController extends Controller
                 ($produk->produk_harga * $pdk[5]) +
                 ($roti->roti_harga * $pdk[5]) +
                 // ($toping->toping_harga * $pdk[5]) +
-                ($selai->selai_harga * $pdk[5]) ;
+                ($selai->selai_harga * $pdk[5]);
 
             // Create/update query.
 
             // dd($data=['request'=>$pdk,'produk'=>$produk,'roti'=>$roti,'selai'=>$selai,'toping'=>$toping,'rumus'=>$rumus]);
 
-            
+
             $datas[$key] = [
 
                 'harga_satuan' => $produk->produk_harga,
@@ -61,87 +61,78 @@ class OrderanController extends Controller
         return view('confirm', compact('datas'));
     }
 
-    public function confirmleo(Request $request)
-    {
-<<<<<<< HEAD
-        // foreach ($request->orderan as $json) {
-        //     var_dump($json[0]);
-        // }
-
-        $orders = $request->orders;
-        $order = json_decode($orders);
-=======
-        foreach ($request->produk_id as $key => $produk_id) {
-            dd($key);
-            $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id[$key])->first();
-            $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $request->roti[$key])->first();
-            $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $request->selai)->first();
-            $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $request->toping)->first();
->>>>>>> 1cb4368f6f3d61bf223c57032e83ebc56043dd4e
+    // public function confirmleo(Request $request)
+    // {
+    //     foreach ($request->produk_id as $key => $produk_id) {
+    //         dd($key);
+    //         $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $request->produk_id[$key])->first();
+    //         $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $request->roti[$key])->first();
+    //         $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $request->selai)->first();
+    //         $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $request->toping)->first();
 
 
-        // foreach ($order as $tes) {
+    //         // foreach ($order as $tes) {
 
-        //     // $ppk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $mmk[5])->get()->toArray();
-        //     // var_dump($ppk);
+    //         //     // $ppk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $mmk[5])->get()->toArray();
+    //         //     // var_dump($ppk);
 
-        // }
+    //         // }
 
-        // $keys = array_keys($order);
-        // for ($i = 0; $i < count($order); $i++) {
-        //     foreach ($order[$keys[$i]] as $key => $value) {
-        //         echo  $value . "<br>";
-        //     }
-        // }
-        foreach ($order as $ord) {
+    //         // $keys = array_keys($order);
+    //         // for ($i = 0; $i < count($order); $i++) {
+    //         //     foreach ($order[$keys[$i]] as $key => $value) {
+    //         //         echo  $value . "<br>";
+    //         //     }
+    //         // }
+    //         foreach ($order as $ord) {
 
-            $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $ord[5])->first();
-            $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $ord[2])->first();
-            $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $ord[3])->first();
-            $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $ord[4])->first();
-            $rumus =
-                ($produk->produk_harga * $ord[5]) +
-                ($roti->roti_harga * $ord[5]) +
-                ($selai->selai_harga * $ord[5]) +
-                ($toping->toping_harga * $ord[5]);
-        }
+    //             $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $ord[5])->first();
+    //             $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $ord[2])->first();
+    //             $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $ord[3])->first();
+    //             $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $ord[4])->first();
+    //             $rumus =
+    //                 ($produk->produk_harga * $ord[5]) +
+    //                 ($roti->roti_harga * $ord[5]) +
+    //                 ($selai->selai_harga * $ord[5]) +
+    //                 ($toping->toping_harga * $ord[5]);
+    //         }
 
 
-        // dd($order);
-        // foreach ($order as $ord) {
-        //     dd($ord);
-        // }
+    //         // dd($order);
+    //         // foreach ($order as $ord) {
+    //         //     dd($ord);
+    //         // }
 
 
 
-        // dd($order[0]);
+    //         // dd($order[0]);
 
-        // Create/update query.
+    //         // Create/update query.
 
-        $datas = [
+    //         $datas = [
 
-            'harga_satuan' => $produk->produk_harga,
+    //             'harga_satuan' => $produk->produk_harga,
 
-            //Orderan
-            'produk' => $produk->produk_nama,
-            'roti' => $roti->roti_nama,
-            'selai' => $selai->selai_nama,
-            'toping' => $toping->toping_nama,
-            'jumlah' => $request->jumlah,
-            'harga' => $rumus,
-            // 'gambar' => $request->gambar,
+    //             //Orderan
+    //             'produk' => $produk->produk_nama,
+    //             'roti' => $roti->roti_nama,
+    //             'selai' => $selai->selai_nama,
+    //             'toping' => $toping->toping_nama,
+    //             'jumlah' => $request->jumlah,
+    //             'harga' => $rumus,
+    //             // 'gambar' => $request->gambar,
 
-            //Info pemesan
-            'pembeli' => $request->nama_pemesan,
-            'notelp' => $request->notelp,
-            'alamat' => $request->alamat,
-            'dropship' => $request->myCheck,
-            'pengirim' => $request->nama_pengirim
-        ];
+    //             //Info pemesan
+    //             'pembeli' => $request->nama_pemesan,
+    //             'notelp' => $request->notelp,
+    //             'alamat' => $request->alamat,
+    //             'dropship' => $request->myCheck,
+    //             'pengirim' => $request->nama_pengirim
+    //         ];
 
-        return view('confirm', compact('datas', 'order'));
-    }
-
+    //         return view('confirm', compact('datas', 'order'));
+    //     }
+    // }
     public function store(Request $request)
     {
         $order = new Orderan();

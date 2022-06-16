@@ -173,7 +173,6 @@ background:#eee;
 </head>
 <body>
 
-
     <div class="container bootstrap snippets bootdey">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -294,6 +293,7 @@ background:#eee;
     </div>
 
 
+    <form action="/pesan" method="POST"></form>
 
 </body>
 </html>
