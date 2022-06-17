@@ -288,10 +288,11 @@
                     <div id="slider" class="nivoSlider">
                         @foreach ($sliders as $slider)
 				    	<img style="
+                        background-size: cover;
                         float: left;
-                        width:  200px;
-                        height: 500px;
-                        object-fit: cover; " src="{{ Voyager::image($slider->image) }}" alt="" />
+                        width:  100px;
+                        height: 500px;"
+                        src="{{ Voyager::image($slider->image) }}" alt="" />
                     @endforeach
 					</div>	<!-- End of /.nivoslider -->
 				</div>	<!-- End of /.col-md-12 -->

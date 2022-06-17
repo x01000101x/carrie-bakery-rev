@@ -9,33 +9,32 @@
 
 /* The Nivo Slider styles */
 .nivoSlider {
+    background-size: cover;
 	position:relative;
 	width:100%;
 	height:auto;
 	overflow: hidden;
 }
 .nivoSlider img {
+    background-size: cover;
 	position:absolute;
 	top:0px;
 	left:0px;
     float: left;
-                        width:  200px;
-                        height: 500px;
-                        object-fit: cover;
+    width:  100px;
+    height: 500px;
 	max-width: none;
 }
 .nivo-main-image {
+    background-size: cover;
 	display: block !important;
 	position: relative !important;
 	width: 100% !important;
-    float: left;
-                        width:  200px;
-                        height: 300px;
-                        object-fit: cover;
 }
 
 /* If an image is wrapped in a link */
 .nivoSlider a.nivo-imageLink {
+    background-size: cover;
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -64,8 +63,7 @@
 	z-index:5;
 	overflow:hidden;
 }
-.nivo-box img { display:block;
-}
+.nivo-box img { display:block; }
 
 /* Caption styles */
 .nivo-caption {
