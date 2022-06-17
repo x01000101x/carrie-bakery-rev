@@ -288,10 +288,11 @@
                     <div id="slider" class="nivoSlider">
                         @foreach ($sliders as $slider)
 				    	<img style="
-                        background-size: cover;
-                        float: left;
-                        width:  100px;
-                        height: 500px;"
+                            float: left;
+                            width:  100px;
+                            height: 500px;
+                            object-fit: cover;
+                        "
                         src="{{ Voyager::image($slider->image) }}" alt="" />
                     @endforeach
 					</div>	<!-- End of /.nivoslider -->
@@ -308,45 +309,22 @@
 	<section id="features">
 		<div class="container">
 			<div class="row">
+                @foreach ($mediaheadings as $mh)
+
 				<div class="col-md-4">
-					<div class="block">
+                    <div class="block">
 						<div class="media">
 							<div class="pull-left" href="#">
-						    	<i class="fa fa-map" aria-hidden="true"></i>
-						  	</div>
-						  	<div class="media-body">
-						    	<h4 class="media-heading">Alamat</h4>
-						    	<p> Pakuan Hill Livistona B 22, Bogor, Jawa Barat, Indonesia<br><br></p>
-						  </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="block">
-						<div class="media">
-							<div class="pull-left" href="#">
-								<i class="fa fa-foursquare"></i>
-						  	</div>
-						  	<div class="media-body">
-						    	<h4 class="media-heading">Social Media</h4>
-						    	<p>Instagram : carrie_bakery_official<br> Facebook: carrie_bakery_official <br> TikTok : maylindebora</p>
-						  </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="block">
-						<div class="media">
-							<div class="pull-left" href="#">
-						    	<i class=" fa fa-phone"></i>
-						  	</div>
-						  	<div class="media-body">
-						    	<h4 class="media-heading">Call Us</h4>
-						    	<p>WA : +62 813-8509-9236 <br>Telp : (02511) 7561766<br><br></p>
-						  </div>	<!-- End of /.media-body -->
+                                <i class="{{ $mh->icon }}"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">{{ $mh->head }}</h4>
+						    	<p>{{ $mh->description }}</p>
+                            </div>	<!-- End of /.media-body -->
 						</div>	<!-- End of /.media -->
 					</div>	<!-- End of /.block -->
 				</div> <!-- End of /.col-md-4 -->
+                @endforeach
 			</div>	<!-- End of /.row -->
 		</div>	<!-- End of /.container -->
 	</section>	<!-- End of section -->
