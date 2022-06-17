@@ -18,11 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
 //Firewall Here
+Route::get('/', [SliderController::class, 'index']);
 Route::get('/shop', [ProdukController::class, 'show'])->name('shop');
 Route::get('/breads', [OrderanController::class, 'breads'])->name('breads');
 Route::get('/indonesian', [OrderanController::class, 'indonesian'])->name('indonesian');
@@ -49,7 +47,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', [SliderController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
 
 

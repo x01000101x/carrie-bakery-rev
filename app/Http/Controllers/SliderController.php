@@ -13,6 +13,8 @@ class SliderController extends Controller
 
         $sliders = $slider::select('id', 'image')->get();
 
-        return view('dashboard', compact('sliders'));
+        // dd($sliders);
+
+        return view('index', compact('sliders'));
     }
 }

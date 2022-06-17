@@ -285,10 +285,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div id="slider" class="nivoSlider">
-				    	<img src="{{ url('assets/images/slider.jpg')}}" alt="" />
-				    	<img src="{{ url('assets/images/slider1.jpg')}}" alt=""/>
-				    	<img src="{{ url('assets/images/slider2.jpg')}}" alt="" />
+                    <div id="slider" class="nivoSlider">
+                        @foreach ($sliders as $slider)
+				    	<img style="
+                        float: left;
+                        width:  200px;
+                        height: 500px;
+                        object-fit: cover; " src="{{ Voyager::image($slider->image) }}" alt="" />
+                    @endforeach
 					</div>	<!-- End of /.nivoslider -->
 				</div>	<!-- End of /.col-md-12 -->
 			</div>	<!-- End of /.row -->
