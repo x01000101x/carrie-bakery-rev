@@ -4,6 +4,7 @@ use App\Http\Controllers\RotiController;
 use App\Http\Controllers\SelaiController;
 use App\Http\Controllers\OrderanController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,9 +49,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [SliderController::class, 'index'])->name('dashboard');
 });
 
 
