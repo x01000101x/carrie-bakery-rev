@@ -343,11 +343,13 @@
 						</div>
 						<div class="row" style="display: grid;
 						place-items: center">
+                                  @foreach ($titles as $title)
 						  	<div class="col-sm-2 col-md-7">
 								  <div class="tengah">
-									  <h1>Hello World</h1>
-									  <p>Kami adalah produsen roti sehat dan kaya serat yang berfokus pada aneka roti wortel dan gandum yang berlokasi di daerah Bogor, Jawa Barat, Indonesia. Kami juga menyediakan camilan aman bagi keluarga yang berfokus pada <i>Indonesian traditional culinary</i></p>
-										</div>
+                                    <h1>{{ $title->head }}</h1>
+                                    <p>{{ $title->description }}</p>
+                                </div>
+                                @endforeach
 										</div>	<!-- End of /.col-sm-6 col-md-4 -->
 						</div>	<!-- End of /.row -->
 					</div>	<!-- End of /.block -->
