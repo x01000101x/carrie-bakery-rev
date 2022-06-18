@@ -370,23 +370,26 @@
 							<h2>BEST SELLER</h2>
 						</div>
 						<div class="row">
-						  	<div class="col-sm-6 col-md-4">
-							    <div class="thumbnail">
-							    	<a class="catagotie-head" href="blog-single.html">
-										<img class="gambar" src="{{ url('assets/images/produk/roti-tawar-bpu.jpeg')}}" alt="...">
-										<h3>Roti Wortel</h3>
+                            @foreach ($bestsellers as $bestseller)
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <a class="catagotie-head" href="blog-single.html">
+										<img class="gambar" src="{{ Voyager::image($bestseller->gambar)}}" alt="...">
+										<h3>{{ $bestseller->nama }}</h3>
 									</a>
-							      	<div class="caption">
-							        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, aut, esse, laborum placeat id illo a expedita aperiam...</p>
+                                    <div class="caption">
+                                        <p>{{ $bestseller->deskripsi }}</p>
 							        	<p>
-							        		<a href="blog-single.html" class="btn btn-default btn-transparent" role="button">
-							        			<span>Beli </span>
+                                            <a href="{{ $bestseller->link }}" class="btn btn-default btn-transparent" role="button">
+                                                <span>Beli </span>
 							        		</a>
 							        	</p>
 							      	</div>	<!-- End of /.caption -->
 							    </div>	<!-- End of /.thumbnail -->
-						  	</div>	<!-- End of /.col-sm-6 col-md-4 -->
-						  	<div class="col-sm-6 col-md-4">
+                            </div>	<!-- End of /.col-sm-6 col-md-4 -->
+                            @endforeach
+						  	{{-- <div class="col-sm-6 col-md-4">
 							    <div class="thumbnail">
 							    	<a class="catagotie-head" href="blog-single.html">
                                         <img class="gambar" src="{{ url('assets/images/produk/kepang-bou.jpg')}}" alt="...">
@@ -417,7 +420,7 @@
 								        </p>
 								    </div>	<!-- End of /.caption -->
 							    </div>	<!-- End of /.thumbnail -->
-						  	</div>	<!-- End of /.col-sm-6 col-md-4 -->
+						  	</div>	<!-- End of /.col-sm-6 col-md-4 --> --}}
 						</div>	<!-- End of /.row -->
 					</div>	<!-- End of /.block -->
 				</div>	<!-- End of /.col-md-12 -->
