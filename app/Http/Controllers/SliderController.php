@@ -18,13 +18,16 @@ class SliderController extends Controller
         $title = new Title();
         $bestseller = new BestSeller();
         $testimoni = new Testimoni();
+        $partner = new Partner();
 
         $sliders = $slider::select('id', 'image')->get();
         $mediaheadings = $mediaheading::select('id', 'icon', 'head', 'description')->get();
         $titles = $title::select('id', 'head', 'description')->get();
         $bestsellers = $bestseller::select('id', 'nama', 'deskripsi', 'gambar', 'link')->get();
         $testimonis = $testimoni::select('id', 'nama', 'gambar', 'komen', 'lokasi', 'tanggal')->get();
+        $partners = $partner::select('id', 'gambar')->get();
 
-        return view('index', compact('sliders', 'mediaheadings', 'titles', 'bestsellers', 'testimonis'));
+
+        return view('index', compact('sliders', 'mediaheadings', 'titles', 'bestsellers', 'testimonis', 'partners'));
     }
 }
