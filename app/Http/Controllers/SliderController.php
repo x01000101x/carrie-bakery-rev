@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Slider;
 use App\Title;
 use App\Testimoni;
+use App\Partner;
 
 class SliderController extends Controller
 {

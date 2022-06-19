@@ -720,15 +720,18 @@
 							<h2>Our Partners</h2>
 						</div>
 					</div>	<!-- End of /.block -->
+
 					<div id="owl-example" class="owl-carousel">
-						<div> <img class="partner-img" src="{{ url('assets/images/partner/paxel.png')}}" alt=""></div>
-						<div> <img class="partner-img" src="{{ url('assets/images/partner/logo-grabfood.png')}}" alt=""></div>
+                        @foreach ($partners as $partner)
+                        <div> <img class="partner-img" src="{{ Voyager::image($partner->gambar) }}" alt=""></div>
+                        @endforeach
+						{{-- <div> <img class="partner-img" src="{{ url('assets/images/partner/logo-grabfood.png')}}" alt=""></div>
 						<div> <img class="partner-img" src="{{ url('assets/images/partner/Gofood-logo.png')}}" alt=""></div>
                         <div> <img class="partner-img" src="{{ url('assets/images/company-4.png')}}" alt=""></div>
 						<div> <img class="partner-img" src="{{ url('assets/images/company-5.png')}}" alt=""></div>
 						<div> <img class="partner-img" src="{{ url('assets/images/company-6.png')}}" alt=""></div>
 						<div> <img class="partner-img" src="{{ url('assets/images/company-8.png')}}" alt=""></div>
-						<div> <img class="partner-img" src="{{ url('assets/images/company-9.png')}}" alt=""></div>
+						<div> <img class="partner-img" src="{{ url('assets/images/company-9.png')}}" alt=""></div> --}}
 					</div>	<!-- End of /.Owl-Slider -->
 				</div>	<!-- End of /.col-md-12 -->
 			</div> <!-- End Of /.Row -->
