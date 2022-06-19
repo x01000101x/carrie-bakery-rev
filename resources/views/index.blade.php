@@ -638,6 +638,8 @@
         <div class="col-sm-12">
           <div id="customers-testimonials" class="owl-carousel">
 
+@foreach($testimonis as $testimoni)
+	
             <!--TESTIMONIAL 1 -->
             <div class="item">
               <div class="shadow-effect">
@@ -647,6 +649,7 @@
               <div class="testimonial-name">Firewall <br> Bogor, 24 Mar 2022</div>
             </div>
             <!--END OF TESTIMONIAL 1 -->
+@endforeach
             <!--TESTIMONIAL 2 -->
             <div class="item">
               <div class="shadow-effect">
