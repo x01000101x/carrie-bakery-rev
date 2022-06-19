@@ -8,6 +8,7 @@ use App\Produk;
 use App\Selai;
 use App\Toping;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 // use Symfony\Component\HttpFoundation\Session\Session;
 
 
@@ -136,6 +137,8 @@ class OrderanController extends Controller
             $order->dropship = $request->myCheck;
             $order->nama_pengirim = $request->nama_pengirim;
             $order->save();
+
+            return view('invoice', compact('ppa'));
         }
 
 
@@ -265,5 +268,16 @@ class OrderanController extends Controller
         $jams = Produk::select('id', 'produk_nama', 'produk_gambar', 'produk_harga', 'kategori')->where('kategori', 'jams')->get();
 
         return view('jams', compact('jams'));
+    }
+
+    public function download()
+    {
+
+        $datas = $kamar::join('resepsis', "kamars.id", "resepsis.id_kamar")
+            ->where("id_user", $id)->get()->toArray();
+
+        $pdf = PDF::loadView('unduh', compact('datas'));
+
+        return $pdf->download('reservasi-hotel-hebat.pdf');
     }
 }
