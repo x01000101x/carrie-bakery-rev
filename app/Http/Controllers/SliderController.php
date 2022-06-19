@@ -23,8 +23,8 @@ class SliderController extends Controller
         $mediaheadings = $mediaheading::select('id', 'icon', 'head', 'description')->get();
         $titles = $title::select('id', 'head', 'description')->get();
         $bestsellers = $bestseller::select('id', 'nama', 'deskripsi', 'gambar', 'link')->get();
-        $testimonis = $testimoni::select('id', 'nama', 'gambar', 'komen', 'lokasi', 'tanggal');
+        $testimonis = $testimoni::select('id', 'nama', 'gambar', 'komen', 'lokasi', 'tanggal')->get();
 
-        return view('index', compact('sliders', 'mediaheadings', 'titles', 'bestsellers'));
+        return view('index', compact('sliders', 'mediaheadings', 'titles', 'bestsellers', 'testimonis'));
     }
 }

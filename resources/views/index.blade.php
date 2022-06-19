@@ -639,18 +639,18 @@
           <div id="customers-testimonials" class="owl-carousel">
 
 @foreach($testimonis as $testimoni)
-	
+
             <!--TESTIMONIAL 1 -->
             <div class="item">
               <div class="shadow-effect">
-                <img class="img-circle" src="{{ url('assets/images/partner/leonardimage.jpg')}}" alt="">
-                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+                <img class="img-circle" src="{{ Voyager::image($testimoni->gambar) }}" alt="">
+                <p>{{ $testimoni->komen }}</p>
               </div>
-              <div class="testimonial-name">Firewall <br> Bogor, 24 Mar 2022</div>
+              <div class="testimonial-name">{{ $testimoni->nama }} <br> {{ $testimoni->lokasi }}, {{ $testimoni->tanggal }}</div>
             </div>
             <!--END OF TESTIMONIAL 1 -->
 @endforeach
-            <!--TESTIMONIAL 2 -->
+            {{-- <!--TESTIMONIAL 2 -->
             <div class="item">
               <div class="shadow-effect">
                 <img class="img-circle" src="{{ url('assets/images/partner/prili.jpg')}}" alt="">
@@ -675,7 +675,9 @@
                 <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
               </div>
               <div class="testimonial-name">IAN OWEN</div>
-            </div>
+            </div> --}}
+
+
             <!--END OF TESTIMONIAL 4 -->
             <!--TESTIMONIAL 5 -->
             {{-- <div class="item">
