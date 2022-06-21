@@ -482,7 +482,7 @@
 									document.getElementById('allpas').value=value;
 								}
 							}
-							
+
 							valueofchar()
 
 							var html_blass = ``
@@ -523,25 +523,25 @@
 						<div class="block">
 							<h4>Catagories</h4>
 							<div class="list-group">
-								<a href="#" class="list-group-item">
+								<a href="/shop" class="list-group-item">
 									<i class="fa  fa-dot-circle-o"></i>
-									Italian Foods
+									All
 								</a>
 								<a href="#" class="list-group-item">
 									<i class="fa  fa-dot-circle-o"></i>
-									Traditional Food
+									Breads
 								</a>
 								<a href="#" class="list-group-item">
 									<i class="fa  fa-dot-circle-o"></i>
-									Indian Food
+									Indonesian Culinaries
 								</a>
 								<a href="#" class="list-group-item">
 									<i class="fa  fa-dot-circle-o"></i>
-									Spanish Food
+									Beverages
 								</a>
 								<a href="#" class="list-group-item">
 									<i class="fa  fa-dot-circle-o"></i>
-									Thai FoodN
+									Jams
 								</a>
 							</div>
 						</div>

@@ -296,7 +296,15 @@ background:#eee;
 
                     <a class="btn btn-warning" href="/checkout"><i class="fa fa-pencil-square-o"></i>BACK</a>
                     <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>SAVE</button>
+
+                    @foreach ($orderan as $stat)
+
+                    @if($stat->status == "booked")
                     <a class="btn btn-success" href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
+                    @else
+                    <a class="btn btn-success" hidden href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
+                    @endif
+                    @endforeach
                 </form>
             </div>
         </div>

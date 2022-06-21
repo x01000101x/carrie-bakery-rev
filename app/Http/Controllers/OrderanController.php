@@ -88,7 +88,6 @@ class OrderanController extends Controller
             $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $pdk[4])->first();
 
 
-
             $rumus =
                 ($produk->produk_harga * $pdk[5]) +
                 ($roti->roti_harga * $pdk[5]) +
@@ -121,6 +120,7 @@ class OrderanController extends Controller
             //     'pengirim' => $request->nama_pengirim
             // ];
             $order = new Orderan();
+            $koks = Orderan::select('id', 'notelp', 'status')->where('notelp', $request->notelp)->first();
             //Orderan
             $order->produk = $produk->produk_nama;
             $order->roti = $roti->roti_nama;
@@ -138,7 +138,7 @@ class OrderanController extends Controller
             $order->nama_pengirim = $request->nama_pengirim;
             $order->save();
 
-            return view('invoice', compact('ppa'));
+            return view('confirm', compact('koks'));
         }
 
 
@@ -273,11 +273,11 @@ class OrderanController extends Controller
     public function download()
     {
 
-        $datas = $kamar::join('resepsis', "kamars.id", "resepsis.id_kamar")
-            ->where("id_user", $id)->get()->toArray();
+        // $datas = $kamar::join('resepsis', "kamars.id", "resepsis.id_kamar")
+        //     ->where("id_user", $id)->get()->toArray();
 
-        $pdf = PDF::loadView('unduh', compact('datas'));
+        // $pdf = PDF::loadView('unduh', compact('datas'));
 
-        return $pdf->download('reservasi-hotel-hebat.pdf');
+        // return $pdf->download('reservasi-hotel-hebat.pdf');
     }
 }
