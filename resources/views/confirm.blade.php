@@ -295,15 +295,17 @@ body{
                     <input type="hidden" name="myCheck" value="{{ $myCheck }}">
                     <input type="hidden" name="nama_pengirim" value="{{ $pengirim }}">
 
-                    <a class="btn btn-warning" href="/checkout"><i class="fa fa-pencil-square-o"></i>BACK</a>
-                    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>SAVE</button>
 
 
                     {{-- @dd($koks->status) --}}
 
                     @if($koks->status == "booked")
+                    <a class="btn btn-warning" href="/shop"><i class="fa fa-pencil-square-o"></i>BACK</a>
                     <a class="btn btn-success" href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
+                    <button class="btn btn-primary" hidden type="submit"><i class="fa fa-check"></i>SAVE</button>
                     @else
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>SAVE</button>
+                    <a class="btn btn-warning" href="/checkout"><i class="fa fa-pencil-square-o"></i>BACK</a>
                     <a class="btn btn-success" hidden href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
                     @endif
 
