@@ -18,6 +18,10 @@ class OrderanController extends Controller
     public function confirm(Request $request)
     {
 
+        $order = new Orderan();
+        $koks = Orderan::select('id', 'notelp', 'status')->where('notelp', $request->notelp)->orderBy('id', 'DESC')->first();
+
+
         $orderanjson = $request->json_data;
         $request->json_data = json_decode($request->json_data);
         // dd($request->json_data);
@@ -70,7 +74,7 @@ class OrderanController extends Controller
         $pengirim = $request->nama_pengirim;
 
         // dd($datas);
-        return view('confirm', compact('datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
+        return view('confirm', compact('datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim', 'koks'));
     }
 
 
@@ -79,6 +83,9 @@ class OrderanController extends Controller
         // dd(json_decode($request->orderan));
         $ppa = json_decode($request->orderan);
         $xxx = json_decode($ppa);
+
+        $orderanjson = $request->json_data;
+        $request->json_data = json_decode($request->json_data);
 
         foreach ($xxx as $key => $pdk) {
             // dd($produk,$request->json_data);
@@ -94,52 +101,83 @@ class OrderanController extends Controller
                 // ($toping->toping_harga * $pdk[5]) +
                 ($selai->selai_harga * $pdk[5]);
 
-            // Create/update query.
+            $datas[$key] = [
 
-            // dd($data=['request'=>$pdk,'produk'=>$produk,'roti'=>$roti,'selai'=>$selai,'toping'=>$toping,'rumus'=>$rumus]);
+                'harga_satuan' => $produk->produk_harga,
 
+                //Orderan
+                'produk' => $produk->produk_nama,
+                'roti' => $roti->roti_nama,
+                'selai' => $selai->selai_nama,
+                'toping' => $toping->toping_nama,
+                'jumlah' => $pdk[5],
+                'harga' => $rumus,
+                // 'gambar' => $request->gambar,
 
-            // $datas[$key] = [
-
-            //     'harga_satuan' => $produk->produk_harga,
-
-            //     //Orderan
-            //     'produk' => $produk->produk_nama,
-            //     'roti' => $roti->roti_nama,
-            //     'selai' => $selai->selai_nama,
-            //     // 'toping' => $toping->toping_nama,
-            //     'jumlah' => $pdk[5],
-            //     'harga' => $rumus,
-            //     // 'gambar' => $request->gambar,
-
-            //     //Info pemesan
-            //     'pembeli' => $request->nama_pemesan,
-            //     'notelp' => $request->notelp,
-            //     'alamat' => $request->alamat,
-            //     'dropship' => $request->myCheck,
-            //     'pengirim' => $request->nama_pengirim
-            // ];
-            $order = new Orderan();
-            $koks = Orderan::select('id', 'notelp', 'status')->where('notelp', $request->notelp)->first();
-            //Orderan
-            $order->produk = $produk->produk_nama;
-            $order->roti = $roti->roti_nama;
-            $order->selai = $selai->selai_nama;
-            $order->toping = $toping->toping_nama;
-            $order->jumlah = $pdk[5];
-            $order->harga = $rumus;
-            // $order->gambar = $request->gambar;
-
-            //Info pemesan
-            $order->nama_pembeli = $request->nama_pemesan;
-            $order->notelp = $request->notelp;
-            $order->alamat = $request->alamat;
-            $order->dropship = $request->myCheck;
-            $order->nama_pengirim = $request->nama_pengirim;
-            $order->save();
-
-            return view('confirm', compact('koks'));
+                //Info pemesan
+                'pembeli' => $request->nama_pemesan,
+                'notelp' => $request->notelp,
+                'alamat' => $request->alamat,
+                'dropship' => $request->myCheck,
+                'pengirim' => $request->nama_pengirim
+            ];
         }
+
+        $pemesan = $request->nama_pemesan;
+        $notelp = $request->notelp;
+        $alamat = $request->alamat;
+        $myCheck = $request->myCheck;
+        $pengirim = $request->nama_pengirim;
+
+
+        // Create/update query.
+
+        // dd($data=['request'=>$pdk,'produk'=>$produk,'roti'=>$roti,'selai'=>$selai,'toping'=>$toping,'rumus'=>$rumus]);
+
+
+        // $datas[$key] = [
+
+        //     'harga_satuan' => $produk->produk_harga,
+
+        //     //Orderan
+        //     'produk' => $produk->produk_nama,
+        //     'roti' => $roti->roti_nama,
+        //     'selai' => $selai->selai_nama,
+        //     // 'toping' => $toping->toping_nama,
+        //     'jumlah' => $pdk[5],
+        //     'harga' => $rumus,
+        //     // 'gambar' => $request->gambar,
+
+        //     //Info pemesan
+        //     'pembeli' => $request->nama_pemesan,
+        //     'notelp' => $request->notelp,
+        //     'alamat' => $request->alamat,
+        //     'dropship' => $request->myCheck,
+        //     'pengirim' => $request->nama_pengirim
+        // ];
+        $order = new Orderan();
+        $koks = Orderan::select('id', 'notelp', 'status')->where('notelp', $request->notelp)->orderBy('id', 'DESC')->first();
+        //Orderan
+        $order->produk = $produk->produk_nama;
+        $order->roti = $roti->roti_nama;
+        $order->selai = $selai->selai_nama;
+        $order->toping = $toping->toping_nama;
+        $order->jumlah = $pdk[5];
+        $order->harga = $rumus;
+        // $order->gambar = $request->gambar;
+
+        //Info pemesan
+        $order->nama_pembeli = $request->nama_pemesan;
+        $order->notelp = $request->notelp;
+        $order->alamat = $request->alamat;
+        $order->dropship = $request->myCheck;
+        $order->nama_pengirim = $request->nama_pengirim;
+        $order->save();
+
+
+        return view('confirm', compact('koks', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
+
+
 
 
 
