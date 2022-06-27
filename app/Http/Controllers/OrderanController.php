@@ -166,6 +166,10 @@ class OrderanController extends Controller
         $order->harga = $rumus;
         // $order->gambar = $request->gambar;
 
+        //ignore comment below
+        //agus request to push
+
+
         //Info pemesan
         $order->nama_pembeli = $request->nama_pemesan;
         $order->notelp = $request->notelp;
