@@ -291,10 +291,13 @@ body{
                     <input type="hidden" name="orderan" value="{{ json_encode($orderanjson) }}">
                     <input type="hidden" name="nama_pemesan" value="{{ $pemesan  }}">
                     <input type="hidden" name="pesanan_id" value="{{ $pesanan_id  }}">
+
                     <input type="hidden" name="notelp" value="{{ $notelp }}">
                     <input type="hidden" name="alamat" value="{{ $alamat }}">
                     <input type="hidden" name="myCheck" value="{{ $myCheck }}">
                     <input type="hidden" name="nama_pengirim" value="{{ $pengirim }}">
+                    <input type="hidden" name="status" value="booked">
+
 
 
 
@@ -309,7 +312,7 @@ body{
                     <a class="btn btn-success" href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
                     <button class="btn btn-primary" hidden type="submit"><i class="fa fa-check"></i>SAVE</button>
                     @else
-                    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>SAVE</button>
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>ORDER</button>
                     <a class="btn btn-warning" href="/checkout"><i class="fa fa-pencil-square-o"></i>BACK</a>
                     <a class="btn btn-success" hidden href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
                     @endif

@@ -176,29 +176,17 @@ class OrderanController extends Controller
         //     'dropship' => $request->myCheck,
         //     'pengirim' => $request->nama_pengirim
         // ];
-        $order = new Orderan();
+        // dd($request->pesanan_id);
         $koks = Orderan::select('id', 'pesanan_id', 'notelp', 'status')->where('pesanan_id', $request->pesanan_id)->orderBy('id', 'DESC')->first();
-        //Orderan
-        $order->produk = $produk->produk_nama;
-        $order->roti = $roti->roti_nama;
-        $order->selai = $selai->selai_nama;
-        $order->toping = $toping->toping_nama;
-        $order->jumlah = $pdk[5];
-        $order->harga = $rumus;
-        // $order->gambar = $request->gambar;
 
-        //ignore comment below
-        //agus request to push
+        // dd($koks);
+        // dd($request->status);
+
+        Orderan::where('pesanan_id', $request->pesanan_id)
+            ->update(['status' => $request->status]);
 
 
-        //Info pemesan
-        $order->nama_pembeli = $request->nama_pemesan;
-        $order->notelp = $request->notelp;
-        $order->alamat = $request->alamat;
-        $order->dropship = $request->myCheck;
-        $order->nama_pengirim = $request->nama_pengirim;
 
-        $order->save();
 
 
         return view('confirm', compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
