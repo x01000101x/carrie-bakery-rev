@@ -290,6 +290,7 @@ body{
                     @csrf
                     <input type="hidden" name="orderan" value="{{ json_encode($orderanjson) }}">
                     <input type="hidden" name="nama_pemesan" value="{{ $pemesan  }}">
+                    <input type="hidden" name="pesanan_id" value="{{ $pesanan_id  }}">
                     <input type="hidden" name="notelp" value="{{ $notelp }}">
                     <input type="hidden" name="alamat" value="{{ $alamat }}">
                     <input type="hidden" name="myCheck" value="{{ $myCheck }}">

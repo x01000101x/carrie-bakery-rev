@@ -19,7 +19,7 @@ class OrderanController extends Controller
     {
 
         $order = new Orderan();
-        $koks = Orderan::select('id', 'notelp', 'status')->where('id', $request->id)->orderBy('id', 'DESC')->first();
+        $koks = Orderan::select('id', 'pesanan_id', 'notelp', 'status')->where('pesanan_id', $request->pesanan_id)->orderBy('id', 'DESC')->first();
 
         // dd($koks);
 
@@ -73,9 +73,10 @@ class OrderanController extends Controller
         $alamat = $request->alamat;
         $myCheck = $request->myCheck;
         $pengirim = $request->nama_pengirim;
+        $pesanan_id = $request->pesanan_id;
 
         // dd($datas);
-        return view('confirm', compact('datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim', 'koks'));
+        return view('confirm', compact('datas', 'orderanjson', 'pesanan_id', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim', 'koks'));
     }
 
 
@@ -129,6 +130,8 @@ class OrderanController extends Controller
         $alamat = $request->alamat;
         $myCheck = $request->myCheck;
         $pengirim = $request->nama_pengirim;
+        $pesanan_id = $request->pesanan_id;
+
 
 
         // Create/update query.
@@ -157,7 +160,7 @@ class OrderanController extends Controller
         //     'pengirim' => $request->nama_pengirim
         // ];
         $order = new Orderan();
-        $koks = Orderan::select('id', 'notelp', 'status')->where('id', $request->id)->orderBy('id', 'DESC')->first();
+        $koks = Orderan::select('id', 'pesanan_id', 'notelp', 'status')->where('pesanan_id', $request->pesanan_id)->orderBy('id', 'DESC')->first();
         //Orderan
         $order->produk = $produk->produk_nama;
         $order->roti = $roti->roti_nama;
@@ -177,10 +180,12 @@ class OrderanController extends Controller
         $order->alamat = $request->alamat;
         $order->dropship = $request->myCheck;
         $order->nama_pengirim = $request->nama_pengirim;
+        $order->pesanan_id = $request->pesanan_id;
+
         $order->save();
 
 
-        return view('confirm', compact('koks', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
+        return view('confirm', compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
 
 
 

@@ -320,7 +320,7 @@
 
 
 
-                                    <input type="text" name="id_pesanan" value="<?php echo uniqid(); ?>" id="id_pesanan" hidden>
+                                    <input type="text" name="pesanan_id" value="<?php uniqid(); ?>" id="pesanan_id" hidden>
 
                                     <div class="form-group">
                                         <label for="nama_pemesan">Nama Pemesan</label>
