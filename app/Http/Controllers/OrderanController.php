@@ -18,27 +18,26 @@ class OrderanController extends Controller
     public function confirm(Request $request)
     {
 
-        $order = new Orderan();
-        $koks = Orderan::select('id', 'pesanan_id', 'notelp', 'status')->where('pesanan_id', $request->pesanan_id)->orderBy('id', 'DESC')->first();
-
         // dd($koks);
-
         $orderanjson = $request->json_data;
         $request->json_data = json_decode($request->json_data);
         // dd($request->json_data);
         // dd($_POST);
         foreach ($request->json_data as $key => $pdk) {
+            // dd($pdk);
+
             // dd($produk,$request->json_data);
             $produk = Produk::select('id', 'produk_harga', 'produk_nama')->where('id', $pdk[0])->first();
             $roti = Roti::select('id', 'roti_nama', 'roti_harga')->where('roti_nama', $pdk[2])->first();
             $selai = Selai::select('id', 'selai_nama', 'selai_harga')->where('selai_nama', $pdk[3])->first();
             $toping = Toping::select('id', 'toping_nama', 'toping_harga')->where('toping_nama', $pdk[4])->first();
 
+            // dd($produk->produk_harga);
             // dd($pdk[4]);
             $rumus =
                 ($produk->produk_harga * $pdk[5]) +
                 ($roti->roti_harga * $pdk[5]) +
-                // ($toping->toping_harga * $pdk[5]) +
+                ($toping->toping_harga * $pdk[5]) +
                 ($selai->selai_harga * $pdk[5]);
 
             // Create/update query.
@@ -74,6 +73,24 @@ class OrderanController extends Controller
         $myCheck = $request->myCheck;
         $pengirim = $request->nama_pengirim;
         $pesanan_id = $request->pesanan_id;
+
+
+        $order = new Orderan();
+        $order->produk = $produk->produk_nama;
+        $order->roti = $roti->roti_nama;
+        $order->selai = $selai->selai_nama;
+        $order->toping = $toping->toping_nama;
+        $order->jumlah = $pdk[5];
+        $order->harga = $rumus;
+        $order->nama_pembeli = $request->nama_pemesan;
+        $order->notelp = $request->notelp;
+        $order->alamat = $request->alamat;
+        $order->dropship = $request->myCheck;
+        $order->nama_pengirim = $request->nama_pengirim;
+        $order->pesanan_id = $request->pesanan_id;
+        $order->save();
+
+        $koks = Orderan::select('id', 'pesanan_id', 'notelp', 'status')->where('pesanan_id', $request->pesanan_id)->orderBy('id', 'DESC')->first();
 
         // dd($datas);
         return view('confirm', compact('datas', 'orderanjson', 'pesanan_id', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim', 'koks'));
@@ -180,7 +197,6 @@ class OrderanController extends Controller
         $order->alamat = $request->alamat;
         $order->dropship = $request->myCheck;
         $order->nama_pengirim = $request->nama_pengirim;
-        $order->pesanan_id = $request->pesanan_id;
 
         $order->save();
 
