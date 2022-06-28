@@ -23,7 +23,6 @@ class OrderanController extends Controller
 
         // dd($koks);
 
-
         $orderanjson = $request->json_data;
         $request->json_data = json_decode($request->json_data);
         // dd($request->json_data);
