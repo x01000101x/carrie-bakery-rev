@@ -19,7 +19,9 @@ class OrderanController extends Controller
     {
 
         $order = new Orderan();
-        $koks = Orderan::select('id', 'notelp', 'status')->where('notelp', $request->notelp)->orderBy('id', 'DESC')->first();
+        $koks = Orderan::select('id', 'notelp', 'status')->where('id', $request->id)->orderBy('id', 'DESC')->first();
+
+        // dd($koks);
 
 
         $orderanjson = $request->json_data;
@@ -156,7 +158,7 @@ class OrderanController extends Controller
         //     'pengirim' => $request->nama_pengirim
         // ];
         $order = new Orderan();
-        $koks = Orderan::select('id', 'notelp', 'status')->where('notelp', $request->notelp)->orderBy('id', 'DESC')->first();
+        $koks = Orderan::select('id', 'notelp', 'status')->where('id', $request->id)->orderBy('id', 'DESC')->first();
         //Orderan
         $order->produk = $produk->produk_nama;
         $order->roti = $roti->roti_nama;

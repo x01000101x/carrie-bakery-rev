@@ -297,7 +297,11 @@ body{
 
 
 
-                    {{-- @dd($koks->status) --}}
+                    {{-- @dd($koks) --}}
+{{--
+                    @foreach ($koks as $kok)
+                        @dd($kok);
+                    @endforeach --}}
 
                     @if($koks->status == "booked")
                     <a class="btn btn-warning" href="/shop"><i class="fa fa-pencil-square-o"></i>BACK</a>

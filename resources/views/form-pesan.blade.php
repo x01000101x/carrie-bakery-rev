@@ -318,6 +318,10 @@
 
                                     {{-- <input type="hidden" name="orderan[]" value="{{ $orderanjson }}" multiple> --}}
 
+
+
+                                    <input type="text" name="id_pesanan" value="<?php echo uniqid(); ?>" id="id_pesanan" hidden>
+
                                     <div class="form-group">
                                         <label for="nama_pemesan">Nama Pemesan</label>
                                     <input type="text" name="nama_pemesan" class="form-control" id="nama_pemesan" required>
