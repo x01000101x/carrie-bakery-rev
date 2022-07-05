@@ -277,6 +277,12 @@ class OrderanController extends Controller
 
     public function checkout()
     {
+        if ($_POST['orderanjson']=='') {
+            return back();
+        }elseif($_POST['orderanjson']=='[]'){
+            return back();
+        }
+        
         if (!empty($_POST['orderanjson'])) {
             $orderanjson = json_decode($_POST['orderanjson']);
             // dd($orderanjson);
