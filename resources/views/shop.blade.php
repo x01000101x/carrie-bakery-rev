@@ -435,19 +435,19 @@
                                     <i class="fa  fa-dot-circle-o"></i>
                                     All
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="/breads" class="list-group-item">
                                     <i class="fa  fa-dot-circle-o"></i>
                                     Breads
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="/indonesian" class="list-group-item">
                                     <i class="fa  fa-dot-circle-o"></i>
                                     Indonesian Culinaries
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="/beverages" class="list-group-item">
                                     <i class="fa  fa-dot-circle-o"></i>
                                     Beverages
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="/jams" class="list-group-item">
                                     <i class="fa  fa-dot-circle-o"></i>
                                     Jams
                                 </a>

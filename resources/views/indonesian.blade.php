@@ -460,7 +460,7 @@
 
 						<!-- chart -->
 						<div class="block">
-							<h4>Keranjang nanti Omean we bentuknya kayak gimana wkwkwk</h4>
+							<h4></h4>
 							<ul class="media-list" id='keranjang_blass'>
 
 							</ul>

@@ -307,8 +307,9 @@
 					<div class="product-grid">
 
 
-                            @foreach ($produks as $produk)
-                            <img style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">
+
+    @foreach ($produks as $produk)
+    <img style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">
                             <h1 style="text-align: center">{{ $produk->produk_nama }}</h1>
                             <div class="form-group">
                                 <input type="text" name="gambar" value="{{ $produk->produk_gambar }}" hidden>
@@ -324,19 +325,19 @@
 
                             <div class="form-group">
                                 <label for="roti">Roti</label>
-                                <select class="form-control" id="roti" name="roti" required>
+                                <select class="form-control fong" id="roti" name="roti" required>
                                     <option selected>Pilih roti</option>
                                     @foreach ($rotis as $roti)
                                     <option value="{{ $roti->roti_nama }}">{{ $roti->roti_nama }}</option>
-                                     @endforeach
+                                    @endforeach
 
 
-                            </select>
-                        </div>
+                                </select>
+                            </div>
                         <div class="form-group">
                             <label for="selai">Selai</label>
-                            <select class="form-control" id="selai" name="selai" required>
-                                  <option selected>Pilih selai</option>
+                            <select class="form-control fong" id="selai" name="selai" required>
+                                  <option selected disabled hidden>Pilih selai</option>
                                   @foreach ($selais as $selai)
                                   <option id="selai_id" value="{{ $selai->selai_nama }}">{{ $selai->selai_nama }}</option>
                                   @endforeach
@@ -344,7 +345,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="toping">Toping</label>
-                                <select class="form-control" id="toping" name="toping" required>
+                                <select class="form-control fong" id="toping" name="toping" required>
                                     <option selected>Pilih toping</option>
                                     <option>Tidak ada</option>
                                     @foreach ($topings as $toping)
@@ -353,19 +354,21 @@
 
                                     @endforeach
                                 </select>
-                              </div>
-                              <div class="form-group">
-                                  <label for="jumlah">Jumlah</label>
-                                  <input type="number" name="jumlah" min="1" class="form-control" id="jumlah" aria-describedby="jumlah" required>
-                                  {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
-                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="jumlah">Jumlah</label>
+                                <input type="number" name="jumlah" min="1" class="form-control fong" id="jumlah" aria-describedby="jumlah" required>
+                                {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                            </div>
+
+                            <p id="demo"></p>
 
                             <button onclick="pastin()" class="btn btn-success">Masukkan ke keranjang</button>
                             <a href="/shop" class="btn btn-danger">Batal</a>
 
 
-                          <br><br>
-                          {{-- <ul>
+                            <br><br>
+                            {{-- <ul>
                               <li>
                                   <div class="products">
                                       <a href="#">
@@ -687,9 +690,18 @@
 </body>
 </html>
 
+<script>
+//     const inputs = document.querySelectorAll('.fong ');
+
+// for (const input of inputs) {
+//   input.setAttribute('required', '');
+// }
+</script>
 
 <script>
-function myFunction() {
+
+    function myFunction() {
+    document.getElementById("jumlah").required = true;
   // Get the checkbox
   var checkBox = document.getElementById("myCheck");
   // Get the output text
@@ -711,30 +723,50 @@ function myFunction() {
 </script>
 
 <script>
-   var sessionkaranjang = sessionStorage.getItem("karanjang");
-   var idk = []
+    var sessionkaranjang = sessionStorage.getItem("karanjang");
+    var idk = []
    if (sessionkaranjang != null) {
        idk = JSON.parse(sessionkaranjang)
-   }
+    }
+    //         if($("#selai").checkValidity()) {
+    //  document.getElementById('selai').submit();
+    // }
 
-   function pastin() {
-       var produk_id = document.getElementById('produk_id').value
-       var produk_nama = document.getElementById('produk_nama').value
-       var roti = document.getElementById('roti').value
-       var selai = document.getElementById('selai').value
-       var toping = document.getElementById('toping').value
-       var jumlah = document.getElementById('jumlah').value
+    function pastin() {
+        var a = document.getElementById("jumlah").value;
+        var b = document.getElementById("selai").value;
+        var c = document.getElementById("toping").value;
+        var d = document.getElementById("roti").value;
+
+        if(!a || b == "Pilih selai" || c == "Pilih toping" || d == "Pilih roti"){
+            alert("Please Fill All Required Fields");
+      return false;
+
+        }else{
+
+            //    document.getElementById("jumlah").required = true;
+            //    document.getElementById("selai").required = true;
+            //    document.getElementById("toping").required = true;
+    //    document.getElementById("roti").required = true;
+
+    var produk_id = document.getElementById('produk_id').value
+    var produk_nama = document.getElementById('produk_nama').value
+    var roti = document.getElementById('roti').value
+    var selai = document.getElementById('selai').value
+    var toping = document.getElementById('toping').value
+    var jumlah = document.getElementById('jumlah').value
 
 
-       var tmb = [
-           produk_id,
+    var tmb = [
+        produk_id,
            produk_nama, roti, selai, toping, jumlah
        ]
        console.log(tmb);
-           idk.push(tmb)
-           sessionStorage.setItem('karanjang', JSON.stringify(idk))
-           location.replace("{{url('/shop')}}");
-       }
+       idk.push(tmb)
+       sessionStorage.setItem('karanjang', JSON.stringify(idk))
+       location.replace("{{url('/shop')}}");
+    }
+}
 
 </script>
 
