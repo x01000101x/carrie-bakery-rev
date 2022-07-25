@@ -29,6 +29,10 @@ Route::get('/jams', [OrderanController::class, 'jams'])->name('jams');
 Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 Route::post('/pesan', [OrderanController::class, 'store'])->name('pesan');
 Route::post('/confirm', [OrderanController::class, 'confirm'])->name('confirm');
+// Route::get('/hella', [OrderanController::class, 'store'])->name('hella');
+
+// Route::get('/confirm', [OrderanController::class, 'confirm'])->name('confirm');
+
 Route::post('/checkout', [OrderanController::class, 'checkout'])->name('checkout');
 
 

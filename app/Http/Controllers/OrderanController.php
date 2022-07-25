@@ -117,7 +117,7 @@ class OrderanController extends Controller
             $rumus =
                 ($produk->produk_harga * $pdk[5]) +
                 ($roti->roti_harga * $pdk[5]) +
-                // ($toping->toping_harga * $pdk[5]) +
+                ($toping->toping_harga * $pdk[5]) +
                 ($selai->selai_harga * $pdk[5]);
 
             $datas[$key] = [
@@ -186,10 +186,9 @@ class OrderanController extends Controller
             ->update(['status' => $request->status]);
 
 
-
-
-
         return view('confirm', compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
+        // return redirect()->route('hella')->with(compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
+
 
 
 
@@ -277,12 +276,12 @@ class OrderanController extends Controller
 
     public function checkout()
     {
-        if ($_POST['orderanjson']=='') {
+        if ($_POST['orderanjson'] == '') {
             return back();
-        }elseif($_POST['orderanjson']=='[]'){
+        } elseif ($_POST['orderanjson'] == '[]') {
             return back();
         }
-        
+
         if (!empty($_POST['orderanjson'])) {
             $orderanjson = json_decode($_POST['orderanjson']);
             // dd($orderanjson);
