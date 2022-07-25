@@ -3,6 +3,7 @@
 use App\Http\Controllers\RotiController;
 use App\Http\Controllers\SelaiController;
 use App\Http\Controllers\OrderanController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,7 @@ Route::get('/jams', [OrderanController::class, 'jams'])->name('jams');
 Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 Route::post('/pesan', [OrderanController::class, 'store'])->name('pesan');
 Route::post('/confirm', [OrderanController::class, 'confirm'])->name('confirm');
+Route::get('/download-invoice', [PDFController::class, 'download'])->name('download-invoice');
 // Route::get('/hella', [OrderanController::class, 'store'])->name('hella');
 
 // Route::get('/confirm', [OrderanController::class, 'confirm'])->name('confirm');

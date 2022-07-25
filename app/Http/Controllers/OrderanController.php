@@ -185,7 +185,6 @@ class OrderanController extends Controller
         Orderan::where('pesanan_id', $request->pesanan_id)
             ->update(['status' => $request->status]);
 
-
         return view('confirm', compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
         // return redirect()->route('hella')->with(compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
 

@@ -309,7 +309,7 @@ body{
 
                     @if($koks->status == "booked")
                     <a class="btn btn-warning" href="/shop"><i class="fa fa-pencil-square-o"></i>BACK</a>
-                    <a class="btn btn-success" href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
+                    <a class="btn btn-success" href="/download-invoice" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
                     <button class="btn btn-primary" hidden type="submit"><i class="fa fa-check"></i>SAVE</button>
                     @else
                     <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>ORDER</button>
@@ -318,6 +318,9 @@ body{
                     @endif
 
                 </form>
+
+
+
             </div>
         </div>
     </div>
