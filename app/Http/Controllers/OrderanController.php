@@ -34,6 +34,7 @@ class OrderanController extends Controller
 
             // dd($produk->produk_harga);
             // dd($pdk[4]);
+
             $rumus =
                 ($produk->produk_harga * $pdk[5]) +
                 ($roti->roti_harga * $pdk[5]) +
@@ -186,7 +187,8 @@ class OrderanController extends Controller
             ->update(['status' => $request->status]);
 
         return view('confirm', compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
-        // return redirect()->route('hella')->with(compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
+        // return redirect()->route('confirm')->with(compact('koks', 'pesanan_id', 'datas', 'orderanjson', 'pemesan', 'notelp', 'alamat', 'myCheck', 'pengirim'));
+        // return back();
 
 
 
