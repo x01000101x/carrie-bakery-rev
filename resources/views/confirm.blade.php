@@ -175,6 +175,7 @@ body{
 <body>
 
     <div class="container bootstrap snippets bootdey">
+        <div id="sangiang">
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="row">
@@ -190,23 +191,23 @@ body{
                                 @else
                                 {{ "Ya" }}
                                 @endif <li>
-                            <li><strong>Nama pengirim (untuk dropshipper):</strong> @if($datas[0]['pengirim'] == null)
-                                {{ "-" }}
+                                    <li><strong>Nama pengirim (untuk dropshipper):</strong> @if($datas[0]['pengirim'] == null)
+                                        {{ "-" }}
                                 @else
                                 {{ $datas[0]['pengirim'] }}
                                 @endif <li>
-{{-- Hello --}}
-                            {{-- <li><strong>Last Name:</strong> Doe</li>
-                            <li><strong>Country:</strong> U.S.A.</li>
-                            <li><strong>DOB:</strong> YYYY/MM/DD</li> --}}
-                        </ul>
-                    </div>
+                                    {{-- Hello --}}
+                                    {{-- <li><strong>Last Name:</strong> Doe</li>
+                                        <li><strong>Country:</strong> U.S.A.</li>
+                                        <li><strong>DOB:</strong> YYYY/MM/DD</li> --}}
+                                    </ul>
+                                </div>
 
-                    {{-- <div class="col-md-6 col-sm-6 text-right">
-                        <h4><strong>Payment</strong> Details</h4>
-                        <ul class="list-unstyled">
-                            <li><strong>Bank Name:</strong> 012345678901</li>
-                            <li><strong>Account Number:</strong> 012345678901</li>
+                                {{-- <div class="col-md-6 col-sm-6 text-right">
+                                    <h4><strong>Payment</strong> Details</h4>
+                                    <ul class="list-unstyled">
+                                        <li><strong>Bank Name:</strong> 012345678901</li>
+                                        <li><strong>Account Number:</strong> 012345678901</li>
                             <li><strong>SWIFT Code:</strong> SWITCH012345678CODE</li>
                             <li><strong>V.A.T Reg #:</strong> VAT5678901CODE</li>
                         </ul>
@@ -228,25 +229,25 @@ body{
                         <tbody>
                             @php
                                 $total = 0;
-                            @endphp
+                                @endphp
                             @foreach($datas as $key=>$data)
-                                <tr>
-                                    <td>
-                                        <div><strong>{{ $data['produk'] }}</strong></div>
-                                        <small>
-                                            <li>Roti : {{ $data['roti'] }}</li>
-                                            <li>Selai : {{ $data['selai'] }}</li>
-                                            <li>Toping : {{ $data['toping'] }}</li>
+                            <tr>
+                                <td>
+                                    <div><strong>{{ $data['produk'] }}</strong></div>
+                                    <small>
+                                        <li>Roti : {{ $data['roti'] }}</li>
+                                        <li>Selai : {{ $data['selai'] }}</li>
+                                        <li>Toping : {{ $data['toping'] }}</li>
 
                                     </small>
-                                    </td>
-                                    <td>{{ $data['jumlah'] }}</td>
-                                    <td> @currency($data['harga_satuan']) <td>
+                                </td>
+                                <td>{{ $data['jumlah'] }}</td>
+                                <td> @currency($data['harga_satuan']) <td>
                                     <td>@currency($data['harga'])</td>
                                 </tr>
                                 @php
                                     $total += $data['harga'];
-                                @endphp
+                                    @endphp
                             @endforeach
                             <tr>Total Seluruh : @currency($total)</tr>
                         </tbody>
@@ -283,6 +284,7 @@ body{
                 </div>
             </div>
         </div>
+    </div>
 
         <div class="panel panel-default text-right">
             <div class="panel-body">
@@ -302,26 +304,26 @@ body{
 
 
                     {{-- @dd($koks) --}}
-{{--
-                    @foreach ($koks as $kok)
+                    {{--
+                        @foreach ($koks as $kok)
                         @dd($kok);
-                    @endforeach --}}
+                        @endforeach --}}
 
-                    @if($koks->status == "booked")
-                    <a class="btn btn-warning" href="/shop"><i class="fa fa-pencil-square-o"></i>BACK</a>
-                    <a class="btn btn-success"onclick="window.print()"><i class="fa fa-print"></i> PRINT INVOICE</a>
-                    <button class="btn btn-primary" hidden type="submit"><i class="fa fa-check"></i>SAVE</button>
-                    @else
-                    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>ORDER</button>
-                    <a class="btn btn-warning" href="/checkout"><i class="fa fa-pencil-square-o"></i>BACK</a>
-                    <a class="btn btn-success" hidden href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
-                    @endif
+                        @if($koks->status == "booked")
+                        <a class="btn btn-warning" href="/shop"><i class="fa fa-pencil-square-o"></i>BACK</a>
+                        <a class="btn btn-success" id="printout"><i class="fa fa-print"></i> PRINT INVOICE</a>
+                        <button class="btn btn-primary" hidden type="submit"><i class="fa fa-check"></i>SAVE</button>
+                        @else
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>ORDER</button>
+                        <a class="btn btn-warning" href="/checkout"><i class="fa fa-pencil-square-o"></i>BACK</a>
+                        <a class="btn btn-success" hidden href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
+                        @endif
 
-                </form>
+                    </form>
 
 
 
-            </div>
+                </div>
         </div>
     </div>
 
@@ -330,5 +332,14 @@ body{
 
 </body>
 </html>
+
+<script>
+   window.onload = function(){
+    document.getElementById("printout").addEventlistener("click", () =>{
+        const invoice = this.document.getElementById("sangiang");
+        console.log(invoice);
+    })
+   }
+</script>
 
 
