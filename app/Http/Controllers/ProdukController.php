@@ -15,7 +15,8 @@ class ProdukController extends Controller
     public function show()
     {
         $produks = Produk::get();
-        return view('shop', compact('produks'));
+        $latests = Produk::latest()->take(3)->get();
+        return view('shop', compact('produks', 'latests'));
     }
 
     public function lgarinchekout()

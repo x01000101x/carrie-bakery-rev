@@ -459,41 +459,20 @@
                         <div class="block">
                             <h4>Latest Food Items</h4>
                             <ul class="media-list">
+                                @foreach ($latests as $latest)
                                 <li class="media">
-                                    <a class="pull-left" href="#">
-                                        <img class="media-object" src="{{ url('assets/images/post-img.png') }}"
-                                            alt="...">
+                                    <a class="pull-left" href="/order/{{ $latest->id }}">
+                                        <img class="media-object" src="{{ Voyager::image($latest->produk_gambar) }}"
+                                        alt="...">
                                     </a>
                                     <div class="media-body">
-                                        <a href="" class="media-heading">Lamb leg roast
-                                            <p>Lorem ipsum dolor sit amet.</p>
+                                        <a href="" class="media-heading">{{ $latest->produk_nama }}
+                                            <p>{{ $latest->produk_deskripsi }}</p>
                                         </a>
                                     </div>
                                 </li>
-                                <li class="media">
-                                    <a class="pull-left" href="#">
-                                        <img class="media-object" src="{{ url('assets/images/post-img-2.png') }}"
-                                            alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="" class="media-heading"> Lamingtons
-                                            <p>Lorem ipsum dolor.</p>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <a class="pull-left" href="#">
-                                        <img class="media-object" src="{{ url('assets/images/post-img-3.png') }}"
-                                            alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="" class="media-heading">
-                                            Anzac Salad
-                                            <p>Lorem ipsum dolor sit.</p>
+                                @endforeach
 
-                                        </a>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
                     </div>
