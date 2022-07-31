@@ -308,7 +308,6 @@
     </section> <!-- End of /#Topic-header -->
 
 
-
     <!-- PRODUCTS Start
     ================================================== -->
 
@@ -413,17 +412,20 @@
 											</a>
 											<div class="media-body">
 
-												<a href="" class="media-heading"> Roti ${order[0]}
+												<a href="" class="media-heading"> ${order[1]}
 													<p>
 														Selai : ${selai}
 														<br>
-														dengan Toping ${order[2]}</p>
+														Toping : ${order[2]}</p>
+                                                        ${order[8]}
 												</a>
 
 											</div>
 										</li>
 										`
                             }
+
+
                             // console.log(html_blass);
                             document.getElementById('keranjang_blass').innerHTML = html_blass
                         </script>

@@ -309,7 +309,7 @@
 
 
     @foreach ($produks as $produk)
-    <img style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">
+    <img id="thumb" name="thumb" style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">
                             <h1 style="text-align: center">{{ $produk->produk_nama }}</h1>
                             <div class="form-group">
                                 <input type="text" name="gambar" value="{{ $produk->produk_gambar }}" hidden>
@@ -737,6 +737,8 @@
         var b = document.getElementById("selai").value;
         var c = document.getElementById("toping").value;
         var d = document.getElementById("roti").value;
+        var e = document.getElementById("thumb").value;
+
 
         if(!a || b == "Pilih selai" || c == "Pilih toping" || d == "Pilih roti"){
             alert("Please Fill All Required Fields");
@@ -755,11 +757,13 @@
     var selai = document.getElementById('selai').value
     var toping = document.getElementById('toping').value
     var jumlah = document.getElementById('jumlah').value
+    var thumb = document.getElementById('thumb').value
+
 
 
     var tmb = [
         produk_id,
-           produk_nama, roti, selai, toping, jumlah
+           produk_nama, roti, selai, toping, jumlah, thumb
        ]
        console.log(tmb);
        idk.push(tmb)
