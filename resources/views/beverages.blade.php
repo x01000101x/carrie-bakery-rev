@@ -520,28 +520,28 @@
 						</script>
 						<!-- end -->
 						<div class="block">
-							<h4>Catagories</h4>
-							<div class="list-group">
-								<a href="#" class="list-group-item">
-									<i class="fa  fa-dot-circle-o"></i>
-									Italian Foods
-								</a>
-								<a href="#" class="list-group-item">
-									<i class="fa  fa-dot-circle-o"></i>
-									Traditional Food
-								</a>
-								<a href="#" class="list-group-item">
-									<i class="fa  fa-dot-circle-o"></i>
-									Indian Food
-								</a>
-								<a href="#" class="list-group-item">
-									<i class="fa  fa-dot-circle-o"></i>
-									Spanish Food
-								</a>
-								<a href="#" class="list-group-item">
-									<i class="fa  fa-dot-circle-o"></i>
-									Thai FoodN
-								</a>
+                            <h4>Catagories</h4>
+                            <div class="list-group">
+                                <a href="/shop" class="list-group-item">
+                                    <i class="fa  fa-dot-circle-o"></i>
+                                    All
+                                </a>
+                                <a href="/breads" class="list-group-item">
+                                    <i class="fa  fa-dot-circle-o"></i>
+                                    Breads
+                                </a>
+                                <a href="/indonesian" class="list-group-item">
+                                    <i class="fa  fa-dot-circle-o"></i>
+                                    Indonesian Culinaries
+                                </a>
+                                <a href="/beverages" class="list-group-item">
+                                    <i class="fa  fa-dot-circle-o"></i>
+                                    Beverages
+                                </a>
+                                <a href="/jams" class="list-group-item">
+                                    <i class="fa  fa-dot-circle-o"></i>
+                                    Jams
+                                </a>
 							</div>
 						</div>
 						<div class="block">
