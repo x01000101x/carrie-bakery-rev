@@ -415,10 +415,12 @@
 
 												<a href="" class="media-heading"> ${order[1]}
 													<p>
-														Selai : ${selai}
+														Selai : ${order[3]}
 														<br>
-														Toping : ${order[2]}</p>
-                                                        ${order[6]}
+														Toping : ${order[4]}
+                                                        <br>
+                                                        Jumlah : ${order[5]}</p>
+
 												</a>
 
 											</div>
