@@ -322,6 +322,7 @@
                         <ul>
                             <form action="/order" method="POST"></form>
                             @foreach ($produks as $produk)
+                            {{-- {{ dd(Voyager::image($produk->produk_gambar)) }} --}}
                                 <li>
                                     <div class="products">
                                         <a href="#">
@@ -408,7 +409,7 @@
                                 html_blass += `
 										<li class="media">
 											<a class="pull-left" href="#">
-												<img class="media-object" src="{{ url('/assets/images/produk/carriebakery.jpeg') }}" alt="...">
+												<img class="media-object" src="${order[6]}" alt="...">
 											</a>
 											<div class="media-body">
 
@@ -417,7 +418,7 @@
 														Selai : ${selai}
 														<br>
 														Toping : ${order[2]}</p>
-                                                        ${order[8]}
+                                                        ${order[6]}
 												</a>
 
 											</div>
