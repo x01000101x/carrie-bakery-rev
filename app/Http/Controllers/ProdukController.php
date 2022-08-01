@@ -15,9 +15,9 @@ class ProdukController extends Controller
 {
     public function show()
     {
-        $produks = Produk::get();
+        $produks = Produk::paginate(5);
         $latests = Produk::latest()->take(3)->get();
-        $promos = Promo::latest()->take(1)->get();
+        $promos = Promo::latest()->get();
         return view('shop', compact('produks', 'latests', 'promos'));
     }
 

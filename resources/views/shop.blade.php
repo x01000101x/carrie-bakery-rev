@@ -355,12 +355,7 @@
 
                     <div class="pagination-bottom">
                         <ul class="pagination">
-                            <li class="disabled"><a href="#">&laquo;</a></li>
-                            <li class="active"><a href="#">1 <span class="sr-only"></span></a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">»</a></li>
+                            {{ $produks->links() }}
                         </ul> <!-- End of /.pagination -->
                     </div>
                 </div> <!-- End of /.col-md-9 -->
@@ -461,6 +456,7 @@
                         <div class="block">
                             @foreach ($promos as $promo)
                             <img width="200px" height="250px" src="{{ Voyager::image($promo->gambar); }}" alt="">
+                            <br><br>
                             @endforeach
                         </div>
                         <div class="block">
