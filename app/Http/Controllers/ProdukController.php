@@ -9,6 +9,7 @@ use App\Roti;
 use App\Selai;
 use App\Toping;
 use App\Produk;
+use App\Promo;
 
 class ProdukController extends Controller
 {
@@ -16,7 +17,8 @@ class ProdukController extends Controller
     {
         $produks = Produk::get();
         $latests = Produk::latest()->take(3)->get();
-        return view('shop', compact('produks', 'latests'));
+        $promos = Promo::latest()->take(1)->get();
+        return view('shop', compact('produks', 'latests', 'promos'));
     }
 
     public function lgarinchekout()

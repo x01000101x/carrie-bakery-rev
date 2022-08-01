@@ -459,7 +459,9 @@
                             </div>
                         </div>
                         <div class="block">
-                            <img src="{{ url('assets/images/food-ad.png') }}" alt="">
+                            @foreach ($promos as $promo)
+                            <img width="200px" height="250px" src="{{ Voyager::image($promo->gambar); }}" alt="">
+                            @endforeach
                         </div>
                         <div class="block">
                             <h4>Latest Food Items</h4>
