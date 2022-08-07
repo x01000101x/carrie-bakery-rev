@@ -343,7 +343,11 @@
                             <select class="form-control fong" id="selai" name="selai" required>
                                   <option selected disabled hidden>Pilih selai</option>
                                   @foreach ($selais as $selai)
+                                  @if ($selai->selai_nama == "Tidak ada")
+                                  <option hidden id="selai_id" value="{{ $selai->selai_nama }}">{{ $selai->selai_nama }}</option>
+                                  @else
                                   <option id="selai_id" value="{{ $selai->selai_nama }}">{{ $selai->selai_nama }}</option>
+                                  @endif
                                   @endforeach
                                 </select>
                             </div>
