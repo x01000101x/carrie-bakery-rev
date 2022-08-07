@@ -328,7 +328,11 @@
                                 <select class="form-control fong" id="roti" name="roti" required>
                                     <option selected>Pilih roti</option>
                                     @foreach ($rotis as $roti)
+                                    @if ($roti->roti_nama == "Tidak ada")
+                                    <option hidden value="{{ $roti->roti_nama }}">{{ $roti->roti_nama }}</option>
+                                    @else
                                     <option value="{{ $roti->roti_nama }}">{{ $roti->roti_nama }}</option>
+                                    @endif
                                     @endforeach
 
 
