@@ -310,10 +310,12 @@
 
     @foreach ($produks as $produk)
     <img id="thumb" name="thumb" style="width: 200px; height:200px; display:block; margin: 0 auto; border: black 5px solid" value="{{$produk->produk_gambar}}" src=" {{ Voyager::image($produk->produk_gambar); }}" alt="">
-                            <h1 style="text-align: center">{{ $produk->produk_nama }}</h1>
-                            <div class="form-group">
-                                <input type="text" name="gambar" value="{{ $produk->produk_gambar }}" hidden>
-                            </div>
+    <h1 style="text-align: center">{{ $produk->produk_nama }}</h1>
+    <div class="form-group">
+        <input type="text" name="gambar" value="{{ $produk->produk_gambar }}" hidden>
+    </div>
+
+
 
                             <div class="form-group">
                                 <label for="produk_nama">Nama Produk</label>
@@ -322,7 +324,7 @@
                                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                             </div>
                             @endforeach
-
+                            @if ($produk->kategori == "breads")
                             <div class="form-group">
                                 <label for="roti">Roti</label>
                                 <select class="form-control fong" id="roti" name="roti" required>
@@ -363,6 +365,23 @@
                                     @endforeach
                                 </select>
                             </div>
+                            @else
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <input id="roti" name="roti" type="text" value="Tidak ada" hidden>
+                                    </div>
+
+
+                                </select>
+                            </div>
+                        <div class="form-group">
+                            <input id="selai" name="selai" type="text" value="Tidak ada" hidden>
+                            </div>
+                            <div class="form-group">
+                                <input id="toping" name="toping" type="text" value="Tidak ada" hidden>
+                                </div>
+
+                            @endif
                             <div class="form-group">
                                 <label for="jumlah">Jumlah</label>
                                 <input type="number" name="jumlah" min="1" class="form-control fong" id="jumlah" aria-describedby="jumlah" required>
