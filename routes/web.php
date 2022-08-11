@@ -29,7 +29,7 @@ Route::get('/beverages', [OrderanController::class, 'beverages'])->name('beverag
 Route::get('/jams', [OrderanController::class, 'jams'])->name('jams');
 Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 Route::post('/pesan', [OrderanController::class, 'store'])->name('pesan');
-Route::post('/confirm', [OrderanController::class, 'confirm'])->name('confirm');
+Route::match(['GET', 'POST'], '/confirm', [OrderanController::class, 'confirm'])->name('confirm');
 Route::get('/download-invoice', [PDFController::class, 'download'])->name('download-invoice');
 // Route::get('/hella', [OrderanController::class, 'store'])->name('hella');
 
