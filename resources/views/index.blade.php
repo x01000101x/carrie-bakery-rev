@@ -140,6 +140,26 @@
         object-fit: cover;
     }
 
+    .item{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 500px;
+    border: 10px;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 10px;
+    }
+
+    .item img{
+        flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 10px;
+
+    }
+
     </style>
 <body>
 
@@ -282,14 +302,11 @@
 
 
 
-
-
 	<section id="slider-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 
-                    <h2>Carousel Example</h2>
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                       <!-- Indicators -->
                       <ol class="carousel-indicators">
@@ -299,15 +316,15 @@
                       </ol>
 
                       <!-- Wrapper for slides -->
-                      <div class="carousel-inner">
+                      <div class="carousel-inner" role="listbox">
                         @foreach($sliders as $key => $slider )
                         @if($key == 0)
                         <div class="item active">
-                            <img src="{{ Voyager::image($slider->image) }}" alt="Los Angeles" style="width:100%;">
+                            <img src="{{ Voyager::image($slider->image) }}" style="width:100%;height:50%;object-fit:cover">
                         </div>
                         @else
                         <div class="item">
-                          <img src="{{ Voyager::image($slider->image) }}" alt="Chicago" style="width:100%;">
+                          <img src="{{ Voyager::image($slider->image) }}" style="width:100%;height:10%;object-fit:cover">
                         </div>
                         @endif
                         @endforeach
