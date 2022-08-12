@@ -645,3 +645,9 @@
 </body>
 
 </html>
+
+<script>
+   var parsingData = JSON.parse(localStorage.getItem('data'));
+        console.log(parsingData);
+
+</script>

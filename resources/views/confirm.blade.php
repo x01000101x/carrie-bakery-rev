@@ -357,16 +357,16 @@ body{
 <script>
     // console.log(document.getElementById('orderan').value + " INI RAW");
     var orderanObject = JSON.parse(document.getElementById('orderan').value);
-    console.log(orderanObject + " Ini parse");
+    // console.log(orderanObject + " Ini parse");
     let datas = [
        orderanObject
 ];
-    console.log(datas + " Ini apalah");
+    // console.log(datas + " Ini apalah");
 
     $("#order_pesanan").on("click", function () {
         localStorage.setItem('data', JSON.stringify(datas));
         var parsingData = JSON.parse(localStorage.getItem('data'));
-        console.log(parsingData);
+        // console.log(parsingData);
 })
 </script>
 
