@@ -140,7 +140,7 @@
         object-fit: cover;
     }
 
-    .item{
+    .comli{
         display: flex;
     justify-content: center;
     align-items: center;
@@ -152,11 +152,10 @@
     border-radius: 10px;
     }
 
-    .item img{
+    .comli img{
         flex-shrink: 0;
     min-width: 100%;
     min-height: 100%;
-    border-radius: 10px;
 
     }
 
@@ -319,11 +318,11 @@
                       <div class="carousel-inner" role="listbox">
                         @foreach($sliders as $key => $slider )
                         @if($key == 0)
-                        <div class="item active">
+                        <div class="item comli active">
                             <img src="{{ Voyager::image($slider->image) }}" style="width:100%;height:50%;object-fit:cover">
                         </div>
                         @else
-                        <div class="item">
+                        <div class="item comli">
                           <img src="{{ Voyager::image($slider->image) }}" style="width:100%;height:10%;object-fit:cover">
                         </div>
                         @endif
