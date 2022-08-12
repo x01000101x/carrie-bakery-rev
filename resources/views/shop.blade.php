@@ -361,6 +361,83 @@
                 </div> <!-- End of /.col-md-9 -->
                 <div class="col-md-3">
                     <div class="blog-sidebar">
+                        <div class="block">
+                            <h4>History Pesanan</h4>
+                            <ul class="media-list" id='history_pesanan'>
+                                <form action="{{ url('/checkout') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" id="getrekt" name="orderanapawe">
+                                    <button type="submit" class="btn btn-primary">Order All</button>
+                                </form>
+                            </ul>
+                            <div class="container">
+
+                            </div>
+                        </div>
+                        <script>
+                            function faaf() {
+                                var parsingData = JSON.parse(localStorage.getItem('data'));
+                                // alert(value);
+                                if (value != null) {
+                                    document.getElementById('getrekt').value = value;
+                                }
+                            }
+
+                            faaf()
+
+                            var history_pesanan = ``
+
+                            var parsingData = localStorage.getItem('data');
+                            parsingData = JSON.parse(parsingData)
+
+                            for (let i = 0; i < parsingData.length; i++) {
+                                var order = parsingData[i]
+
+                                console.log(order)
+
+                                for (let a = 0; a < order[1].length; a++) {
+                                    var selai = ''
+                                    var selbe = order[1]
+                                    selai += selbe + ','
+                                }
+                                history_pesanan += `
+										<li class="media">
+											<a class="pull-left" href="#">
+												<img class="media-object" src="${order[6]}" alt="...">
+											</a>
+											<div class="media-body">
+
+												<a href="" class="media-heading"> ${order[1]}
+													<p>
+														Selai : ${order[0]}
+														<br>
+														Toping : ${order[4]}
+                                                        <br>
+                                                        Jumlah : ${order[5]}</p>
+
+												</a>
+                                                <button class="btn btn-danger" name="myBtn" id="myBtn">hapus</button>
+
+											</div>
+										</li>
+										`
+                            }
+
+
+                            // console.log(html_blass);
+                            document.getElementById('keranjang_blass').innerHTML = html_blass;
+
+                            // sessionStorage.removeItem('keranjang_blass');
+//                             $(function(){
+
+// $("#aKill").click(function(){
+//       $.post("serverpage.php",function(data){
+//       // if you want you can show some message to user here
+//    });
+// });
+                        </script>
+
+                        {{-- END OF HISTORY PESANAN --}}
 
                         <!-- chart -->
                         <div class="block">
