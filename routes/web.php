@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Testing Here
+Route::get('/testing', [ProdukController::class, 'testing']);
 
 //Firewall Here
 Route::get('/', [SliderController::class, 'index']);

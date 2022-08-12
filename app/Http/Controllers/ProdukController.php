@@ -102,4 +102,9 @@ class ProdukController extends Controller
         ];
         return view('one_hendeler/one', $data);
     }
+
+    public function testing()
+    {
+        return view('testing');
+    }
 }
