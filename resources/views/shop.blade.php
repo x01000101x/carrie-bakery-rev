@@ -364,24 +364,44 @@
                         <div class="block">
                             <h4>History Pesanan</h4>
                             <ul class="media-list" id='history_pesanan'>
-                                <form action="{{ url('/checkout') }}" method="post">
+                                <h1 id="output_history_pesanan">Hej</h1>
+                                {{-- <form action="{{ url('/checkout') }}" method="post">
                                     @csrf
                                     <input type="hidden" id="getrekt" name="orderanapawe">
                                     <button type="submit" class="btn btn-primary">Order All</button>
-                                </form>
+                                </form> --}}
                             </ul>
                             <div class="container">
 
                             </div>
                         </div>
                         <script>
+
+                            function testicels(){
+                                if (localStorage.getItem('data') != null){
+                                    var konkrit = JSON.parse(localStorage.getItem('data'));
+                                    console.log(konkrit.length);
+                                    console.log(konkrit);
+                                    // for (let i = 0; i < konkrit.length; i++){
+                                    //     var pukimai = konkrit[i];
+                                    //     console.log(pukimai);
+                                    // }
+                                }
+                            }
+
+                            testicels();
+
+
+                            var testis = localStorage.getItem('data');
+                            console.log(testis);
                             function faaf() {
-                                var parsingData = JSON.parse(localStorage.getItem('data'));
+                                var parsingData = JSON.stringify(localStorage.getItem('data'));
                                 // alert(value);
                                 if (value != null) {
                                     document.getElementById('getrekt').value = value;
                                 }
                             }
+
 
                             faaf()
 
@@ -392,8 +412,9 @@
 
                             for (let i = 0; i < parsingData.length; i++) {
                                 var order = parsingData[i]
+                                console.log("ajg ");
 
-                                console.log(order)
+                                console.log(order[0][1] + "tai")
 
                                 for (let a = 0; a < order[1].length; a++) {
                                     var selai = ''
@@ -403,13 +424,13 @@
                                 history_pesanan += `
 										<li class="media">
 											<a class="pull-left" href="#">
-												<img class="media-object" src="${order[6]}" alt="...">
+												<img class="media-object" src="https://cdn-brilio-net.akamaized.net/news/2021/04/01/203113/1200x800-9-jenis-roti-tawar-populer-di-dunia-bikin-ngiler-210401r.jpg" alt="...">
 											</a>
 											<div class="media-body">
 
 												<a href="" class="media-heading"> ${order[1]}
 													<p>
-														Selai : ${order[0]}
+														Selai : ${order}
 														<br>
 														Toping : ${order[4]}
                                                         <br>
@@ -425,7 +446,7 @@
 
 
                             // console.log(html_blass);
-                            document.getElementById('keranjang_blass').innerHTML = html_blass;
+                            document.getElementById('history_pesanan').innerHTML = history_pesanan;
 
                             // sessionStorage.removeItem('keranjang_blass');
 //                             $(function(){

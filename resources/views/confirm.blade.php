@@ -288,9 +288,11 @@ body{
         </div>
     </div>
 
+    {{-- <input type="hidden" id="forbodden" value="{{ json_decode($orderanjson) }}"> --}}
+
         <div class="panel panel-default text-right">
             <div class="panel-body">
-                <form action="/pesan" method="POST">
+                <form action="/pesan" id="formPesanan" method="POST">
                     @csrf
                     <input type="hidden" id="orderan" name="orderan" value="{{ json_encode($orderanjson) }}">
                     <input type="hidden" id="nama_pemesan" name="nama_pemesan" value="{{ $pemesan  }}">
@@ -355,19 +357,51 @@ body{
 </script>
 
 <script>
-    // console.log(document.getElementById('orderan').value + " INI RAW");
-    var orderanObject = JSON.parse(document.getElementById('orderan').value);
-    // console.log(orderanObject + " Ini parse");
-    let datas = [
-       orderanObject
-];
-    // console.log(datas + " Ini apalah");
 
-    $("#order_pesanan").on("click", function () {
-        localStorage.setItem('data', JSON.stringify(datas));
-        var parsingData = JSON.parse(localStorage.getItem('data'));
-        // console.log(parsingData);
-})
+    document.getElementById('formPesanan')
+    .addEventListener("submit", function(event){
+        event.preventDefault();
+        var orderanObj = JSON.parse(document.getElementById("orderan").value);
+        console.log(orderanObj);
+        // var b=JSON.stringify(orderanObj);
+        str = orderanObj.replace(/[\[\]']+/g, '');
+        // var masl = [];
+        kuku = str.split(/[ ,]+/);
+        // var jujur = kuku.replace(/['"]+/g, '');
+        // masl.push(str);
+        // var kupu = masl.replace(/['"]+/g, '');
+        console.log(kuku);
+
+        // console.log("Hello", orderanObj);
+
+        if(!kuku){
+            return;
+        }
+
+        // var infoOrder = {
+        //     pesanan: orderanObj
+        // };
+
+        localStorage.setItem("data", JSON.stringify(kuku));
+        var inchok = JSON.parse(localStorage.getItem("data"));
+        console.log(inchok);
+    })
+
+
+
+    // console.log(document.getElementById('orderan').value + " INI RAW");
+//     var orderanObject = JSON.parse(document.getElementById('orderan').value);
+//     // console.log(orderanObject + " Ini parse");
+//     let datas = [
+//        orderanObject
+// ];
+//     // console.log(datas + " Ini apalah");
+
+//     $("#order_pesanan").on("click", function () {
+//         localStorage.setItem('data', datas);
+//         var parsingData = JSON.parse(localStorage.getItem('data'));
+//         console.log(parsingData);
+// })
 </script>
 
 
