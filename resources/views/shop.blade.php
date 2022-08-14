@@ -365,11 +365,11 @@
                             <h4>History Pesanan</h4>
                             <ul class="media-list" id='history_pesanan'>
                                 <h1 id="output_history_pesanan">Hej</h1>
-                                {{-- <form action="{{ url('/checkout') }}" method="post">
+                                <form action="{{ url('/checkout') }}" method="post">
                                     @csrf
                                     <input type="hidden" id="getrekt" name="orderanapawe">
                                     <button type="submit" class="btn btn-primary">Order All</button>
-                                </form> --}}
+                                </form>
                             </ul>
                             <div class="container">
 
@@ -377,27 +377,56 @@
                         </div>
                         <script>
 
-                            function testicels(){
-                                if (localStorage.getItem('data') != null){
-                                    var konkrit = JSON.parse(localStorage.getItem('data'));
-                                    console.log(konkrit.length);
-                                    // console.log(konkrit);
-                                    for (let i = 0; i < konkrit.length; i++){
-                                        var pukimai = konkrit[i];
-                                        var hedon = pukimai.replaceAll('"', '');
-                                        console.log(hedon);
-                                    }
-                                }
-                            }
+                            // function testicels(){
+                            //     if (localStorage.getItem('data') != null){
+                            //         var konkrit = JSON.parse(localStorage.getItem('data'));
+                            //         console.log(konkrit.length);
+                            //         // console.log(konkrit);
+                            //         for (let i = 0; i < konkrit.length; i++){
+                            //             var pukimai = konkrit[i];
+                            //             var hedon = pukimai.replaceAll('"', '');
+                            //             var luka = hedon.replace(/\\/g, '');
+                            //             console.log(konkrit[1]);
+                            //         }
+                            //     }
 
-                            testicels();
+
+                            // testicels();
+
+                            // history_pesanan += `
+							// 			<li class="media">
+							// 				<a class="pull-left" href="#">
+							// 					<img class="media-object" src="https://cdn-brilio-net.akamaized.net/news/2021/04/01/203113/1200x800-9-jenis-roti-tawar-populer-di-dunia-bikin-ngiler-210401r.jpg" alt="...">
+							// 				</a>
+							// 				<div class="media-body">
+
+							// 					<a href="" class="media-heading"> ${konkrit[1]}
+							// 						<p>
+							// 							Selai : ${konkrit}
+							// 							<br>
+							// 							Toping : ${konkrit[4]}
+                            //                             <br>
+                            //                             Jumlah : ${konkrit[5]}</p>
+
+							// 					</a>
+                            //                     <button class="btn btn-danger" name="myBtn" id="myBtn">hapus</button>
+
+							// 				</div>
+							// 			</li>
+							// 			`
+                            // }
+
+
+                            // // console.log(html_blass);
+                            // document.getElementById('output_history_pesanan').innerHTML = history_pesanan;
+
 
 
                             var testis = localStorage.getItem('data');
-                            console.log(testis);
+                            // console.log(testis + " stuber");
                             function faaf() {
-                                var parsingData = JSON.stringify(localStorage.getItem('data'));
-                                // alert(value);
+                                var value = localStorage.getItem('data');
+
                                 if (value != null) {
                                     document.getElementById('getrekt').value = value;
                                 }
@@ -413,29 +442,29 @@
 
                             for (let i = 0; i < parsingData.length; i++) {
                                 var order = parsingData[i]
-                                console.log("ajg ");
+                                console.log(parsingData[1]);
 
-                                console.log(order[0][1] + "tai")
+                                console.log(parsingData[6].replace(/\\/g, '').replaceAll('"', ''));
 
-                                for (let a = 0; a < order[1].length; a++) {
+                                for (let a = 0; a < parsingData[1].length; a++) {
                                     var selai = ''
-                                    var selbe = order[1]
+                                    var selbe = parsingData[1]
                                     selai += selbe + ','
                                 }
                                 history_pesanan += `
 										<li class="media">
 											<a class="pull-left" href="#">
-												<img class="media-object" src="https://cdn-brilio-net.akamaized.net/news/2021/04/01/203113/1200x800-9-jenis-roti-tawar-populer-di-dunia-bikin-ngiler-210401r.jpg" alt="...">
+												<img class="media-object" src="${parsingData[6].replace(/\\/g, '').replaceAll('"', '')}" alt="...">
 											</a>
 											<div class="media-body">
 
-												<a href="" class="media-heading"> ${order[1]}
+												<a href="" class="media-heading"> ${parsingData[1].replaceAll('"', '')}
 													<p>
-														Selai : ${order}
+														Selai : ${parsingData[3].replaceAll('"', '')}
 														<br>
-														Toping : ${order[4]}
+														Toping : ${parsingData[4].replaceAll('"', '')}
                                                         <br>
-                                                        Jumlah : ${order[5]}</p>
+                                                        Jumlah : ${parsingData[5].replaceAll('"', '')}</p>
 
 												</a>
                                                 <button class="btn btn-danger" name="myBtn" id="myBtn">hapus</button>

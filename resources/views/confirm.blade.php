@@ -365,8 +365,9 @@ body{
         console.log(orderanObj);
         // var b=JSON.stringify(orderanObj);
         str = orderanObj.replace(/[\[\]']+/g, '');
+        console.log(str)
         // var masl = [];
-        kuku = str.split(/[ ,]+/);
+        kuku = str.split(/[,]+/);
         // var jujur = kuku.replace(/['"]+/g, '');
         // masl.push(str);
         // var kupu = masl.replace(/['"]+/g, '');
