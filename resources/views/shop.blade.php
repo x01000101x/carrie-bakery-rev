@@ -364,11 +364,11 @@
                         <div class="block">
                             <h4>History Pesanan</h4>
                             <ul class="media-list" id='history_pesanan'>
-                                <h1 id="output_history_pesanan">Hej</h1>
-                                <form action="{{ url('/checkout') }}" method="post">
+                                <h1 id="output_history_pesanan">Tidak ada History</h1>
+                                <form action="{{ url('/blabl') }}" method="post">
                                     @csrf
                                     <input type="hidden" id="getrekt" name="orderanapawe">
-                                    <button type="submit" class="btn btn-primary">Order All</button>
+                                    <button type="button" class="btn btn-primary">Order All</button>
                                 </form>
                             </ul>
                             <div class="container">
@@ -442,7 +442,7 @@
 
                             for (let i = 0; i < parsingData.length; i++) {
                                 var order = parsingData[i]
-                                console.log(parsingData[1]);
+                                console.log(parsingData);
 
                                 console.log(parsingData[6].replace(/\\/g, '').replaceAll('"', ''));
 

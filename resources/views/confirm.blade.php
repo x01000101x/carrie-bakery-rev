@@ -327,9 +327,7 @@ body{
 
 
                 </div>
-                <div class="panuan">
-                    <button class="btn btn-danger">Tes cockies</button>
-                </div>
+
         </div>
     </div>
 
@@ -361,6 +359,10 @@ body{
     document.getElementById('formPesanan')
     .addEventListener("submit", function(event){
         // event.preventDefault();
+
+        var pesanan_id = document.getElementById("pesanan_id").value;
+
+
         var orderanObj = JSON.parse(document.getElementById("orderan").value);
         console.log(orderanObj);
         // var b=JSON.stringify(orderanObj);
@@ -386,6 +388,9 @@ body{
         localStorage.setItem("data", JSON.stringify(kuku));
         var inchok = JSON.parse(localStorage.getItem("data"));
         console.log(inchok);
+
+        //delete session keranjang
+        sessionStorage.removeItem('karanjang');
     })
 
 
