@@ -33,6 +33,8 @@ Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 Route::post('/pesan', [OrderanController::class, 'store'])->name('pesan');
 Route::match(['GET', 'POST'], '/confirm', [OrderanController::class, 'confirm'])->name('confirm');
 Route::get('/download-invoice', [PDFController::class, 'download'])->name('download-invoice');
+Route::get('/history_pesanan', [ProdukController::class, 'history'])->name('history_pesanan');
+
 // Route::get('/hella', [OrderanController::class, 'store'])->name('hella');
 
 // Route::get('/confirm', [OrderanController::class, 'confirm'])->name('confirm');

@@ -107,4 +107,9 @@ class ProdukController extends Controller
     {
         return view('testing');
     }
+
+    public function history()
+    {
+        return view('history_pesanan');
+    }
 }
