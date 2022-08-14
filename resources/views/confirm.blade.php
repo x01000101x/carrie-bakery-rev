@@ -360,7 +360,7 @@ body{
 
     document.getElementById('formPesanan')
     .addEventListener("submit", function(event){
-        event.preventDefault();
+        // event.preventDefault();
         var orderanObj = JSON.parse(document.getElementById("orderan").value);
         console.log(orderanObj);
         // var b=JSON.stringify(orderanObj);

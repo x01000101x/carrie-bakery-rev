@@ -381,11 +381,12 @@
                                 if (localStorage.getItem('data') != null){
                                     var konkrit = JSON.parse(localStorage.getItem('data'));
                                     console.log(konkrit.length);
-                                    console.log(konkrit);
-                                    // for (let i = 0; i < konkrit.length; i++){
-                                    //     var pukimai = konkrit[i];
-                                    //     console.log(pukimai);
-                                    // }
+                                    // console.log(konkrit);
+                                    for (let i = 0; i < konkrit.length; i++){
+                                        var pukimai = konkrit[i];
+                                        var hedon = pukimai.replaceAll('"', '');
+                                        console.log(hedon);
+                                    }
                                 }
                             }
 
