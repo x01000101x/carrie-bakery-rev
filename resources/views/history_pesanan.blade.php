@@ -322,7 +322,7 @@
 
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
-                          <div class="col-md-4">
+                          <div class="col-md-4" id="history_pesanan">
                             <img src="..." class="img-fluid rounded-start" alt="...">
                           </div>
                           <div class="col-md-8">
@@ -347,7 +347,7 @@
                     <div class="blog-sidebar">
                         <div class="block">
                             <h4>History Pesanan</h4>
-                            <ul class="media-list" id='history_pesanan'>
+                            <ul class="media-list" id='hajaj'>
                                 <h1 id="output_history_pesanan">Tidak ada History</h1>
                                 <form action="{{ url('/blabl') }}" method="post">
                                     @csrf
@@ -436,25 +436,21 @@
                                     selai += selbe + ','
                                 }
                                 history_pesanan += `
-										<li class="media">
-											<a class="pull-left" href="#">
-												<img class="media-object" src="${parsingData[6].replace(/\\/g, '').replaceAll('"', '')}" alt="...">
-											</a>
-											<div class="media-body">
+                                <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img style="width: 50px; height:50px" src="${parsingData[6].replace(/\\/g, '').replaceAll('"', '')}" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-												<a href="" class="media-heading"> ${parsingData[1].replaceAll('"', '')}
-													<p>
-														Selai : ${parsingData[3].replaceAll('"', '')}
-														<br>
-														Toping : ${parsingData[4].replaceAll('"', '')}
-                                                        <br>
-                                                        Jumlah : ${parsingData[5].replaceAll('"', '')}</p>
-
-												</a>
-                                                <button class="btn btn-danger" name="myBtn" id="myBtn">hapus</button>
-
-											</div>
-										</li>
 										`
                             }
 
