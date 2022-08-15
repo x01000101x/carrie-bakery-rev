@@ -268,7 +268,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav nav-main">
                     <li><a href="{{ url('/') }}">HOME</a></li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="{{ url('shop') }}">
                             SHOP
                             <span class="caret"></span>
@@ -281,7 +281,7 @@
                         </ul>
                     </li> <!-- End of /.dropdown -->
                     </li> <!-- End of /.dropdown -->
-                    <li><a href="{{ url('/history_pesanan') }}">ORDERAN</a></li>
+                    <li><a class="active" href="{{ url('/history_pesanan') }}">ORDERAN</a></li>
 
 
                 </ul> <!-- End of /.nav-main -->
