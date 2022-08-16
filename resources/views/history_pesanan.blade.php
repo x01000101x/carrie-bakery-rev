@@ -268,7 +268,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav nav-main">
                     <li><a href="{{ url('/') }}">HOME</a></li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="{{ url('shop') }}">
                             SHOP
                             <span class="caret"></span>
@@ -281,7 +281,7 @@
                         </ul>
                     </li> <!-- End of /.dropdown -->
                     </li> <!-- End of /.dropdown -->
-                    <li><a href="{{ url('/history_pesanan') }}">ORDERAN</a></li>
+                    <li><a class="active" href="{{ url('/history_pesanan') }}">ORDERAN</a></li>
 
 
                 </ul> <!-- End of /.nav-main -->
@@ -317,46 +317,20 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="products-heading">
-                        <h2>NEW PRODUCTS</h2>
+                        <h2>DAFTAR ORDERAN</h2>
                     </div> <!-- End of /.Products-heading -->
-                    <div class="product-grid">
-                        <ul>
-                            <form action="/order" method="POST"></form>
-                            @foreach ($produks as $produk)
-                            {{-- {{ dd(Voyager::image($produk->produk_gambar)) }} --}}
-                                <li>
-                                    <div class="products">
-                                        <a href="#">
-                                            <img class="gambar" src="{{ Voyager::image($produk->produk_gambar) }}"
-                                                alt="">
-                                        </a>
-                                        <a href="#">
-                                            <h4>{{ $produk->produk_nama }}</h4>
-                                        </a>
-                                        <p class="price">@currency($produk->produk_harga) </p>
-                                        <div>
-                                            @if ($produk->link_blass != null)
-                                                <a class="view-link shutter" href="{!! url($produk->link_blass) !!}">
-                                                    <i class="fa fa-plus-circle"></i>Order
-                                                </a>
-                                            @else
-                                                <a class="view-link shutter" href="/order/{{ $produk->id }}">
-                                                    <i class="fa fa-plus-circle"></i>Beli
-                                                </a>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
-                            </form>
-                        </ul>
-                    </div>
+
+
+                          <div id="history_pesanan">
+
+                          </div>
+
 
                     <!-- Pagination -->
 
                     <div class="pagination-bottom">
                         <ul class="pagination">
-                            {{ $produks->links() }}
+
                         </ul> <!-- End of /.pagination -->
                     </div>
                 </div> <!-- End of /.col-md-9 -->
@@ -364,7 +338,7 @@
                     <div class="blog-sidebar">
                         <div class="block">
                             <h4>History Pesanan</h4>
-                            <ul class="media-list" id='history_pesanan'>
+                            <ul class="media-list" id='hajaj'>
                                 <h1 id="output_history_pesanan">Tidak ada History</h1>
                                 <form action="{{ url('/blabl') }}" method="post">
                                     @csrf
@@ -438,14 +412,16 @@
 
                             var history_pesanan = ``
 
+                            var tungau = localStorage.getItem('data');
+
                             var parsingData = localStorage.getItem('data');
                             parsingData = JSON.parse(parsingData)
 
                             for (let i = 0; i < parsingData.length; i++) {
                                 var order = parsingData[i]
-                                console.log(parsingData);
+                                console.log(parsingData + " Kuda");
 
-                                console.log(parsingData[6].replace(/\\/g, '').replaceAll('"', ''));
+                                console.log(parsingData[0]);
 
                                 for (let a = 0; a < parsingData[1].length; a++) {
                                     var selai = ''
@@ -453,25 +429,28 @@
                                     selai += selbe + ','
                                 }
                                 history_pesanan += `
-										<li class="media">
-											<a class="pull-left" href="#">
-												<img class="media-object" src="${parsingData[6].replace(/\\/g, '').replaceAll('"', '')}" alt="...">
-											</a>
-											<div class="media-body">
+                                <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img style="width: 150px; height:100px" src="${order[6]}" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">${order[1]}</h5>
+                              <p class="card-text"><li>
+                                <p>Selai : ${order[3]} </p>
+                                <p>Toping : ${order[4]} </p>
+                                <p>Jumlah : ${order[5]} </p>
+                                <p>Status : <button class="btn btn-primary">Keke</button></p>
 
-												<a href="" class="media-heading"> ${parsingData[1].replaceAll('"', '')}
-													<p>
-														Selai : ${parsingData[3].replaceAll('"', '')}
-														<br>
-														Toping : ${parsingData[4].replaceAll('"', '')}
-                                                        <br>
-                                                        Jumlah : ${parsingData[5].replaceAll('"', '')}</p>
+                                </li></p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
 
-												</a>
-                                                <button class="btn btn-danger" name="myBtn" id="myBtn">hapus</button>
-
-											</div>
-										</li>
 										`
                             }
 
@@ -491,137 +470,8 @@
 
                         {{-- END OF HISTORY PESANAN --}}
 
-                        <!-- chart -->
-                        <div class="block">
-                            <h4>Keranjang</h4>
-                            <ul class="media-list" id='keranjang_blass'>
-
-                            </ul>
-                            <div class="container">
-                                <form action="{{ url('/checkout') }}" method="post">
-                                    @csrf
-                                    <input type="hidden" id="allpas" name="orderanjson">
-                                    <button type="submit" class="btn btn-primary">Order All</button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <script>
-                            function valueofchar() {
-                                var value = sessionStorage.getItem('karanjang');
-                                // alert(value);
-                                if (value != null) {
-                                    document.getElementById('allpas').value = value;
-                                }
-                            }
-
-                            valueofchar()
-
-                            var html_blass = ``
-
-                            var inche = sessionStorage.getItem('karanjang')
-                            inche = JSON.parse(inche)
-
-                            for (let i = 0; i < inche.length; i++) {
-                                var order = inche[i]
-                                // console.log(order + " Bitch ass");
 
 
-                                for (let a = 0; a < order[1].length; a++) {
-                                    var selai = ''
-                                    var selbe = order[1]
-                                    selai += selbe + ','
-                                }
-                                html_blass += `
-										<li class="media">
-											<a class="pull-left" href="#">
-												<img class="media-object" src="${order[6]}" alt="...">
-											</a>
-											<div class="media-body">
-
-												<a href="" class="media-heading"> ${order[1]}
-													<p>
-														Selai : ${order[3]}
-														<br>
-														Toping : ${order[4]}
-                                                        <br>
-                                                        Jumlah : ${order[5]}</p>
-
-												</a>
-                                                <button class="btn btn-danger" name="myBtn" id="myBtn">hapus</button>
-
-											</div>
-										</li>
-										`
-                            }
-
-
-                            // console.log(html_blass);
-                            document.getElementById('keranjang_blass').innerHTML = html_blass;
-
-                            // sessionStorage.removeItem('keranjang_blass');
-//                             $(function(){
-
-// $("#aKill").click(function(){
-//       $.post("serverpage.php",function(data){
-//       // if you want you can show some message to user here
-//    });
-// });
-                        </script>
-
-{{-- <a href="#" id="aKill" > Kill Session</a> --}}
-                        <!-- end -->
-                        <div class="block">
-                            <h4>Catagories</h4>
-                            <div class="list-group">
-                                <a href="/shop" class="list-group-item">
-                                    <i class="fa  fa-dot-circle-o"></i>
-                                    All
-                                </a>
-                                <a href="/breads" class="list-group-item">
-                                    <i class="fa  fa-dot-circle-o"></i>
-                                    Breads
-                                </a>
-                                <a href="/indonesian" class="list-group-item">
-                                    <i class="fa  fa-dot-circle-o"></i>
-                                    Indonesian Culinaries
-                                </a>
-                                <a href="/beverages" class="list-group-item">
-                                    <i class="fa  fa-dot-circle-o"></i>
-                                    Beverages
-                                </a>
-                                <a href="/jams" class="list-group-item">
-                                    <i class="fa  fa-dot-circle-o"></i>
-                                    Jams
-                                </a>
-                            </div>
-                        </div>
-                        <div class="block">
-                            @foreach ($promos as $promo)
-                            <img width="200px" height="250px" src="{{ Voyager::image($promo->gambar); }}" alt="">
-                            <br><br>
-                            @endforeach
-                        </div>
-                        <div class="block">
-                            <h4>Latest Food Items</h4>
-                            <ul class="media-list">
-                                @foreach ($latests as $latest)
-                                <li class="media">
-                                    <a class="pull-left" href="/order/{{ $latest->id }}">
-                                        <img class="media-object" src="{{ Voyager::image($latest->produk_gambar) }}"
-                                        alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="" class="media-heading">{{ $latest->produk_nama }}
-                                            <p>{{ $latest->produk_deskripsi }}</p>
-                                        </a>
-                                    </div>
-                                </li>
-                                @endforeach
-
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
     </section>

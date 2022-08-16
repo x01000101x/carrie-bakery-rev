@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Testing Here
+Route::get('/testing', [ProdukController::class, 'testing']);
 
 //Firewall Here
 Route::get('/', [SliderController::class, 'index']);
@@ -29,8 +31,10 @@ Route::get('/beverages', [OrderanController::class, 'beverages'])->name('beverag
 Route::get('/jams', [OrderanController::class, 'jams'])->name('jams');
 Route::get('/order/{id}', [ProdukController::class, 'show2'])->name('order');
 Route::post('/pesan', [OrderanController::class, 'store'])->name('pesan');
-Route::post('/confirm', [OrderanController::class, 'confirm'])->name('confirm');
+Route::match(['GET', 'POST'], '/confirm', [OrderanController::class, 'confirm'])->name('confirm');
 Route::get('/download-invoice', [PDFController::class, 'download'])->name('download-invoice');
+Route::get('/history_pesanan', [ProdukController::class, 'history'])->name('history_pesanan');
+
 // Route::get('/hella', [OrderanController::class, 'store'])->name('hella');
 
 // Route::get('/confirm', [OrderanController::class, 'confirm'])->name('confirm');

@@ -7,6 +7,7 @@
     <title>Konfirmasi</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="{{ url('assets/js/jquery.min.js')}}" type="text/javascript"></script>
 
     <style>
 
@@ -287,19 +288,20 @@ body{
         </div>
     </div>
 
+    {{-- <input type="hidden" id="forbodden" value="{{ json_decode($orderanjson) }}"> --}}
+
         <div class="panel panel-default text-right">
             <div class="panel-body">
-                <form action="/pesan" method="POST">
+                <form action="/pesan" id="formPesanan" method="POST">
                     @csrf
-                    <input type="hidden" name="orderan" value="{{ json_encode($orderanjson) }}">
-                    <input type="hidden" name="nama_pemesan" value="{{ $pemesan  }}">
-                    <input type="hidden" name="pesanan_id" value="{{ $pesanan_id  }}">
-
-                    <input type="hidden" name="notelp" value="{{ $notelp }}">
-                    <input type="hidden" name="alamat" value="{{ $alamat }}">
-                    <input type="hidden" name="myCheck" value="{{ $myCheck }}">
-                    <input type="hidden" name="nama_pengirim" value="{{ $pengirim }}">
-                    <input type="hidden" name="status" value="booked">
+                    <input type="hidden" id="orderan" name="orderan" value="{{ json_encode($orderanjson) }}">
+                    <input type="hidden" id="nama_pemesan" name="nama_pemesan" value="{{ $pemesan  }}">
+                    <input type="hidden" id="pesanan_id" name="pesanan_id" value="{{ $pesanan_id  }}">
+                    <input type="hidden" id="notelp" name="notelp" value="{{ $notelp }}">
+                    <input type="hidden" id="alamat" name="alamat" value="{{ $alamat }}">
+                    <input type="hidden" id="myCheck "name="myCheck" value="{{ $myCheck }}">
+                    <input type="hidden" id="nama_pengirim" name="nama_pengirim" value="{{ $pengirim }}">
+                    <input type="hidden" id="status" name="status" value="booked">
 
 
 
@@ -315,7 +317,7 @@ body{
                         <a class="btn btn-success" id="printout"><i class="fa fa-print"></i> PRINT INVOICE</a>
                         <button class="btn btn-primary" hidden type="submit"><i class="fa fa-check"></i>SAVE</button>
                         @else
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>ORDER</button>
+                        <button class="btn btn-primary" id="order_pesanan" type="submit"><i class="fa fa-check"></i>ORDER</button>
                         <a class="btn btn-warning" href="/checkout"><i class="fa fa-pencil-square-o"></i>BACK</a>
                         <a class="btn btn-success" hidden href="page-invoice-print.html" target="_blank"><i class="fa fa-print"></i> PRINT INVOICE</a>
                         @endif
@@ -325,6 +327,7 @@ body{
 
 
                 </div>
+
         </div>
     </div>
 
@@ -349,6 +352,78 @@ body{
         html2pdf().from(invoice).set(opt).save();
     })
    }
+</script>
+
+<script>
+
+document.getElementById("order_pesanan").onclick = function(event) {
+            // event.preventDefault();
+            let pesanans = sessionStorage.getItem('karanjang');
+            // console.log(pesanans);
+
+            let OrderanObj = JSON.stringify(pesanans);
+            // console.log(OrderanObj);
+
+            if (!pesanans){
+                return;
+            }
+
+        sessionStorage.removeItem('karanjang');
+
+
+            localStorage.setItem("data", pesanans);
+            let faku = JSON.parse(localStorage.getItem("data"));
+            console.log(faku);
+            }
+
+    // document.getElementById('formPesanan')
+    // .addEventListener("submit", function(event){
+    //     // event.preventDefault();
+
+    //     var pesanan_id = document.getElementById("pesanan_id").value;
+
+
+    //     var orderanObj = JSON.parse(document.getElementById("orderan").value);
+    //     console.log(orderanObj);
+    //     // var b=JSON.stringify(orderanObj);
+    //     str = orderanObj.replace(/[\[\]']+/g, '');
+    //     console.log(str)
+    //     // var masl = [];
+    //     kuku = str.split(/[,]+/);
+    //     // var jujur = kuku.replace(/['"]+/g, '');
+    //     // masl.push(str);
+    //     // var kupu = masl.replace(/['"]+/g, '');
+    //     console.log(kuku);
+
+    //     // console.log("Hello", orderanObj);
+
+    //     if(!kuku){
+    //         return;
+    //     }
+
+    //     // var infoOrder = {
+    //     //     pesanan: orderanObj
+    //     // };
+
+    //     localStorage.setItem("data", JSON.stringify(kuku));
+    //     var inchok = JSON.parse(localStorage.getItem("data"));
+    //     console.log(inchok);
+
+    //     //delete session keranjang
+
+    // console.log(document.getElementById('orderan').value + " INI RAW");
+//     var orderanObject = JSON.parse(document.getElementById('orderan').value);
+//     // console.log(orderanObject + " Ini parse");
+//     let datas = [
+//        orderanObject
+// ];
+//     // console.log(datas + " Ini apalah");
+
+//     $("#order_pesanan").on("click", function () {
+//         localStorage.setItem('data', datas);
+//         var parsingData = JSON.parse(localStorage.getItem('data'));
+//         console.log(parsingData);
+// })
 </script>
 
 
