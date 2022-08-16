@@ -468,7 +468,7 @@
                                                         Jumlah : ${parsingData[5].replaceAll('"', '')}</p>
 
 												</a>
-                                                <button class="btn btn-danger" name="myBtn" id="myBtn">hapus</button>
+                                                <button class="btn btn-danger" name="myBtn" id="myBtn" onclick="deletall())">hapus</button>
 
 											</div>
 										</li>
@@ -479,6 +479,10 @@
                             // console.log(html_blass);
                             document.getElementById('history_pesanan').innerHTML = history_pesanan;
 
+                            function deletall() {
+                                localStorage.removeItem('data');
+                                location.reload();
+                            }
                             // sessionStorage.removeItem('keranjang_blass');
 //                             $(function(){
 
@@ -754,7 +758,8 @@
                                     <img src="{{ url('assets/images/Maestro.png') }}" alt="">
                                 </a>
                             </li>
-                            <li <a href="#">
+                            <li >
+                                <a href="#">
                                 <img src="{{ url('assets/images/Visa.png') }}" alt="">
                                 </a>
                             </li>
