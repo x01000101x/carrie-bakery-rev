@@ -356,42 +356,59 @@ body{
 
 <script>
 
-    document.getElementById('formPesanan')
-    .addEventListener("submit", function(event){
-        // event.preventDefault();
+document.getElementById("order_pesanan").onclick = function(event) {
+            // event.preventDefault();
+            let pesanans = sessionStorage.getItem('karanjang');
+            // console.log(pesanans);
 
-        var pesanan_id = document.getElementById("pesanan_id").value;
+            let OrderanObj = JSON.stringify(pesanans);
+            // console.log(OrderanObj);
+
+            if (!testong){
+                return;
+            }
+
+            localStorage.setItem("data", OrderanObj);
+            let faku = JSON.parse(localStorage.getItem("data"));
+            console.log(faku);
+            }
+
+    // document.getElementById('formPesanan')
+    // .addEventListener("submit", function(event){
+    //     // event.preventDefault();
+
+    //     var pesanan_id = document.getElementById("pesanan_id").value;
 
 
-        var orderanObj = JSON.parse(document.getElementById("orderan").value);
-        console.log(orderanObj);
-        // var b=JSON.stringify(orderanObj);
-        str = orderanObj.replace(/[\[\]']+/g, '');
-        console.log(str)
-        // var masl = [];
-        kuku = str.split(/[,]+/);
-        // var jujur = kuku.replace(/['"]+/g, '');
-        // masl.push(str);
-        // var kupu = masl.replace(/['"]+/g, '');
-        console.log(kuku);
+    //     var orderanObj = JSON.parse(document.getElementById("orderan").value);
+    //     console.log(orderanObj);
+    //     // var b=JSON.stringify(orderanObj);
+    //     str = orderanObj.replace(/[\[\]']+/g, '');
+    //     console.log(str)
+    //     // var masl = [];
+    //     kuku = str.split(/[,]+/);
+    //     // var jujur = kuku.replace(/['"]+/g, '');
+    //     // masl.push(str);
+    //     // var kupu = masl.replace(/['"]+/g, '');
+    //     console.log(kuku);
 
-        // console.log("Hello", orderanObj);
+    //     // console.log("Hello", orderanObj);
 
-        if(!kuku){
-            return;
-        }
+    //     if(!kuku){
+    //         return;
+    //     }
 
-        // var infoOrder = {
-        //     pesanan: orderanObj
-        // };
+    //     // var infoOrder = {
+    //     //     pesanan: orderanObj
+    //     // };
 
-        localStorage.setItem("data", JSON.stringify(kuku));
-        var inchok = JSON.parse(localStorage.getItem("data"));
-        console.log(inchok);
+    //     localStorage.setItem("data", JSON.stringify(kuku));
+    //     var inchok = JSON.parse(localStorage.getItem("data"));
+    //     console.log(inchok);
 
-        //delete session keranjang
-        sessionStorage.removeItem('karanjang');
-    })
+    //     //delete session keranjang
+    //     sessionStorage.removeItem('karanjang');
+    // })
 
 
 
