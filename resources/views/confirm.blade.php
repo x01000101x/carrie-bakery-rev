@@ -364,11 +364,14 @@ document.getElementById("order_pesanan").onclick = function(event) {
             let OrderanObj = JSON.stringify(pesanans);
             // console.log(OrderanObj);
 
-            if (!testong){
+            if (!pesanans){
                 return;
             }
 
-            localStorage.setItem("data", OrderanObj);
+        sessionStorage.removeItem('karanjang');
+
+
+            localStorage.setItem("data", pesanans);
             let faku = JSON.parse(localStorage.getItem("data"));
             console.log(faku);
             }
@@ -407,10 +410,6 @@ document.getElementById("order_pesanan").onclick = function(event) {
     //     console.log(inchok);
 
     //     //delete session keranjang
-    //     sessionStorage.removeItem('karanjang');
-    // })
-
-
 
     // console.log(document.getElementById('orderan').value + " INI RAW");
 //     var orderanObject = JSON.parse(document.getElementById('orderan').value);
