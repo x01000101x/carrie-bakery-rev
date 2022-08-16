@@ -417,6 +417,7 @@
                                                         Jumlah : ${order[5]}</p>
 
 												</a>
+                                                <button class="btn btn-danger" name="myBtn" id="myBtn">hapus</button>
 
 											</div>
 										</li>
@@ -425,8 +426,19 @@
 
 
                             // console.log(html_blass);
-                            document.getElementById('keranjang_blass').innerHTML = html_blass
+                            document.getElementById('keranjang_blass').innerHTML = html_blass;
+
+                            // sessionStorage.removeItem('keranjang_blass');
+//                             $(function(){
+
+// $("#aKill").click(function(){
+//       $.post("serverpage.php",function(data){
+//       // if you want you can show some message to user here
+//    });
+// });
                         </script>
+
+{{-- <a href="#" id="aKill" > Kill Session</a> --}}
                         <!-- end -->
                         <div class="block">
                             <h4>Catagories</h4>
