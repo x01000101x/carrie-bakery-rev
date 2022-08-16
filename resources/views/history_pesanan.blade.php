@@ -320,20 +320,11 @@
                         <h2>DAFTAR ORDERAN</h2>
                     </div> <!-- End of /.Products-heading -->
 
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4" id="history_pesanan">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
+
+                          <div id="history_pesanan">
+
                           </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+
 
                     <!-- Pagination -->
 
@@ -421,14 +412,16 @@
 
                             var history_pesanan = ``
 
+                            var tungau = localStorage.getItem('data');
+
                             var parsingData = localStorage.getItem('data');
                             parsingData = JSON.parse(parsingData)
 
                             for (let i = 0; i < parsingData.length; i++) {
                                 var order = parsingData[i]
-                                console.log(parsingData);
+                                console.log(parsingData + " Kuda");
 
-                                console.log(parsingData[6].replace(/\\/g, '').replaceAll('"', ''));
+                                console.log(parsingData[0]);
 
                                 for (let a = 0; a < parsingData[1].length; a++) {
                                     var selai = ''
@@ -439,17 +432,24 @@
                                 <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                           <div class="col-md-4">
-                            <img style="width: 50px; height:50px" src="${parsingData[6].replace(/\\/g, '').replaceAll('"', '')}" class="img-fluid rounded-start" alt="...">
+                            <img style="width: 150px; height:100px" src="${order[6]}" class="img-fluid rounded-start" alt="...">
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <h5 class="card-title">${order[1]}</h5>
+                              <p class="card-text"><li>
+                                <p>Selai : ${order[3]} </p>
+                                <p>Toping : ${order[4]} </p>
+                                <p>Jumlah : ${order[5]} </p>
+                                <p>Status : <button class="btn btn-primary">Keke</button></p>
+
+                                </li></p>
                               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                           </div>
                         </div>
                       </div>
+                      <br>
 
 										`
                             }
