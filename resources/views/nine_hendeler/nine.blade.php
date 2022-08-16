@@ -423,7 +423,7 @@
 									<img src="{{ url('assets/images/Maestro.png')}}" alt="">
 								</a>
 							</li>
-							<li
+							<li>
 								<a href="#">
 									<img src="{{ url('assets/images/Visa.png')}}" alt="">
 								</a>
@@ -459,8 +459,8 @@
         function selt(id) {
             if (selainame.length<6) {
                 selainame.push(document.getElementById(id + 'value').value)
-                selaiimg.push(document.getElementById(id + 'img').src);                
-            }        
+                selaiimg.push(document.getElementById(id + 'img').src);
+            }
             console.log(selainame,selaiimg,selainame.length,selaiimg.length);
             claw()
 			roso()
@@ -473,10 +473,10 @@
             }
         }
 		function roso() {
-            kom_rasa = JSON.stringify(selainame); 
+            kom_rasa = JSON.stringify(selainame);
             document.getElementById('kombinasi_rasa').value = kom_rasa;
-            
-            kom_toping = JSON.stringify(toping); 
+
+            kom_toping = JSON.stringify(toping);
 			// alert(toping)
             document.getElementById('kombinasi_toping').value = kom_toping;
 
@@ -510,7 +510,7 @@
 		var sessionkaranjang=sessionStorage.getItem("karanjang");
         var karan=[]
         if (sessionkaranjang!=null) {
-            karan=JSON.parse(sessionkaranjang)                
+            karan=JSON.parse(sessionkaranjang)
         }
         function pastin() {
             var kmb_r='Sobek'
@@ -519,7 +519,7 @@
             var kmb_t=document.getElementById('kombinasi_toping').value
             kmb_t=JSON.parse(kmb_t)
             var tmb=[
-                kmb_r,kmb_s,kmb_t
+                '3',"Roti Sobek","Sobek",kmb_s,kmb_t,'10',"http://localhost:8000/storage/produks/June2022/KesMOLi9akLQRNuJ3Igs.jpeg"
             ]
             if (kmb_s.length<6) {
                 alert('pilihlah 6 Kombinasi Selai dan 1 Kombinasi Toping')

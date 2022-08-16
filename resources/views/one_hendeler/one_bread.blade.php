@@ -155,7 +155,7 @@
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--     
+<!--
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         -->
 <!-- owl corosel cdn -->
@@ -193,9 +193,9 @@
         var kmb_r = document.getElementById('roti_select').value
         var kmb_s = document.getElementById('selai_select').value
         var kmb_t = document.getElementById('toping_select').value
-        var tmb = [
-            kmb_r, kmb_s, kmb_t
-        ]
+        var tmb=[
+                '3',`Roti ${kmb_r}`,kmb_r,kmb_s,kmb_t,'10',"http://localhost:8000/storage/produks/June2022/KesMOLi9akLQRNuJ3Igs.jpeg"
+            ]
         if (kmb_s.length < 1) {
             alert('pilihlah 1 roti, Selai, Toping')
         } else {
@@ -239,7 +239,7 @@
         document.getElementById('selai_select').value = document.getElementById('mix-1').value + ' MIX ' + document.getElementById('mix-2').value
         // alert(document.getElementById('selai_select').value)
     }
-    
+
     function pwaope() {
         var isian=document.getElementById('selai_select').value
         alert('selai '+isian+' siap di pesan');
