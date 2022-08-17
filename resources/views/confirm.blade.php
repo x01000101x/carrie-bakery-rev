@@ -365,7 +365,7 @@ document.getElementById("order_pesanan").onclick = function(event) {
             // console.log(pesanan_id);
 
             let pesanans = sessionStorage.getItem('karanjang');
-            console.log(pesanans + " Kontol");
+            console.log(pesanans + " Kol");
             let pardapot = JSON.parse(pesanans);
 
             for (let i = 0; i < pardapot.length; i++) {
@@ -374,8 +374,6 @@ document.getElementById("order_pesanan").onclick = function(event) {
 
                 found.push(pesanan_id);
 
-                // var combine = found + ", " + pesanan_id;
-                // var sabi = JSON.parse(combine);
 
             }
 
@@ -385,38 +383,26 @@ document.getElementById("order_pesanan").onclick = function(event) {
             let OrderanObj = JSON.stringify(pardapot);
             console.log(OrderanObj);
 
-            if (!pardapot){
-                return;
-            }
-
 
             let old_data = JSON.parse(localStorage.getItem('data'));
             // console.log(typeof(old_data));
 
             if(old_data !== null){
-                pesanansObj = JSON.parse(pesanans);
-                for (let i = 0; i < pesanansObj.length; i++) {
-                var acumalaka = pesanansObj[i];
+                for (let i = 0; i < pardapot.length; i++) {
+                var acumalaka = pardapot[i];
                 old_data.push(acumalaka);
-
-
-                // var found = old_data[i]
-                // found.push(pardapot);
-
-                // var combine = found + ", " + pesanan_id;
-                // var sabi = JSON.parse(combine);
 
             }
             console.log(old_data);
             }
             else{
 
-                // sessionStorage.removeItem('karanjang');
 
 
                 localStorage.setItem("data", OrderanObj);
                 let faku = JSON.parse(localStorage.getItem("data"));
-                // console.log(faku + " Hi meki");
+                sessionStorage.removeItem('karanjang');
+                // console.log(faku + " Hi");
             }
         }
 
