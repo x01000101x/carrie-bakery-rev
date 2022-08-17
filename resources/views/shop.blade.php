@@ -363,20 +363,9 @@
                 <div class="col-md-3">
                     <div class="blog-sidebar">
                         <div class="block">
-                            <h4>History Pesanan</h4>
-                            <ul class="media-list" id='history_pesanan'>
-                                <h1 id="output_history_pesanan">Tidak ada History</h1>
-                                <form action="{{ url('/blabl') }}" method="post">
-                                    @csrf
-                                    <input type="hidden" id="getrekt" name="orderanapawe">
-                                    <button type="button" class="btn btn-primary">Order All</button>
-                                </form>
-                            </ul>
-                            <div class="container">
 
-                            </div>
                         </div>
-                        <script>
+                        {{-- <script>
 
                             // function testicels(){
                             //     if (localStorage.getItem('data') != null){
@@ -491,7 +480,7 @@
 //       // if you want you can show some message to user here
 //    });
 // });
-                        </script>
+                        </script> --}}
 
                         {{-- END OF HISTORY PESANAN --}}
 

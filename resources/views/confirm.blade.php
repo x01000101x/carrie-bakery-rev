@@ -356,10 +356,32 @@ body{
 
 <script>
 
+    console.log(localStorage.getItem('data'));
+
 document.getElementById("order_pesanan").onclick = function(event) {
-            // event.preventDefault();
+    event.preventDefault();
+
+            let pesanan_id = document.getElementById("pesanan_id").value;
+            // console.log(pesanan_id);
+
             let pesanans = sessionStorage.getItem('karanjang');
-            // console.log(pesanans);
+            let pardapot = JSON.parse(pesanans);
+
+            for (let i = 0; i < pardapot.length; i++) {
+                var found = pardapot[i]
+                console.log(found);
+
+                found.push(pesanan_id);
+
+                // var combine = found + ", " + pesanan_id;
+                // var sabi = JSON.parse(combine);
+
+            }
+
+            console.log(pardapot);
+
+            // let fairytale = pesanans.push(pesanan_id);
+            // console.log(pardapot);
 
             let OrderanObj = JSON.stringify(pesanans);
             // console.log(OrderanObj);
@@ -368,12 +390,12 @@ document.getElementById("order_pesanan").onclick = function(event) {
                 return;
             }
 
-        sessionStorage.removeItem('karanjang');
+        // sessionStorage.removeItem('karanjang');
 
 
             localStorage.setItem("data", pesanans);
             let faku = JSON.parse(localStorage.getItem("data"));
-            console.log(faku);
+            // console.log(faku);
             }
 
     // document.getElementById('formPesanan')
