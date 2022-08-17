@@ -430,25 +430,27 @@
                                 }
                                 history_pesanan += `
                                 <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img style="width: 150px; height:100px" src="${order[6]}" class="img-fluid rounded-start" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">${order[1]}</h5>
-                              <p class="card-text"><li>
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img style="width: 150px; height:150px" src="${order[6]}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">${order[1]}</h5>
+        <p class="card-text">
+            <li>
                                 <p>Selai : ${order[3]} </p>
                                 <p>Toping : ${order[4]} </p>
                                 <p>Jumlah : ${order[5]} </p>
                                 <p>Status : <button class="btn btn-primary">Keke</button></p>
 
                                 </li></p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
                       <br>
 
 										`
