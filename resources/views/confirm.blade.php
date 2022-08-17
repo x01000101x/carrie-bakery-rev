@@ -365,6 +365,7 @@ document.getElementById("order_pesanan").onclick = function(event) {
             // console.log(pesanan_id);
 
             let pesanans = sessionStorage.getItem('karanjang');
+            console.log(pesanans + " Kontol");
             let pardapot = JSON.parse(pesanans);
 
             for (let i = 0; i < pardapot.length; i++) {
@@ -378,25 +379,46 @@ document.getElementById("order_pesanan").onclick = function(event) {
 
             }
 
-            console.log(pardapot);
-
             // let fairytale = pesanans.push(pesanan_id);
             // console.log(pardapot);
 
-            let OrderanObj = JSON.stringify(pesanans);
-            // console.log(OrderanObj);
+            let OrderanObj = JSON.stringify(pardapot);
+            console.log(OrderanObj);
 
-            if (!pesanans){
+            if (!pardapot){
                 return;
             }
 
-        // sessionStorage.removeItem('karanjang');
+
+            let old_data = JSON.parse(localStorage.getItem('data'));
+            // console.log(typeof(old_data));
+
+            if(old_data !== null){
+                pesanansObj = JSON.parse(pesanans);
+                for (let i = 0; i < pesanansObj.length; i++) {
+                var acumalaka = pesanansObj[i];
+                old_data.push(acumalaka);
 
 
-            localStorage.setItem("data", pesanans);
-            let faku = JSON.parse(localStorage.getItem("data"));
-            // console.log(faku);
+                // var found = old_data[i]
+                // found.push(pardapot);
+
+                // var combine = found + ", " + pesanan_id;
+                // var sabi = JSON.parse(combine);
+
             }
+            console.log(old_data);
+            }
+            else{
+
+                // sessionStorage.removeItem('karanjang');
+
+
+                localStorage.setItem("data", OrderanObj);
+                let faku = JSON.parse(localStorage.getItem("data"));
+                // console.log(faku + " Hi meki");
+            }
+        }
 
     // document.getElementById('formPesanan')
     // .addEventListener("submit", function(event){
