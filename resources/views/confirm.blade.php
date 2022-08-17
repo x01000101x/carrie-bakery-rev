@@ -368,12 +368,17 @@ document.getElementById("order_pesanan").onclick = function(event) {
             console.log(pesanans + " Kol");
             let pardapot = JSON.parse(pesanans);
 
+            var today = new Date();
+            var date = today.getDate()+"-"+(today.getMonth()+1) + "-" + today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+' '+time;
+
             for (let i = 0; i < pardapot.length; i++) {
                 var found = pardapot[i]
                 console.log(found);
 
                 found.push(pesanan_id);
-
+                found.push(dateTime);
 
             }
 
