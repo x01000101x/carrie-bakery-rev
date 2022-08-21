@@ -386,28 +386,34 @@ document.getElementById("order_pesanan").onclick = function(event) {
             // console.log(pardapot);
 
             let OrderanObj = JSON.stringify(pardapot);
-            console.log(OrderanObj);
+            console.log(OrderanObj, " ini setering");
+            // console.log(typeof(OrderanObj));
 
+            // console.log(localStorage.getItem('data') + " ,p");
 
-            let old_data = JSON.parse(localStorage.getItem('data'));
-            // console.log(typeof(old_data));
+            let older_data = localStorage.getItem('data');
+            console.log(older_data + " Kararosin");
 
-            if(old_data !== null){
+            if(older_data == ""){
+                console.log('acumalakaaahahha');
+            }
+
+            if(older_data !== null || older_data !== ""){
                 for (let i = 0; i < pardapot.length; i++) {
-                var acumalaka = pardapot[i];
-                old_data.push(acumalaka);
+                    var acumalaka = pardapot[i];
+                    let old_data = JSON.parse(localStorage.getItem('data'));
+                    old_data.push(acumalaka);
+                sessionStorage.removeItem('karanjang');
 
             }
-            console.log(old_data);
+            // console.log(old_data);
             }
             else{
-
-
-
+                localStorage.removeItem("data");
                 localStorage.setItem("data", OrderanObj);
                 let faku = JSON.parse(localStorage.getItem("data"));
-                sessionStorage.removeItem('karanjang');
                 // console.log(faku + " Hi");
+                sessionStorage.removeItem('karanjang');
             }
         }
 
