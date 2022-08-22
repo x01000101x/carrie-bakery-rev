@@ -423,6 +423,7 @@
 
                                 console.log(parsingData[0]);
 
+
                                 for (let a = 0; a < parsingData[1].length; a++) {
                                     var selai = ''
                                     var selbe = parsingData[1]
@@ -446,7 +447,7 @@
 
                                 </li></p>
 
-        <p class="card-text"><small class="text-muted">${$order[8]}</small></p>
+        <p class="card-text"><small class="text-muted">${order[8]}</small></p>
       </div>
     </div>
   </div>

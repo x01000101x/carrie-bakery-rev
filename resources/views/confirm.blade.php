@@ -398,12 +398,21 @@ document.getElementById("order_pesanan").onclick = function(event) {
                 console.log('acumalakaaahahha');
             }
 
-            if(older_data !== null || older_data !== ""){
+            if(older_data !== ""){
                 for (let i = 0; i < pardapot.length; i++) {
                     var acumalaka = pardapot[i];
                     let old_data = JSON.parse(localStorage.getItem('data'));
                     old_data.push(acumalaka);
                 sessionStorage.removeItem('karanjang');
+
+            }else if(older_data !== null){
+
+                for (let i = 0; i < pardapot.length; i++) {
+                    var acumalaka = pardapot[i];
+                    let old_data = JSON.parse(localStorage.getItem('data'));
+                    old_data.push(acumalaka);
+                sessionStorage.removeItem('karanjang');
+
 
             }
             // console.log(old_data);
